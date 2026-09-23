@@ -113,8 +113,9 @@ public class PlayerMovement : MonoBehaviour
         foreach (Transform eachChild in enemies.transform)
         {
             eachChild.transform.localPosition = eachChild.GetComponent<EnemyMovement>().startPosition;
+            Debug.Log("{} location reset", eachChild);
         }
         // reset timer
-        catchThePrey.timer =0;
+        catchThePrey.RestartTimer();
     }
 }

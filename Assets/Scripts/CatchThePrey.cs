@@ -16,13 +16,28 @@ public class CatchThePrey : MonoBehaviour
     public Vector3 boxSize;
     public float maxDistance;
     public LayerMask layerMask;
+    private Coroutine timerRoutine;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(TimerTick());
     }
+    public void RestartTimer()
+    {
+        // 1. If a timer loop is already running, safely stop it first
+        if (timerRoutine != null)
+        {
+            StopCoroutine(timerRoutine);
+        }
 
+        // 2. Reset values to default configuration
+        timer = 0;
+        countTimerState = true;
+
+        // 3. Start the timer routine freshly and save its reference
+        timerRoutine = StartCoroutine(TimerTick());
+    }
     private IEnumerator TimerTick()
     {
         while (countTimerState)
@@ -39,7 +54,7 @@ public class CatchThePrey : MonoBehaviour
         {
             int minutes = timer / 60;
             int seconds = timer % 60;
-            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timerText.text = string.Format("Timer - {0:00}:{1:00}", minutes, seconds);
         }
     }
 
@@ -52,4 +67,6 @@ public class CatchThePrey : MonoBehaviour
             Debug.Log("Enemy caught! Timer stopped at: " + timer);
         }
     }
+
+
 }
