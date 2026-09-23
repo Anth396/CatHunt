@@ -1,0 +1,1385 @@
+fileFormatVersion: 2
+guid: 4bae6513879265d4ca687e748f9a82a9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1312601302335119399
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_0
+  - first:
+      213: 7445523579426186312
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_1
+  - first:
+      213: 6384127091589061281
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_2
+  - first:
+      213: 7336894457687795853
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_3
+  - first:
+      213: 337381731161000913
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_4
+  - first:
+      213: -7447035857638515867
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_5
+  - first:
+      213: -8048488729890179135
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_6
+  - first:
+      213: -5865520394340115057
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_7
+  - first:
+      213: -3176935989905337981
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_8
+  - first:
+      213: -8137391815821622335
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_9
+  - first:
+      213: 245787959916023022
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_10
+  - first:
+      213: -644456987895609346
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_11
+  - first:
+      213: -6809792837397933816
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_12
+  - first:
+      213: -1210905013945090128
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_13
+  - first:
+      213: -5298347676932923291
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_14
+  - first:
+      213: -6006000091521613883
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_15
+  - first:
+      213: -7699722236026005072
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_16
+  - first:
+      213: 4328265809371660648
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_17
+  - first:
+      213: -6723790307033714312
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_18
+  - first:
+      213: 7001552477088125744
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_19
+  - first:
+      213: -56724617820604305
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_20
+  - first:
+      213: 1537808050509153721
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_21
+  - first:
+      213: -7375599019934372028
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_22
+  - first:
+      213: 158329092518611399
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_23
+  - first:
+      213: 4302653996618312627
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_24
+  - first:
+      213: -5815317830130207264
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_25
+  - first:
+      213: 355625378525067923
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_26
+  - first:
+      213: 163197265411717307
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_27
+  - first:
+      213: 7067577386930469967
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_28
+  - first:
+      213: -2597114139752759118
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_29
+  - first:
+      213: 4101789171024838763
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_30
+  - first:
+      213: -4404544379392454270
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_31
+  - first:
+      213: 454635857418498779
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_32
+  - first:
+      213: -7384333649469693160
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_33
+  - first:
+      213: 5392141119429110605
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_34
+  - first:
+      213: -6142137591693114432
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_35
+  - first:
+      213: -5423176756451360184
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_36
+  - first:
+      213: 8782757501981326691
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_37
+  - first:
+      213: -8524671064073304202
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_38
+  - first:
+      213: 4778110848371676125
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_39
+  - first:
+      213: -7918569834956143489
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_40
+  - first:
+      213: 363604018454128923
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_41
+  - first:
+      213: 92561238138637595
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_42
+  - first:
+      213: 5108974309741906336
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_43
+  - first:
+      213: 8805762064124150939
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_44
+  - first:
+      213: -8096230694186215081
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_45
+  - first:
+      213: -9067010203327086363
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_46
+  - first:
+      213: -9092418603012608172
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_47
+  - first:
+      213: -4232194901034681325
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_48
+  - first:
+      213: 6965494047947726058
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_49
+  - first:
+      213: 2423483628548444276
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_50
+  - first:
+      213: 9115277274774293597
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_51
+  - first:
+      213: 5915396347667315573
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_52
+  - first:
+      213: -6927274763298595681
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_53
+  - first:
+      213: -2220435067982124471
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_54
+  - first:
+      213: 382859739028036568
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_55
+  - first:
+      213: 5935854472661834052
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_56
+  - first:
+      213: -60913341290135313
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_57
+  - first:
+      213: -1422520772661540785
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_58
+  - first:
+      213: 4902913708549672730
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_59
+  - first:
+      213: 8481890446821535310
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_60
+  - first:
+      213: -8369604988403923111
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_61
+  - first:
+      213: -210801418038424635
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_62
+  - first:
+      213: -2454969571869322282
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_63
+  - first:
+      213: 7606712367031808206
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_64
+  - first:
+      213: 3881537193293162927
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_65
+  - first:
+      213: 2723373520845319775
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_66
+  - first:
+      213: -3133660271984706357
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_67
+  - first:
+      213: 6228171450018802835
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_68
+  - first:
+      213: 4415183269281446666
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_69
+  - first:
+      213: -2759085470543119794
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_70
+  - first:
+      213: 1812160802479490373
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_71
+  - first:
+      213: -2048933240827094562
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_72
+  - first:
+      213: -9080721532934052591
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_73
+  - first:
+      213: 7144565471900691262
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_74
+  - first:
+      213: 7485028478125000787
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_75
+  - first:
+      213: 1762234183180659258
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_76
+  - first:
+      213: 8031478431403519323
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_77
+  - first:
+      213: 2658655976397016692
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_78
+  - first:
+      213: 6354341389937128005
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_79
+  - first:
+      213: -5562413252570564083
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_80
+  - first:
+      213: 8732312421314573344
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_81
+  - first:
+      213: -1773648426651374935
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_82
+  - first:
+      213: 7053956807399012736
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_83
+  - first:
+      213: 7370011945989320703
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_84
+  - first:
+      213: 3224433691443052185
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_85
+  - first:
+      213: -7815769719302958044
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_86
+  - first:
+      213: -742630613747622202
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_87
+  - first:
+      213: -251002933344824279
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_88
+  - first:
+      213: 6021959444530312591
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_89
+  - first:
+      213: -2545217124062703486
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_90
+  - first:
+      213: 8617660125179465072
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_91
+  - first:
+      213: 2626579751617890475
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_92
+  - first:
+      213: -3813216304992199431
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_93
+  - first:
+      213: -5528047171583043472
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_94
+  - first:
+      213: 6575412594245333604
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_95
+  - first:
+      213: -575004674242352187
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_96
+  - first:
+      213: 1455707480144542473
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_97
+  - first:
+      213: 7374341359308944310
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_98
+  - first:
+      213: -1403919278131455938
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_99
+  - first:
+      213: -2828962293557981688
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_100
+  - first:
+      213: 325045850462190047
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_101
+  - first:
+      213: 8322407565040805211
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_102
+  - first:
+      213: 2894167123912598744
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_103
+  - first:
+      213: -1546776104626051791
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_104
+  - first:
+      213: -4469046173484504810
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_105
+  - first:
+      213: 9064143282073837230
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_106
+  - first:
+      213: -1690690159406474376
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_107
+  - first:
+      213: 52461235943891316
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_108
+  - first:
+      213: 8494768497148174742
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_109
+  - first:
+      213: 370191951342833788
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_110
+  - first:
+      213: -5673721772413628129
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_111
+  - first:
+      213: -8805293960688951561
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_112
+  - first:
+      213: -3072125975689334169
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_113
+  - first:
+      213: -5389448472251252386
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_114
+  - first:
+      213: 6939009399698646046
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_115
+  - first:
+      213: 2317010857196335509
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_116
+  - first:
+      213: -404154593745455459
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_117
+  - first:
+      213: 6408186213724854467
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_118
+  - first:
+      213: -7871671474866152175
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_119
+  - first:
+      213: -625127115808478628
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_120
+  - first:
+      213: 2222476087862193993
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_121
+  - first:
+      213: -6124311204847687517
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_122
+  - first:
+      213: -7425301129123236579
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_123
+  - first:
+      213: -5027866853446636610
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_124
+  - first:
+      213: 4576092377505744136
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_125
+  - first:
+      213: 6863240420434915092
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_126
+  - first:
+      213: 8186685368044337692
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_127
+  - first:
+      213: 783923626048995129
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_128
+  - first:
+      213: 3930114957715355308
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_129
+  - first:
+      213: -7198241383105842524
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_130
+  - first:
+      213: -2193228307212278537
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_131
+  - first:
+      213: 4041195727611273467
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_132
+  - first:
+      213: 1853847433301816368
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_133
+  - first:
+      213: 3712700994568480506
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_134
+  - first:
+      213: -6019369333453109353
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_135
+  - first:
+      213: -6448023147078960137
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_136
+  - first:
+      213: 4703036588493555288
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_137
+  - first:
+      213: 1195424976102227509
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_138
+  - first:
+      213: -3492124553528546014
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_139
+  - first:
+      213: -2051555809156478279
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_140
+  - first:
+      213: 3865127177211528965
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_141
+  - first:
+      213: 7596786152971552253
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_142
+  - first:
+      213: -6568216849711054062
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_143
+  - first:
+      213: -7955059882419435350
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_144
+  - first:
+      213: 3839223642766905646
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_145
+  - first:
+      213: -4085533019784960143
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_146
+  - first:
+      213: -2297827943327426501
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_147
+  - first:
+      213: -2975150852963047013
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_148
+  - first:
+      213: -6877394265906377551
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_149
+  - first:
+      213: 7509654206287017123
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_150
+  - first:
+      213: -6547251009074226286
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_151
+  - first:
+      213: -8542808100149339766
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_152
+  - first:
+      213: 3089085786617920915
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_153
+  - first:
+      213: -5121947008303507786
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_154
+  - first:
+      213: 3119621004797893773
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_155
+  - first:
+      213: 9142991926408321590
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_156
+  - first:
+      213: 5612221004328534408
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_157
+  - first:
+      213: -964537549073891223
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_158
+  - first:
+      213: -2389735396211589581
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_159
+  - first:
+      213: 1904729983109262708
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_160
+  - first:
+      213: -7206378625181441694
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_161
+  - first:
+      213: 7133789254411603947
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_162
+  - first:
+      213: -4663107070196131191
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_163
+  - first:
+      213: 1127506904430883297
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_164
+  - first:
+      213: -7453158041351603818
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_165
+  - first:
+      213: -9071605041060261208
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_166
+  - first:
+      213: 4924711784145457371
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_167
+  - first:
+      213: 3201140737925102386
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_168
+  - first:
+      213: 3018341922254797602
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_169
+  - first:
+      213: -554615244615589784
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_170
+  - first:
+      213: -7113516001445769252
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_171
+  - first:
+      213: 2048546875228432120
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_172
+  - first:
+      213: -5837986020705186633
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_173
+  - first:
+      213: 371377650531292372
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_174
+  - first:
+      213: 6308911122783003855
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_175
+  - first:
+      213: -2457173446635034643
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_176
+  - first:
+      213: -7901770071124138464
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_177
+  - first:
+      213: -4159764568698851947
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_178
+  - first:
+      213: -7408576339771743567
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_179
+  - first:
+      213: 2553693147525040458
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_180
+  - first:
+      213: -8553295841704911499
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_181
+  - first:
+      213: -7908312989892098387
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_182
+  - first:
+      213: 5010946734236533411
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_183
+  - first:
+      213: 741874330885576659
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_184
+  - first:
+      213: 6032282910944035022
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_185
+  - first:
+      213: -7473397504664466137
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_186
+  - first:
+      213: -3920676438720081136
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_187
+  - first:
+      213: 2153594350648412970
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_188
+  - first:
+      213: -4826790409068263923
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_189
+  - first:
+      213: -2311962381741573594
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_190
+  - first:
+      213: 4590278764071943639
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_191
+  - first:
+      213: 689067458956762313
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_192
+  - first:
+      213: -9155889136051387363
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_193
+  - first:
+      213: 4651204020653222816
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_194
+  - first:
+      213: 3380132660003663126
+    second: Generated Image September 23, 2026 - 8_33PM (1) (1)_195
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_21
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 573
+        width: 117
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b585573644675510800000000000000
+      internalID: 1537808050509153721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_22
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 590
+        width: 117
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44fa71bd4cb94a990800000000000000
+      internalID: -7375599019934372028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_23
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 578
+        width: 117
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c98e25887f723200800000000000000
+      internalID: 158329092518611399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_24
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 567
+        width: 125
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb69d3730916bb30800000000000000
+      internalID: 4302653996618312627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_25
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 602
+        width: 13
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e5f71f8e37db4fa0800000000000000
+      internalID: -5815317830130207264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_26
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 549
+        width: 111
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ab918c56f6fe400800000000000000
+      internalID: 355625378525067923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_27
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 637
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb83e295c0bc34200800000000000000
+      internalID: 163197265411717307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_28
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 550
+        width: 132
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4cf2921034151260800000000000000
+      internalID: 7067577386930469967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_29
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 614
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b084e2337235fbd0800000000000000
+      internalID: -2597114139752759118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_82
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 333
+        width: 156
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aaa305372cb267e0800000000000000
+      internalID: -1773648426651374935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_83
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 329
+        width: 165
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08977f5c750b4e160800000000000000
+      internalID: 7053956807399012736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_84
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 327
+        width: 232
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff241f11da874660800000000000000
+      internalID: 7370011945989320703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_86
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 324
+        width: 147
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42451ba99dec88390800000000000000
+      internalID: -7815769719302958044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_87
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 318
+        width: 108
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce1e343465a1b5f0800000000000000
+      internalID: -742630613747622202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_stand
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 81
+        width: 115
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1abb22a7f2fc9170800000000000000
+      internalID: 8186685368044337692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_128
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 86
+        width: 119
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93fbfad626e01ea00800000000000000
+      internalID: 783923626048995129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_129
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 86
+        width: 127
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6b21d3bb29a8630800000000000000
+      internalID: 3930114957715355308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_130
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 87
+        width: 118
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a2b5789995ba1c90800000000000000
+      internalID: -7198241383105842524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_131
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 87
+        width: 144
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f4e74d89761091e0800000000000000
+      internalID: -2193228307212278537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_132
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 87
+        width: 133
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0a8146a16351830800000000000000
+      internalID: 4041195727611273467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_133
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 87
+        width: 136
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03479b12b603ab910800000000000000
+      internalID: 1853847433301816368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generated Image September 23, 2026 - 8_33PM (1) (1)_134
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 84
+        width: 118
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af66e7242e9268330800000000000000
+      internalID: 3712700994568480506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2eb4ed15876ddd44aa5690f7dbba504d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_0: 1312601302335119399
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_1: 7445523579426186312
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_10: 245787959916023022
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_100: -2828962293557981688
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_101: 325045850462190047
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_102: 8322407565040805211
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_103: 2894167123912598744
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_104: -1546776104626051791
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_105: -4469046173484504810
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_106: 9064143282073837230
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_107: -1690690159406474376
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_108: 52461235943891316
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_109: 8494768497148174742
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_11: -644456987895609346
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_110: 370191951342833788
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_111: -5673721772413628129
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_112: -8805293960688951561
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_113: -3072125975689334169
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_114: -5389448472251252386
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_115: 6939009399698646046
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_116: 2317010857196335509
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_117: -404154593745455459
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_118: 6408186213724854467
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_119: -7871671474866152175
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_12: -6809792837397933816
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_120: -625127115808478628
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_121: 2222476087862193993
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_122: -6124311204847687517
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_123: -7425301129123236579
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_124: -5027866853446636610
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_125: 4576092377505744136
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_126: 6863240420434915092
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_128: 783923626048995129
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_129: 3930114957715355308
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_13: -1210905013945090128
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_130: -7198241383105842524
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_131: -2193228307212278537
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_132: 4041195727611273467
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_133: 1853847433301816368
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_134: 3712700994568480506
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_135: -6019369333453109353
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_136: -6448023147078960137
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_137: 4703036588493555288
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_138: 1195424976102227509
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_139: -3492124553528546014
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_14: -5298347676932923291
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_140: -2051555809156478279
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_141: 3865127177211528965
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_142: 7596786152971552253
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_143: -6568216849711054062
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_144: -7955059882419435350
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_145: 3839223642766905646
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_146: -4085533019784960143
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_147: -2297827943327426501
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_148: -2975150852963047013
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_149: -6877394265906377551
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_15: -6006000091521613883
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_150: 7509654206287017123
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_151: -6547251009074226286
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_152: -8542808100149339766
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_153: 3089085786617920915
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_154: -5121947008303507786
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_155: 3119621004797893773
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_156: 9142991926408321590
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_157: 5612221004328534408
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_158: -964537549073891223
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_159: -2389735396211589581
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_16: -7699722236026005072
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_160: 1904729983109262708
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_161: -7206378625181441694
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_162: 7133789254411603947
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_163: -4663107070196131191
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_164: 1127506904430883297
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_165: -7453158041351603818
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_166: -9071605041060261208
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_167: 4924711784145457371
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_168: 3201140737925102386
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_169: 3018341922254797602
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_17: 4328265809371660648
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_170: -554615244615589784
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_171: -7113516001445769252
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_172: 2048546875228432120
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_173: -5837986020705186633
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_174: 371377650531292372
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_175: 6308911122783003855
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_176: -2457173446635034643
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_177: -7901770071124138464
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_178: -4159764568698851947
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_179: -7408576339771743567
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_18: -6723790307033714312
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_180: 2553693147525040458
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_181: -8553295841704911499
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_182: -7908312989892098387
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_183: 5010946734236533411
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_184: 741874330885576659
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_185: 6032282910944035022
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_186: -7473397504664466137
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_187: -3920676438720081136
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_188: 2153594350648412970
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_189: -4826790409068263923
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_19: 7001552477088125744
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_190: -2311962381741573594
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_191: 4590278764071943639
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_192: 689067458956762313
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_193: -9155889136051387363
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_194: 4651204020653222816
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_195: 3380132660003663126
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_2: 6384127091589061281
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_20: -56724617820604305
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_21: 1537808050509153721
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_22: -7375599019934372028
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_23: 158329092518611399
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_24: 4302653996618312627
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_25: -5815317830130207264
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_26: 355625378525067923
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_27: 163197265411717307
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_28: 7067577386930469967
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_29: -2597114139752759118
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_3: 7336894457687795853
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_30: 4101789171024838763
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_31: -4404544379392454270
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_32: 454635857418498779
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_33: -7384333649469693160
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_34: 5392141119429110605
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_35: -6142137591693114432
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_36: -5423176756451360184
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_37: 8782757501981326691
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_38: -8524671064073304202
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_39: 4778110848371676125
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_4: 337381731161000913
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_40: -7918569834956143489
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_41: 363604018454128923
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_42: 92561238138637595
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_43: 5108974309741906336
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_44: 8805762064124150939
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_45: -8096230694186215081
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_46: -9067010203327086363
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_47: -9092418603012608172
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_48: -4232194901034681325
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_49: 6965494047947726058
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_5: -7447035857638515867
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_50: 2423483628548444276
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_51: 9115277274774293597
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_52: 5915396347667315573
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_53: -6927274763298595681
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_54: -2220435067982124471
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_55: 382859739028036568
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_56: 5935854472661834052
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_57: -60913341290135313
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_58: -1422520772661540785
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_59: 4902913708549672730
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_6: -8048488729890179135
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_60: 8481890446821535310
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_61: -8369604988403923111
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_62: -210801418038424635
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_63: -2454969571869322282
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_64: 7606712367031808206
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_65: 3881537193293162927
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_66: 2723373520845319775
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_67: -3133660271984706357
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_68: 6228171450018802835
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_69: 4415183269281446666
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_7: -5865520394340115057
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_70: -2759085470543119794
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_71: 1812160802479490373
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_72: -2048933240827094562
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_73: -9080721532934052591
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_74: 7144565471900691262
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_75: 7485028478125000787
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_76: 1762234183180659258
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_77: 8031478431403519323
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_78: 2658655976397016692
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_79: 6354341389937128005
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_8: -3176935989905337981
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_80: -5562413252570564083
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_81: 8732312421314573344
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_82: -1773648426651374935
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_83: 7053956807399012736
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_84: 7370011945989320703
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_85: 3224433691443052185
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_86: -7815769719302958044
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_87: -742630613747622202
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_88: -251002933344824279
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_89: 6021959444530312591
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_9: -8137391815821622335
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_90: -2545217124062703486
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_91: 8617660125179465072
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_92: 2626579751617890475
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_93: -3813216304992199431
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_94: -5528047171583043472
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_95: 6575412594245333604
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_96: -575004674242352187
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_97: 1455707480144542473
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_98: 7374341359308944310
+      Generated Image September 23, 2026 - 8_33PM (1) (1)_99: -1403919278131455938
+      cat_stand: 8186685368044337692
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
