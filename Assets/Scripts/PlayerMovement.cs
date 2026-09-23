@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; // 1. Added the new Input System namespace
+using TMPro;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -13,7 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer catSprite;
     private bool faceRightState = true;
     private Rigidbody2D catBody;
-
+    public TextMeshProUGUI timerText;
+    public GameObject enemies;
+    public CatchThePrey catchThePrey;
     // Start is called before the first frame update
     void Start()
     {
@@ -82,7 +86,35 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Collided with goomba!");
+            Debug.Log("Collided with prey!");
+            Time.timeScale = 0.0f;
         }
+    }
+
+    public void RestartButtonCallback(int input)
+    {
+        Debug.Log("Restart!");
+        // reset everything
+        ResetGame();
+        // resume time
+        Time.timeScale = 1.0f;
+    }
+
+    private void ResetGame()
+    {
+        // reset position
+        catBody.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        // reset sprite direction
+        faceRightState = true;
+        catSprite.flipX = false;
+        // reset timer
+        timerText.text = "Timer - 00:00";
+        // reset rat
+        foreach (Transform eachChild in enemies.transform)
+        {
+            eachChild.transform.localPosition = eachChild.GetComponent<EnemyMovement>().startPosition;
+        }
+        // reset timer
+        catchThePrey.timer =0;
     }
 }
