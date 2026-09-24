@@ -18,6 +18,10 @@ public class CatchThePrey : MonoBehaviour
     public LayerMask layerMask;
     private Coroutine timerRoutine;
 
+    [Header("Pop-Up UI Components")]
+    public GameObject popUpPanel;             // Drag PopUpPanel here
+    public TextMeshProUGUI finalScoreText; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,8 +69,24 @@ public class CatchThePrey : MonoBehaviour
         {
             countTimerState = false; // This stops the timer loop
             Debug.Log("Enemy caught! Timer stopped at: " + timer);
+            ShowPopUpMessage();
         }
     }
+    private void ShowPopUpMessage()
+    {
+        if (popUpPanel != null && finalScoreText != null)
+        {
+            // 1. Calculate the final formatted time string
+            int minutes = timer / 60;
+            int seconds = timer % 60;
+            string finalTimeStr = string.Format("{0:00}:{1:00}", minutes, seconds);
 
+            // 2. Set the text message on your pop-up window
+            finalScoreText.text = "Prey Caught!\nYour Time: " + finalTimeStr;
+
+            // 3. Activate the panel gameobject so it pops up visually
+            popUpPanel.SetActive(true);
+        }
+    }
 
 }

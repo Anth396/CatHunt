@@ -104,12 +104,17 @@ public class PlayerMovement : MonoBehaviour
     {
         // reset position
         catBody.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
+        catBody.linearVelocity = Vector2.zero;
         // reset sprite direction
         faceRightState = true;
         catSprite.flipX = false;
         // reset timer
         timerText.text = "Timer - 00:00";
         // reset rat
+        if (catchThePrey.popUpPanel != null)
+        {
+            catchThePrey.popUpPanel.SetActive(false); 
+        }
         foreach (Transform eachChild in enemies.transform)
         {
             eachChild.transform.localPosition = eachChild.GetComponent<EnemyMovement>().startPosition;
