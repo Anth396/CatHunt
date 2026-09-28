@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 31202541}
   - component: {fileID: 31202540}
   - component: {fileID: 31202543}
+  - component: {fileID: 31202544}
   m_Layer: 0
   m_Name: cat
   m_TagString: Untagged
@@ -189,12 +190,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8186685368044337692, guid: 4bae6513879265d4ca687e748f9a82a9, type: 3}
+  m_Sprite: {fileID: 437085136, guid: 9b8e8322acaa6854eb40f263f95ce5a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.15, y: 1.12}
+  m_Size: {x: 2.35, y: 1.59}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -208,7 +209,7 @@ Transform:
   m_GameObject: {fileID: 31202536}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.007, y: -1.627, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -226,9 +227,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b075242f07f4a8c428fc752a7da43267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 10
-  maxSpeed: 20
-  upSpeed: 10
+  moveSpeed: 5
+  maxSpeed: 10
+  jumpForce: 12
+  dashSpeed: 15
+  dashDuration: 0.2
+  dashCooldown: 5
+  gravity: 30
+  fallMultiplier: 1.5
+  groundFriction: 2.5
 --- !u!61 &31202541
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -263,17 +270,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.054577112}
+  m_Offset: {x: 0.006419182, y: -0.055451214}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.15, y: 1.12}
-    newSize: {x: 1.15, y: 1.12}
+    oldSize: {x: 2.35, y: 1.59}
+    newSize: {x: 2.35, y: 1.59}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.15, y: 1.0108457}
+  m_Size: {x: 2.3439307, y: 1.4968764}
   m_EdgeRadius: 0
 --- !u!50 &31202542
 Rigidbody2D:
@@ -289,8 +296,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_AngularDamping: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -315,6 +322,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatchThePrey
   enemyLocation: {fileID: 560783832}
+--- !u!95 &31202544
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31202536}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec024eb46ffa4e44b9e15c481a7528e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &298519837
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +1006,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.007, y: -1.627, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1556,7 +1585,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2de872a605c43294e860bb694e4580b8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
