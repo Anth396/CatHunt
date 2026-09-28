@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem; // 1. Added the new Input System namespace
-using TMPro;
-
+using UnityEngine.InputSystem; 
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,31 +13,24 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer catSprite;
     private bool faceRightState = true;
     private Rigidbody2D catBody;
-    public TextMeshProUGUI timerText;
-    public GameObject enemies;
-    public CatchThePrey catchThePrey;
+
     // Start is called before the first frame update
     void Start()
     {
-        // Set to be 30 FPS
-        Application.targetFrameRate = 30;
         catBody = GetComponent<Rigidbody2D>();
         catSprite = GetComponent<SpriteRenderer>();
-        catBody.constraints = RigidbodyConstraints2D.FreezeRotation; // Fixed repetitive GetComponent call
+        catBody.constraints = RigidbodyConstraints2D.FreezeRotation; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Check if keyboard is connected
         if (Keyboard.current == null) return;
 
-        // 2. Fixed legacy Input.GetKeyDown checks
         if (Keyboard.current.spaceKey.wasPressedThisFrame && onGroundState)
         {
             jumpRequest = true;
         }
-        
     }
 
     // FixedUpdate is called 50 times a second
@@ -47,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Keyboard.current == null) return;
 
-        // 3. Fixed legacy Input.GetAxisRaw("Horizontal")
         float moveHorizontal = 0f;
         if (Keyboard.current.dKey.isPressed) moveHorizontal = 1f;
         else if (Keyboard.current.aKey.isPressed) moveHorizontal = -1f;
@@ -56,16 +46,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 movement = new Vector2(moveHorizontal, 0);
             
-            // Note: In newer Unity versions, 'linearVelocity' is used instead of 'velocity'
             if (catBody.linearVelocity.magnitude < maxSpeed)
                 catBody.AddForce(movement * speed);
         }
         
-        // 4. Fixed legacy Input.GetKeyUp
         bool noMovementKeysPressed = Keyboard.current.aKey.wasReleasedThisFrame || Keyboard.current.dKey.wasReleasedThisFrame;
         if (noMovementKeysPressed)
         {
-            // stop
             catBody.linearVelocity = Vector2.zero;
         }
 
@@ -87,40 +74,14 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Collided with prey!");
-            Time.timeScale = 0.0f;
+            GameManager.Instance.StopGameAndShowWin(GameManager.Instance.timer);
         }
     }
 
+    // Link your UI Restart Button to this method directly via GameManager, 
+    // or delegate it like this:
     public void RestartButtonCallback(int input)
     {
-        Debug.Log("Restart!");
-        // reset everything
-        ResetGame();
-        // resume time
-        Time.timeScale = 1.0f;
-    }
-
-    private void ResetGame()
-    {
-        // reset position
-        catBody.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-        catBody.linearVelocity = Vector2.zero;
-        // reset sprite direction
-        faceRightState = true;
-        catSprite.flipX = false;
-        // reset timer
-        timerText.text = "Timer - 00:00";
-        // reset rat
-        if (catchThePrey.popUpPanel != null)
-        {
-            catchThePrey.popUpPanel.SetActive(false); 
-        }
-        foreach (Transform eachChild in enemies.transform)
-        {
-            eachChild.transform.localPosition = eachChild.GetComponent<EnemyMovement>().startPosition;
-            Debug.Log("{} location reset", eachChild);
-        }
-        // reset timer
-        catchThePrey.RestartTimer();
+        GameManager.Instance.RestartButtonCallback(input);
     }
 }
