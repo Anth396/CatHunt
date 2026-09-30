@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 12f;
 
     [Header("Dash Settings")]
-    public float dashSpeed = 25f;       // Exceeds maxSpeed during dash
-    public float dashDuration = 0.2f;   // How long the dash lasts
-    public float dashCooldown = 5.0f;   // Cooldown time between dashes
+    public float dashSpeed = 25f;       
+    public float dashDuration = 0.5f;   
+    public float dashCooldown = 1.5f;   
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
@@ -24,6 +24,17 @@ public class PlayerMovement : MonoBehaviour
     public float fallMultiplier = 1.5f; 
     public float groundFriction = 15f;  
 
+    [Header("Animation References")]
+    private Animator animator;
+    private string currentAnimationState;
+
+    // Animation State Constants (Match exact names of your Animation states/clips)
+    const string ANIM_IDLE = "cat-idle";
+    const string ANIM_RUN = "cat-run";
+    const string ANIM_JUMP = "cat-jump";
+    const string ANIM_SKID = "cat-skid";
+    const string ANIM_DASH = "cat-dash";
+
     // States
     private bool onGroundState = true;
     private bool jumpRequest = false;
@@ -33,26 +44,26 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D catBody;
     private SpriteRenderer catSprite;
 
+    public AudioSource catAudio;
+
     void Start()
     {
         Application.targetFrameRate = 30;
         catBody = GetComponent<Rigidbody2D>();
         catSprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         catBody.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    // 1. UPDATE: Handles inputs only
     void Update()
     {
         if (Keyboard.current == null) return;
 
-        // Decrease cooldown timer continuously
         if (dashCooldownTimer > 0f)
         {
             dashCooldownTimer -= Time.deltaTime;
         }
 
-        // Capture Horizontal Input keys (A/D or Left/Right)
         float moveDir = 0f;
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveDir = 1f;
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveDir = -1f;
@@ -61,23 +72,22 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalInput = moveDir;
             
-            // Handle Sprite Flipping safely on ground
             if (horizontalInput > 0) { catSprite.flipX = false; }
             else if (horizontalInput < 0) { catSprite.flipX = true; }
         }
 
-        // Capture Jump input trigger
         if (Keyboard.current.spaceKey.wasPressedThisFrame && onGroundState && !isDashing)
         {
             jumpRequest = true;
         }
 
-        // Capture Dash input trigger (e.g., Left Shift key)
-        // Rule: Can only be cast on the ground, and not while already dashing or cooling down
         if (Keyboard.current.leftShiftKey.wasPressedThisFrame && onGroundState && !isDashing && dashCooldownTimer <= 0f)
         {
             StartDash();
         }
+
+        // Handle animation selection logic every frame update
+        UpdateAnimationState();
     }
 
     private void StartDash()
@@ -85,37 +95,29 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
-
-        // Dash follows the direction the player is currently facing (based on SpriteRenderer flipX)
         dashDirection = catSprite.flipX ? -1f : 1f;
     }
 
-    // 2. FIXEDUPDATE: Handles all physical calculations, velocities, and reactions
     void FixedUpdate()
     {
         Vector2 currentVel = catBody.linearVelocity;
 
-        // --- A. DASH PHYSICS HANDLER ---
         if (isDashing)
         {
             dashTimer -= Time.fixedDeltaTime;
-            
-            // Force dash velocity in the direction faced
             currentVel.x = dashDirection * dashSpeed;
-            currentVel.y = 0f; // Keep ground-dash locked flat
+            currentVel.y = 0f; 
 
             if (dashTimer <= 0f)
             {
-                // End dash: Instantly drop back down to maximum speed limit matching travel direction
                 isDashing = false;
                 currentVel.x = dashDirection * maxSpeed;
             }
 
             catBody.linearVelocity = currentVel;
-            return; // Skip normal movement calculations while dash is active
+            return; 
         }
 
-        // --- B. VERTICAL PHYSICS (Gravity, Jumping, Apex Slowdown, Fall Acceleration) ---
         if (jumpRequest)
         {
             airMomentumX = currentVel.x; 
@@ -138,42 +140,89 @@ public class PlayerMovement : MonoBehaviour
             currentVel.y = Mathf.Min(currentVel.y, 0f);
         }
 
-        // --- C. HORIZONTAL PHYSICS (Movement, Air Lockout, Ground Friction, and Dash Post-Behavior) ---
         if (onGroundState)
         {
             if (Mathf.Abs(horizontalInput) > 0)
             {
-                // Check if current movement key matches the direction the player was traveling/dashing
                 bool sameDirection = (Mathf.Sign(horizontalInput) == Mathf.Sign(currentVel.x)) || (Mathf.Abs(currentVel.x) < 0.1f);
 
                 if (sameDirection)
                 {
-                    // Retain/accelerate speed normally
                     currentVel.x += horizontalInput * moveSpeed * Time.fixedDeltaTime;
                     currentVel.x = Mathf.Clamp(currentVel.x, -maxSpeed, maxSpeed);
                 }
                 else
                 {
-                    // If movement key is opposite to direction, gradually slow down using friction
                     currentVel.x = Mathf.Lerp(currentVel.x, 0f, groundFriction * Time.fixedDeltaTime);
                 }
             }
             else
             {
-                // Apply ground friction when keys are lifted
                 currentVel.x = Mathf.Lerp(currentVel.x, 0f, groundFriction * Time.fixedDeltaTime);
                 if (Mathf.Abs(currentVel.x) < 0.05f) currentVel.x = 0f;
             }
         }
         else
         {
-            // Airborne momentum lock
             currentVel.x = airMomentumX;
         }
 
         catBody.linearVelocity = currentVel;
     }
 
+    private void UpdateAnimationState()
+    {
+        if (animator == null) return;
+
+        string newState;
+
+        // 1. If Cat's off the ground -> play jump clip
+        if (!onGroundState)
+        {
+            newState = ANIM_JUMP;
+        }
+        else
+        {
+            // Check for Skid condition: 
+            // Skidding happens when physical velocity is moving significantly in one direction, 
+            // but player input is actively trying to push the opposite way.
+            bool isSkidding = (catBody.linearVelocity.x > 0.5f && horizontalInput < -0.1f) || 
+                              (catBody.linearVelocity.x < -0.5f && horizontalInput > 0.1f) ||
+                              (catBody.linearVelocity.x != 0f && horizontalInput == 0f);
+
+            if (isSkidding)
+            {
+                newState = ANIM_SKID;
+            }
+            else if (isDashing)
+            {
+                newState = ANIM_DASH;
+            }
+            // 2. If Cat's moving (has velocity magnitude above threshold) -> play run clip looped
+            else if (Mathf.Abs(catBody.linearVelocity.x) > 0.2f)
+            {
+                newState = ANIM_RUN;
+            }
+            // 4. Otherwise -> stay at idle clip
+            else
+            {
+                newState = ANIM_IDLE;
+            }
+        }
+
+        // Prevent restarting the same animation over and over every frame
+        if (currentAnimationState != newState)
+        {
+            animator.Play(newState);
+            currentAnimationState = newState;
+        }
+    }
+
+    void PlayDashSound()
+    {
+        // play jump sound
+        catAudio.PlayOneShot(catAudio.clip);
+    }
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))
