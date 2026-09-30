@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
     private float dashDirection = 1f;
+    private bool isBouncing = false;
+
+    // Public property so BreakableObject can read if player is dashing
+    public bool IsDashing => isDashing;
 
     [Header("Custom Physics Settings")]
     public float gravity = 30f;
@@ -28,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private string currentAnimationState;
 
-    // Animation State Constants (Match exact names of your Animation states/clips)
+    // Animation State Constants
     const string ANIM_IDLE = "cat-idle";
     const string ANIM_RUN = "cat-run";
     const string ANIM_JUMP = "cat-jump";
@@ -53,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         catSprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         catBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        catBody.gravityScale = 0f; // Handled strictly by code
     }
 
     void Update()
@@ -68,25 +73,23 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveDir = 1f;
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveDir = -1f;
 
-        if (onGroundState && !isDashing)
+        if (onGroundState && !isDashing && !isBouncing)
         {
             horizontalInput = moveDir;
-            
             if (horizontalInput > 0) { catSprite.flipX = false; }
             else if (horizontalInput < 0) { catSprite.flipX = true; }
         }
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && onGroundState && !isDashing)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && onGroundState && !isDashing && !isBouncing)
         {
             jumpRequest = true;
         }
 
-        if (Keyboard.current.leftShiftKey.wasPressedThisFrame && onGroundState && !isDashing && dashCooldownTimer <= 0f)
+        if (Keyboard.current.leftShiftKey.wasPressedThisFrame && onGroundState && !isDashing && dashCooldownTimer <= 0f && !isBouncing)
         {
             StartDash();
         }
 
-        // Handle animation selection logic every frame update
         UpdateAnimationState();
     }
 
@@ -96,12 +99,32 @@ public class PlayerMovement : MonoBehaviour
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
         dashDirection = catSprite.flipX ? -1f : 1f;
+
+        if (catAudio != null && catAudio.clip != null)
+        {
+            catAudio.PlayOneShot(catAudio.clip);
+        }
     }
 
     void FixedUpdate()
     {
         Vector2 currentVel = catBody.linearVelocity;
 
+        // Handle Obstacle Bounce
+        if (isBouncing)
+        {
+            dashTimer = 0f;
+
+            currentVel.x = -currentVel.x;
+            currentVel.y = 1.0f;
+            
+            catBody.linearVelocity = currentVel;
+
+            isBouncing = false; 
+            return;
+        }
+
+        // Handle Dash Momentum
         if (isDashing)
         {
             dashTimer -= Time.fixedDeltaTime;
@@ -118,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
             return; 
         }
 
+        // Vertical Custom Gravity / Jumping
         if (jumpRequest)
         {
             airMomentumX = currentVel.x; 
@@ -137,9 +161,10 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            currentVel.y = Mathf.Min(currentVel.y, 0f);
+            currentVel.y = 0f;
         }
 
+        // Horizontal Movement / Friction
         if (onGroundState)
         {
             if (Mathf.Abs(horizontalInput) > 0)
@@ -176,16 +201,12 @@ public class PlayerMovement : MonoBehaviour
 
         string newState;
 
-        // 1. If Cat's off the ground -> play jump clip
         if (!onGroundState)
         {
             newState = ANIM_JUMP;
         }
         else
         {
-            // Check for Skid condition: 
-            // Skidding happens when physical velocity is moving significantly in one direction, 
-            // but player input is actively trying to push the opposite way.
             bool isSkidding = (catBody.linearVelocity.x > 0.5f && horizontalInput < -0.1f) || 
                               (catBody.linearVelocity.x < -0.5f && horizontalInput > 0.1f) ||
                               (catBody.linearVelocity.x != 0f && horizontalInput == 0f);
@@ -198,19 +219,16 @@ public class PlayerMovement : MonoBehaviour
             {
                 newState = ANIM_DASH;
             }
-            // 2. If Cat's moving (has velocity magnitude above threshold) -> play run clip looped
             else if (Mathf.Abs(catBody.linearVelocity.x) > 0.2f)
             {
                 newState = ANIM_RUN;
             }
-            // 4. Otherwise -> stay at idle clip
             else
             {
                 newState = ANIM_IDLE;
             }
         }
 
-        // Prevent restarting the same animation over and over every frame
         if (currentAnimationState != newState)
         {
             animator.Play(newState);
@@ -218,16 +236,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void PlayDashSound()
-    {
-        // play jump sound
-        catAudio.PlayOneShot(catAudio.clip);
-    }
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))
         {
             onGroundState = true;
+        }
+        else if (col.gameObject.CompareTag("Obstacle"))
+        {
+            isBouncing = true;
         }
     }
 
@@ -237,6 +254,19 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Collided with prey!");
             GameManager.Instance.StopGameAndShowWin(GameManager.Instance.timer);
+        }
+        else if (other.gameObject.CompareTag("Obstacle"))
+        {
+            isBouncing = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            onGroundState = false;
+            airMomentumX = catBody.linearVelocity.x;
         }
     }
 

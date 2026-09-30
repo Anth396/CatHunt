@@ -238,7 +238,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Generated Image September 24, 2026 - 12_16AM (1)_3
+      name: rock
       rect:
         serializedVersion: 2
         x: 821
@@ -348,7 +348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Generated Image September 24, 2026 - 12_16AM (1)_8
+      name: wooden-crate
       rect:
         serializedVersion: 2
         x: 69
@@ -392,7 +392,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Generated Image September 24, 2026 - 12_16AM (1)_10
+      name: wooden-crate-broke
       rect:
         serializedVersion: 2
         x: 573
@@ -590,7 +590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Generated Image September 24, 2026 - 12_16AM (1)_19
+      name: potion
       rect:
         serializedVersion: 2
         x: 605
@@ -736,7 +736,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Generated Image September 24, 2026 - 12_16AM (1)_1: -7184339236953269272
-      Generated Image September 24, 2026 - 12_16AM (1)_10: -8315858533358639843
       Generated Image September 24, 2026 - 12_16AM (1)_11: -38946486833613944
       Generated Image September 24, 2026 - 12_16AM (1)_12: -6894094330070214836
       Generated Image September 24, 2026 - 12_16AM (1)_13: -6263392656690264378
@@ -745,21 +744,22 @@ TextureImporter:
       Generated Image September 24, 2026 - 12_16AM (1)_16: 3649225997292565192
       Generated Image September 24, 2026 - 12_16AM (1)_17: 6641762515558178884
       Generated Image September 24, 2026 - 12_16AM (1)_18: 3078264576502696577
-      Generated Image September 24, 2026 - 12_16AM (1)_19: -8250170673506784733
       Generated Image September 24, 2026 - 12_16AM (1)_2: -417214502055183426
       Generated Image September 24, 2026 - 12_16AM (1)_20: -1559668097692953979
       Generated Image September 24, 2026 - 12_16AM (1)_21: -5138434456422683564
       Generated Image September 24, 2026 - 12_16AM (1)_22: 1811748634810071344
       Generated Image September 24, 2026 - 12_16AM (1)_23: -2472562882467587523
       Generated Image September 24, 2026 - 12_16AM (1)_24: 7236927496407833453
-      Generated Image September 24, 2026 - 12_16AM (1)_3: -3202097913145499711
       Generated Image September 24, 2026 - 12_16AM (1)_4: 4338931188830753839
       Generated Image September 24, 2026 - 12_16AM (1)_5: -3520727669861844009
       Generated Image September 24, 2026 - 12_16AM (1)_6: 6628266660789939404
       Generated Image September 24, 2026 - 12_16AM (1)_7: 6179453122806179928
-      Generated Image September 24, 2026 - 12_16AM (1)_8: 6575597023664877204
       Generated Image September 24, 2026 - 12_16AM (1)_9: 3641695293039451013
       brick_ground: 9087447416156253270
+      potion: -8250170673506784733
+      rock: -3202097913145499711
+      wooden-crate: 6575597023664877204
+      wooden-crate-broke: -8315858533358639843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
