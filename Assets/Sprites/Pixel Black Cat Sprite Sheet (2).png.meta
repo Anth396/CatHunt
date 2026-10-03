@@ -1,0 +1,1066 @@
+fileFormatVersion: 2
+guid: ccf28eec8a08bd844b9397481842c6e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2665275980995374036
+    second: Pixel Black Cat Sprite Sheet (2)_0
+  - first:
+      213: -7685468329517468974
+    second: Pixel Black Cat Sprite Sheet (2)_1
+  - first:
+      213: 6320785502519310256
+    second: Pixel Black Cat Sprite Sheet (2)_2
+  - first:
+      213: -7573823720464446389
+    second: Pixel Black Cat Sprite Sheet (2)_3
+  - first:
+      213: -1764076148433666713
+    second: Pixel Black Cat Sprite Sheet (2)_4
+  - first:
+      213: 5882258020415301722
+    second: Pixel Black Cat Sprite Sheet (2)_5
+  - first:
+      213: 6159850263734078782
+    second: Pixel Black Cat Sprite Sheet (2)_6
+  - first:
+      213: -3874886415744349240
+    second: Pixel Black Cat Sprite Sheet (2)_7
+  - first:
+      213: 1585347466630001475
+    second: Pixel Black Cat Sprite Sheet (2)_8
+  - first:
+      213: -1691628042538017982
+    second: Pixel Black Cat Sprite Sheet (2)_9
+  - first:
+      213: -3732532839417772690
+    second: Pixel Black Cat Sprite Sheet (2)_10
+  - first:
+      213: 4722806357887351742
+    second: Pixel Black Cat Sprite Sheet (2)_11
+  - first:
+      213: 9176565781043024372
+    second: Pixel Black Cat Sprite Sheet (2)_12
+  - first:
+      213: 3771807753893536668
+    second: Pixel Black Cat Sprite Sheet (2)_13
+  - first:
+      213: 2761497931333205233
+    second: Pixel Black Cat Sprite Sheet (2)_14
+  - first:
+      213: 773645559769430859
+    second: Pixel Black Cat Sprite Sheet (2)_15
+  - first:
+      213: -7195896761369890283
+    second: Pixel Black Cat Sprite Sheet (2)_16
+  - first:
+      213: 6821049770575628130
+    second: Pixel Black Cat Sprite Sheet (2)_17
+  - first:
+      213: -884996918085578462
+    second: Pixel Black Cat Sprite Sheet (2)_18
+  - first:
+      213: -6882199734686018618
+    second: Pixel Black Cat Sprite Sheet (2)_19
+  - first:
+      213: 6362575507149140781
+    second: Pixel Black Cat Sprite Sheet (2)_20
+  - first:
+      213: 5180562622624692612
+    second: Pixel Black Cat Sprite Sheet (2)_21
+  - first:
+      213: -241075747091194249
+    second: Pixel Black Cat Sprite Sheet (2)_22
+  - first:
+      213: 3664331401316442773
+    second: Pixel Black Cat Sprite Sheet (2)_23
+  - first:
+      213: -5876019698605491685
+    second: Pixel Black Cat Sprite Sheet (2)_24
+  - first:
+      213: -3321879120489996925
+    second: Pixel Black Cat Sprite Sheet (2)_25
+  - first:
+      213: -1454972655246859855
+    second: Pixel Black Cat Sprite Sheet (2)_26
+  - first:
+      213: -252876586973527959
+    second: Pixel Black Cat Sprite Sheet (2)_27
+  - first:
+      213: 4168610149578998894
+    second: Pixel Black Cat Sprite Sheet (2)_28
+  - first:
+      213: 1479931333385957851
+    second: Pixel Black Cat Sprite Sheet (2)_29
+  - first:
+      213: -8082280438903081168
+    second: Pixel Black Cat Sprite Sheet (2)_30
+  - first:
+      213: -876991660810962769
+    second: Pixel Black Cat Sprite Sheet (2)_31
+  - first:
+      213: -3925348154564938523
+    second: Pixel Black Cat Sprite Sheet (2)_32
+  - first:
+      213: -7033182504006159080
+    second: Pixel Black Cat Sprite Sheet (2)_33
+  - first:
+      213: 1780245981772153444
+    second: Pixel Black Cat Sprite Sheet (2)_34
+  - first:
+      213: -349614762649834246
+    second: Pixel Black Cat Sprite Sheet (2)_35
+  - first:
+      213: -6745434886785952260
+    second: Pixel Black Cat Sprite Sheet (2)_36
+  - first:
+      213: -4580095727814859696
+    second: Pixel Black Cat Sprite Sheet (2)_37
+  - first:
+      213: -3933439694294367375
+    second: Pixel Black Cat Sprite Sheet (2)_38
+  - first:
+      213: 5471084049309190228
+    second: Pixel Black Cat Sprite Sheet (2)_39
+  - first:
+      213: 7233578202429884276
+    second: Pixel Black Cat Sprite Sheet (2)_40
+  - first:
+      213: 3588338255532213459
+    second: Pixel Black Cat Sprite Sheet (2)_41
+  - first:
+      213: -7984513760674802874
+    second: Pixel Black Cat Sprite Sheet (2)_42
+  - first:
+      213: 3744007217435663298
+    second: Pixel Black Cat Sprite Sheet (2)_43
+  - first:
+      213: -6174372928888108566
+    second: Pixel Black Cat Sprite Sheet (2)_44
+  - first:
+      213: -7043824192446934997
+    second: Pixel Black Cat Sprite Sheet (2)_45
+  - first:
+      213: 4039861852139217935
+    second: Pixel Black Cat Sprite Sheet (2)_46
+  - first:
+      213: 4147733315986462024
+    second: Pixel Black Cat Sprite Sheet (2)_47
+  - first:
+      213: -5828897294307543403
+    second: Pixel Black Cat Sprite Sheet (2)_48
+  - first:
+      213: 1699058027517480916
+    second: Pixel Black Cat Sprite Sheet (2)_49
+  - first:
+      213: 6883336149781336785
+    second: Pixel Black Cat Sprite Sheet (2)_50
+  - first:
+      213: 3932589631785648188
+    second: Pixel Black Cat Sprite Sheet (2)_51
+  - first:
+      213: -5338364138788375083
+    second: Pixel Black Cat Sprite Sheet (2)_52
+  - first:
+      213: 8282844657409669076
+    second: Pixel Black Cat Sprite Sheet (2)_53
+  - first:
+      213: -8468886561509507948
+    second: Pixel Black Cat Sprite Sheet (2)_54
+  - first:
+      213: -2197114621350827368
+    second: Pixel Black Cat Sprite Sheet (2)_55
+  - first:
+      213: -1663173340201724673
+    second: Pixel Black Cat Sprite Sheet (2)_56
+  - first:
+      213: -173978041113751002
+    second: Pixel Black Cat Sprite Sheet (2)_57
+  - first:
+      213: 6512336296873655006
+    second: Pixel Black Cat Sprite Sheet (2)_58
+  - first:
+      213: 5912655645412447203
+    second: Pixel Black Cat Sprite Sheet (2)_59
+  - first:
+      213: 3454342902175873966
+    second: Pixel Black Cat Sprite Sheet (2)_60
+  - first:
+      213: -8091552274991254391
+    second: Pixel Black Cat Sprite Sheet (2)_61
+  - first:
+      213: 5095277093687616786
+    second: Pixel Black Cat Sprite Sheet (2)_62
+  - first:
+      213: -8993923692111153449
+    second: Pixel Black Cat Sprite Sheet (2)_63
+  - first:
+      213: -9164853340795676511
+    second: Pixel Black Cat Sprite Sheet (2)_64
+  - first:
+      213: -1261206456399667
+    second: Pixel Black Cat Sprite Sheet (2)_65
+  - first:
+      213: -1747843998936096714
+    second: Pixel Black Cat Sprite Sheet (2)_66
+  - first:
+      213: 6593408100937516197
+    second: Pixel Black Cat Sprite Sheet (2)_67
+  - first:
+      213: -2423718423777603222
+    second: Pixel Black Cat Sprite Sheet (2)_68
+  - first:
+      213: 7222497498778651591
+    second: Pixel Black Cat Sprite Sheet (2)_69
+  - first:
+      213: 5979564215342787992
+    second: Pixel Black Cat Sprite Sheet (2)_70
+  - first:
+      213: 651564587952249212
+    second: Pixel Black Cat Sprite Sheet (2)_71
+  - first:
+      213: 1623775256171978192
+    second: Pixel Black Cat Sprite Sheet (2)_72
+  - first:
+      213: -5032338267825484652
+    second: Pixel Black Cat Sprite Sheet (2)_73
+  - first:
+      213: -2996016073331134167
+    second: Pixel Black Cat Sprite Sheet (2)_74
+  - first:
+      213: -2622923119516172661
+    second: Pixel Black Cat Sprite Sheet (2)_75
+  - first:
+      213: 2107184333775838322
+    second: Pixel Black Cat Sprite Sheet (2)_76
+  - first:
+      213: 6101112082420973796
+    second: Pixel Black Cat Sprite Sheet (2)_77
+  - first:
+      213: -7604784861114831250
+    second: Pixel Black Cat Sprite Sheet (2)_78
+  - first:
+      213: 3697570872222904139
+    second: Pixel Black Cat Sprite Sheet (2)_79
+  - first:
+      213: -6622463006695556411
+    second: Pixel Black Cat Sprite Sheet (2)_80
+  - first:
+      213: 2957442735566951686
+    second: Pixel Black Cat Sprite Sheet (2)_81
+  - first:
+      213: 4319337950756510711
+    second: Pixel Black Cat Sprite Sheet (2)_82
+  - first:
+      213: -6666895774132164679
+    second: Pixel Black Cat Sprite Sheet (2)_83
+  - first:
+      213: 6692192447668419755
+    second: Pixel Black Cat Sprite Sheet (2)_84
+  - first:
+      213: -6426661218250165870
+    second: Pixel Black Cat Sprite Sheet (2)_85
+  - first:
+      213: -3198000456377267809
+    second: Pixel Black Cat Sprite Sheet (2)_86
+  - first:
+      213: -892421686126674774
+    second: Pixel Black Cat Sprite Sheet (2)_87
+  - first:
+      213: -2473660290173487659
+    second: Pixel Black Cat Sprite Sheet (2)_88
+  - first:
+      213: -2738290547406403273
+    second: Pixel Black Cat Sprite Sheet (2)_89
+  - first:
+      213: -2594704481030503332
+    second: Pixel Black Cat Sprite Sheet (2)_90
+  - first:
+      213: 410628179358645423
+    second: Pixel Black Cat Sprite Sheet (2)_91
+  - first:
+      213: 2295322699702998231
+    second: Pixel Black Cat Sprite Sheet (2)_92
+  - first:
+      213: -6103735358792985935
+    second: Pixel Black Cat Sprite Sheet (2)_93
+  - first:
+      213: 5586561858567177962
+    second: Pixel Black Cat Sprite Sheet (2)_94
+  - first:
+      213: 3612529020137110784
+    second: Pixel Black Cat Sprite Sheet (2)_95
+  - first:
+      213: -2885361113121470240
+    second: Pixel Black Cat Sprite Sheet (2)_96
+  - first:
+      213: -290339377453389343
+    second: Pixel Black Cat Sprite Sheet (2)_97
+  - first:
+      213: 2408434875073931340
+    second: Pixel Black Cat Sprite Sheet (2)_98
+  - first:
+      213: -6959855932878596921
+    second: Pixel Black Cat Sprite Sheet (2)_99
+  - first:
+      213: -8527600181595744295
+    second: Pixel Black Cat Sprite Sheet (2)_100
+  - first:
+      213: -9218235362225190425
+    second: Pixel Black Cat Sprite Sheet (2)_101
+  - first:
+      213: -1121923227670321112
+    second: Pixel Black Cat Sprite Sheet (2)_102
+  - first:
+      213: 1887022812864963170
+    second: Pixel Black Cat Sprite Sheet (2)_103
+  - first:
+      213: 8484047545489060837
+    second: Pixel Black Cat Sprite Sheet (2)_104
+  - first:
+      213: 1192298674446673784
+    second: Pixel Black Cat Sprite Sheet (2)_105
+  - first:
+      213: 4216111952859052774
+    second: Pixel Black Cat Sprite Sheet (2)_106
+  - first:
+      213: -6245658392098253558
+    second: Pixel Black Cat Sprite Sheet (2)_107
+  - first:
+      213: 3257199426317268030
+    second: Pixel Black Cat Sprite Sheet (2)_108
+  - first:
+      213: -7910075100829186558
+    second: Pixel Black Cat Sprite Sheet (2)_109
+  - first:
+      213: -901232236070032252
+    second: Pixel Black Cat Sprite Sheet (2)_110
+  - first:
+      213: 2111560695439472454
+    second: Pixel Black Cat Sprite Sheet (2)_111
+  - first:
+      213: 8314102038947368874
+    second: Pixel Black Cat Sprite Sheet (2)_112
+  - first:
+      213: 3217422796651016173
+    second: Pixel Black Cat Sprite Sheet (2)_113
+  - first:
+      213: 5906293369271538338
+    second: Pixel Black Cat Sprite Sheet (2)_114
+  - first:
+      213: -8725354920213398600
+    second: Pixel Black Cat Sprite Sheet (2)_115
+  - first:
+      213: -8250239631949476071
+    second: Pixel Black Cat Sprite Sheet (2)_116
+  - first:
+      213: -6465454938032692499
+    second: Pixel Black Cat Sprite Sheet (2)_117
+  - first:
+      213: 5642715030737422655
+    second: Pixel Black Cat Sprite Sheet (2)_118
+  - first:
+      213: -3129954671558632272
+    second: Pixel Black Cat Sprite Sheet (2)_119
+  - first:
+      213: 3284182005346675869
+    second: Pixel Black Cat Sprite Sheet (2)_120
+  - first:
+      213: 1704592974375394816
+    second: Pixel Black Cat Sprite Sheet (2)_121
+  - first:
+      213: -1299866917215988773
+    second: Pixel Black Cat Sprite Sheet (2)_122
+  - first:
+      213: -7510612151473452685
+    second: Pixel Black Cat Sprite Sheet (2)_123
+  - first:
+      213: -4802689729705814479
+    second: Pixel Black Cat Sprite Sheet (2)_124
+  - first:
+      213: 8629434987075615432
+    second: Pixel Black Cat Sprite Sheet (2)_125
+  - first:
+      213: 8469831795076207628
+    second: Pixel Black Cat Sprite Sheet (2)_126
+  - first:
+      213: 1476910752018827637
+    second: Pixel Black Cat Sprite Sheet (2)_127
+  - first:
+      213: 1134601307011437598
+    second: Pixel Black Cat Sprite Sheet (2)_128
+  - first:
+      213: -5767464410896442085
+    second: Pixel Black Cat Sprite Sheet (2)_129
+  - first:
+      213: -3394587723993577233
+    second: Pixel Black Cat Sprite Sheet (2)_130
+  - first:
+      213: -8033035218094764089
+    second: Pixel Black Cat Sprite Sheet (2)_131
+  - first:
+      213: -560706145155091870
+    second: Pixel Black Cat Sprite Sheet (2)_132
+  - first:
+      213: 6036686532880378440
+    second: Pixel Black Cat Sprite Sheet (2)_133
+  - first:
+      213: 4184525669300132095
+    second: Pixel Black Cat Sprite Sheet (2)_134
+  - first:
+      213: -5063390261465850919
+    second: Pixel Black Cat Sprite Sheet (2)_135
+  - first:
+      213: 461301833081817930
+    second: Pixel Black Cat Sprite Sheet (2)_136
+  - first:
+      213: -8608237467578116458
+    second: Pixel Black Cat Sprite Sheet (2)_137
+  - first:
+      213: -8876984204370475344
+    second: Pixel Black Cat Sprite Sheet (2)_138
+  - first:
+      213: -2437303456094498940
+    second: Pixel Black Cat Sprite Sheet (2)_139
+  - first:
+      213: 9195822110202137464
+    second: Pixel Black Cat Sprite Sheet (2)_140
+  - first:
+      213: 64997630057559770
+    second: Pixel Black Cat Sprite Sheet (2)_141
+  - first:
+      213: -1939564272131812315
+    second: Pixel Black Cat Sprite Sheet (2)_142
+  - first:
+      213: -7112606776034233628
+    second: Pixel Black Cat Sprite Sheet (2)_143
+  - first:
+      213: -7702515695434401603
+    second: Pixel Black Cat Sprite Sheet (2)_144
+  - first:
+      213: -3543740884235004744
+    second: Pixel Black Cat Sprite Sheet (2)_145
+  - first:
+      213: 5447092351743751849
+    second: Pixel Black Cat Sprite Sheet (2)_146
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cat-run_0
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 790
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db2c9b2266fcf420800000000000000
+      internalID: 2665275980995374036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-run_7
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 791
+        width: 163
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce68651d3dc5f9458cdd4530fc97aac
+      internalID: -7685468329517468974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-run_6
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 792
+        width: 191
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4ff59ff78a6d447b11488ba19ed7c3
+      internalID: 6320785502519310256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-run_1
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 789
+        width: 140
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079f198162d4280459f9ec1d7cdc8196
+      internalID: -7573823720464446389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-run_2
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 789
+        width: 140
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71ea084246221f4d97e0ed228e6e3fd
+      internalID: -1764076148433666713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-run_4
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 795
+        width: 187
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740d4ae817f2d7b41a081d8139bea97b
+      internalID: 5882258020415301722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-run_3
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 796
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11897c0e6ee44544bde6c2d7cd66096
+      internalID: 6159850263734078782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-run_5
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 795
+        width: 178
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69ad1c9d344f2e42984ee37ef65a58c
+      internalID: -3874886415744349240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-jump_0
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 531
+        width: 169
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6238f7b713c103e4ea012f92bd63630c
+      internalID: -1670230782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-jump_1
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 538
+        width: 186
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e46044cd7091d49aa8f1c9d9d34984
+      internalID: -1768165662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-jump_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 567
+        width: 184
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc040a082679409498b09194071b2ebe
+      internalID: -123101520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-jump_3
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 594
+        width: 163
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a15ef2d945cbe9418f0171a2c0bdb6b
+      internalID: -492736740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-jump_4
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 551
+        width: 180
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd85cfee83a67284ea88790f16340e36
+      internalID: 1802727724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-jump_5
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 535
+        width: 158
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5, y: 0.46899223}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8d3dc2d08216e49b155d34744e55c5
+      internalID: 699321847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-dash_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 334
+        width: 180
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee4b4e946591b94fa83a2445aedf41c
+      internalID: -15932489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-dash_1
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 334
+        width: 177
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568bdb9bc6d15234c8e676821eee824b
+      internalID: 1400735296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-dash_3
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 334
+        width: 230
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f43ce50e5b2ec42b87a4eea72c929f
+      internalID: 1871473481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-dash_2
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 332
+        width: 225
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffde04cd549b804ebbcd234453c49fd
+      internalID: 1560969760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-dash_4
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 337
+        width: 184
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0343b36214438214baf0b2c9f5693c09
+      internalID: 674117889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-dash_5
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 327
+        width: 155
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae7bec08907c084e866b542d16b7e35
+      internalID: 486697574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-idle
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 79
+        width: 164
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f752387a64de41f4e99ef3a66515e4ae
+      internalID: 1384058037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-skid
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 79
+        width: 176
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe56483b0269dd4fad6ed34ddd522ea
+      internalID: -28162405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 719d4d2f66be22444bce95578e83f563
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      cat-dash_0: -15932489
+      cat-dash_1: 1400735296
+      cat-dash_2: 1560969760
+      cat-dash_3: 1871473481
+      cat-dash_4: 674117889
+      cat-dash_5: 486697574
+      cat-idle: 1384058037
+      cat-jump_0: -1670230782
+      cat-jump_1: -1768165662
+      cat-jump_2: -123101520
+      cat-jump_3: -492736740
+      cat-jump_4: 1802727724
+      cat-jump_5: 699321847
+      cat-run_0: 2665275980995374036
+      cat-run_1: -7573823720464446389
+      cat-run_2: -1764076148433666713
+      cat-run_3: 6159850263734078782
+      cat-run_4: 5882258020415301722
+      cat-run_5: -3874886415744349240
+      cat-run_6: 6320785502519310256
+      cat-run_7: -7685468329517468974
+      cat-skid: -28162405
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

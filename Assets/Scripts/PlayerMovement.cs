@@ -211,13 +211,13 @@ public class PlayerMovement : MonoBehaviour
                               (catBody.linearVelocity.x < -0.5f && horizontalInput > 0.1f) ||
                               (catBody.linearVelocity.x != 0f && horizontalInput == 0f);
 
-            if (isSkidding)
-            {
-                newState = ANIM_SKID;
-            }
-            else if (isDashing)
+            if (isDashing)
             {
                 newState = ANIM_DASH;
+            }
+            else if (isSkidding)
+            {
+                newState = ANIM_SKID;
             }
             else if (Mathf.Abs(catBody.linearVelocity.x) > 0.2f)
             {
