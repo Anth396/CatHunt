@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashCooldownTimer = 0f;
     private float dashDirection = 1f;
     private bool isBouncing = false;
+    public float bounceMinSpeed = 5f;
 
     // Public property so BreakableObject can read if player is dashing
     public bool IsDashing => isDashing;
@@ -36,11 +37,14 @@ public class PlayerMovement : MonoBehaviour
     const string ANIM_IDLE = "cat-idle";
     const string ANIM_RUN = "cat-run";
     const string ANIM_JUMP = "cat-jump";
+    const string ANIM_MID_JUMP = "cat-mid-jump";
+    const string ANIM_MID_FALL = "cat-mid-fall";
+    const string ANIM_FALL = "cat-fall";
     const string ANIM_SKID = "cat-skid";
     const string ANIM_DASH = "cat-dash";
 
     // States
-    private bool onGroundState = true;
+    public bool onGroundState = true;
     private bool jumpRequest = false;
     private float horizontalInput = 0f;
     private float airMomentumX = 0f; 
@@ -80,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
             else if (horizontalInput < 0) { catSprite.flipX = true; }
         }
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && onGroundState && !isDashing && !isBouncing)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && onGroundState && !isBouncing)
         {
             jumpRequest = true;
         }
@@ -113,11 +117,24 @@ public class PlayerMovement : MonoBehaviour
         // Handle Obstacle Bounce
         if (isBouncing)
         {
+            isDashing = false;
             dashTimer = 0f;
 
-            currentVel.x = -currentVel.x;
+            if (Mathf.Abs(currentVel.x) < bounceMinSpeed)
+            {
+                // Too slow: push back at a fixed speed, opposite to movement (or facing if standing still)
+                float dir = Mathf.Abs(currentVel.x) > 0.01f
+                    ? Mathf.Sign(currentVel.x)
+                    : (catSprite.flipX ? -1f : 1f);
+                currentVel.x = -dir * bounceMinSpeed;
+            }
+            else
+            {
+                currentVel.x = -currentVel.x;
+            }
             currentVel.y = 1.0f;
-            
+            airMomentumX = currentVel.x;
+
             catBody.linearVelocity = currentVel;
 
             isBouncing = false; 
@@ -125,11 +142,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Handle Dash Momentum
-        if (isDashing)
+        // A jump request cancels the dash and falls through to the jump logic below,
+        // carrying the dash speed into the air via airMomentumX.
+        if (isDashing && !jumpRequest)
         {
             dashTimer -= Time.fixedDeltaTime;
             currentVel.x = dashDirection * dashSpeed;
-            currentVel.y = 0f; 
 
             if (dashTimer <= 0f)
             {
@@ -144,6 +162,8 @@ public class PlayerMovement : MonoBehaviour
         // Vertical Custom Gravity / Jumping
         if (jumpRequest)
         {
+            isDashing = false;
+            dashTimer = 0f;
             airMomentumX = currentVel.x; 
             currentVel.y = jumpForce;
             onGroundState = false;
@@ -203,7 +223,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (!onGroundState)
         {
-            newState = ANIM_JUMP;
+            if (catBody.linearVelocity.y > 2.0f) 
+            {
+                newState = ANIM_JUMP;
+            }
+            else if (catBody.linearVelocity.y > 0f)
+            {
+                newState = ANIM_MID_JUMP;
+            }
+            else if (catBody.linearVelocity.y > -2.0f)
+            {
+                newState = ANIM_MID_FALL;
+            }
+            else
+            {
+                newState = ANIM_FALL;
+            }
         }
         else
         {
@@ -242,23 +277,30 @@ public class PlayerMovement : MonoBehaviour
         {
             onGroundState = true;
         }
-        else if (col.gameObject.CompareTag("Obstacle"))
-        {
-            isBouncing = true;
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
+        else if (col.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Collided with prey!");
             GameManager.Instance.StopGameAndShowWin(GameManager.Instance.timer);
         }
-        else if (other.gameObject.CompareTag("Obstacle"))
-        {
-            isBouncing = true;
-        }
+    }
+
+    // Called by Obstacle.cs
+    public void Bounce()
+    {
+        isBouncing = true;
+    }
+
+    // Called by GameManager on restart
+    public void ResetState()
+    {
+        isDashing = false;
+        isBouncing = false;
+        dashTimer = 0f;
+        dashCooldownTimer = 0f;
+        jumpRequest = false;
+        horizontalInput = 0f;
+        airMomentumX = 0f;
+        onGroundState = true;
     }
 
     void OnCollisionExit2D(Collision2D col)

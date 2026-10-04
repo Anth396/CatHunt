@@ -42,7 +42,7 @@ public class BreakableObject : MonoBehaviour
             Destroy(selfCollider);
         }
 
-        // 2. Destroy BoxCollider2D on its parent (if a parent exists and has one)
+        // 2. Destroy BoxCollider2D on its parent (if a parent exists and has one) and the child of the parent(physics hit box)
         if (transform.parent != null)
         {
             BoxCollider2D parentCollider = transform.parent.GetComponent<BoxCollider2D>();
@@ -52,7 +52,17 @@ public class BreakableObject : MonoBehaviour
                 Destroy(parentCollider);
                 Destroy(parentSprite);
             }
+            BoxCollider2D[] childColliders = transform.parent.GetComponentsInChildren<BoxCollider2D>();
+            foreach (BoxCollider2D childCol in childColliders)
+            {
+                // Ensure we don't accidentally re-target the main one if it's already caught
+                if (childCol.gameObject != gameObject)
+                {
+                    Destroy(childCol);
+                }
+            }
         }
+
 
         // Optional: If you want to completely destroy the game object after a short delay or right away:
         // Destroy(gameObject);

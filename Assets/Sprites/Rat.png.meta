@@ -1,0 +1,439 @@
+fileFormatVersion: 2
+guid: ccc352b9c51c51042a4b23c3b8233dcd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3234599221686973282
+    second: Generated Image October 04, 2026 - 6_15PM (1)_0
+  - first:
+      213: -925376471907584433
+    second: Generated Image October 04, 2026 - 6_15PM (1)_1
+  - first:
+      213: -111885076412194449
+    second: Generated Image October 04, 2026 - 6_15PM (1)_2
+  - first:
+      213: 5247480364487969697
+    second: Generated Image October 04, 2026 - 6_15PM (1)_3
+  - first:
+      213: -8395541692485825941
+    second: Generated Image October 04, 2026 - 6_15PM (1)_4
+  - first:
+      213: -7156445949451961924
+    second: Generated Image October 04, 2026 - 6_15PM (1)_5
+  - first:
+      213: 3935551005855055906
+    second: Generated Image October 04, 2026 - 6_15PM (1)_6
+  - first:
+      213: 3940796649901272522
+    second: Generated Image October 04, 2026 - 6_15PM (1)_7
+  - first:
+      213: 4828977830163262009
+    second: Generated Image October 04, 2026 - 6_15PM (1)_8
+  - first:
+      213: -6120539285457240642
+    second: Generated Image October 04, 2026 - 6_15PM (1)_9
+  - first:
+      213: -5060667713606731353
+    second: Generated Image October 04, 2026 - 6_15PM (1)_10
+  - first:
+      213: 8863348829569912111
+    second: Generated Image October 04, 2026 - 6_15PM (1)_11
+  - first:
+      213: 1983573089733354889
+    second: Generated Image October 04, 2026 - 6_15PM (1)_12
+  - first:
+      213: 6439317738783416586
+    second: Generated Image October 04, 2026 - 6_15PM (1)_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rat-idle
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 629
+        width: 172
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4578fa7adb0334ab02288517aa982a
+      internalID: 1146885033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rat_1
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 629
+        width: 173
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c975341de9e9f4084239a372eb1d30
+      internalID: -24950278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-run_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 362
+        width: 221
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20418e6c85778a64493c745a4e210e9a
+      internalID: -1431731566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-run_1
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 362
+        width: 186
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ac05692634cf74f9da462c5259c716
+      internalID: -46365564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-run_2
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 362
+        width: 195
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6a7c4e30b916a4dbd1b83ea7c382ad
+      internalID: -1745148308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-run_3
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 386
+        width: 110
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f68ceca2a499f4984f43ae86f1c4bf
+      internalID: 264504284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-run_4
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 362
+        width: 170
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd43794190d4ad24c80ff1e884d184cb
+      internalID: -350457340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-run_5
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 361
+        width: 163
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f28105ee4d091f479163e846fafb317
+      internalID: -579851961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-jump_0
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 78
+        width: 157
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd3ccbeda4a16c48a4cb25e7ff13380
+      internalID: -649686639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-jump_1
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 86
+        width: 161
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521bcf546b21d1c4cae0a87636c21438
+      internalID: 1615707128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-jump_2
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 144
+        width: 99
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d9674b27c3a4042bb7254968a3daf4
+      internalID: 711588090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-jump_3
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 74
+        width: 154
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb440b116cff0746b0797ebea05f73b
+      internalID: -1261834408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 465788f5371d84642a6c77fa23af2ece
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Rat_1: -24950278
+      Rat_2: 4418433
+      Rat_3: -680202006
+      rat-idle: 1146885033
+      rat-jump_0: -649686639
+      rat-jump_1: 1615707128
+      rat-jump_2: 711588090
+      rat-jump_3: -1261834408
+      rat-run_0: -1431731566
+      rat-run_1: -46365564
+      rat-run_2: -1745148308
+      rat-run_3: 264504284
+      rat-run_4: -350457340
+      rat-run_5: -579851961
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -6,8 +6,9 @@ public class CatchThePrey : MonoBehaviour
 {
     public Transform enemyLocation;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
+        Collider2D other = collision.collider;
         // Check if the object we touched is the enemy
         if (other.gameObject.CompareTag("Enemy") || other.transform == enemyLocation)
         {

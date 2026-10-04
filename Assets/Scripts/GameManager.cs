@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void StopGameAndShowWin(int finalTime)
     {
+        if (!countTimerState) return; // already won
         countTimerState = false;
         Time.timeScale = 0.0f;
 
@@ -101,6 +102,12 @@ public class GameManager : MonoBehaviour
         {
             playerBody.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
             playerBody.linearVelocity = Vector2.zero;
+
+            PlayerMovement player = playerBody.GetComponent<PlayerMovement>();
+            if (player != null)
+            {
+                player.ResetState();
+            }
         }
 
         // 2. Hide pop-up panel
@@ -118,6 +125,7 @@ public class GameManager : MonoBehaviour
                 if (enemyMove != null)
                 {
                     eachChild.transform.localPosition = enemyMove.startPosition;
+                    enemyMove.ResetState();
                 }
             }
         }
