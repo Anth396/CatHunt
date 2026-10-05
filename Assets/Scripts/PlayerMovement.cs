@@ -24,6 +24,16 @@ public class PlayerMovement : MonoBehaviour
     // Public property so BreakableObject can read if player is dashing
     public bool IsDashing => isDashing;
 
+    [Header("Slash Settings")]
+    public float slashDuration = 0.35f;
+    public float slashCooldown = 0.3f;
+    private bool isSlashing = false;
+    private float slashTimer = 0f;
+    private float slashCooldownTimer = 0f;
+
+    // Catching the prey only counts while slashing
+    public bool IsSlashing => isSlashing;
+
     [Header("Custom Physics Settings")]
     public float gravity = 30f;
     public float fallMultiplier = 1.5f; 
@@ -42,9 +52,10 @@ public class PlayerMovement : MonoBehaviour
     const string ANIM_FALL = "cat-fall";
     const string ANIM_SKID = "cat-skid";
     const string ANIM_DASH = "cat-dash";
+    const string ANIM_SLASH = "cat-slash";
 
     // States
-    public bool onGroundState = true;
+    public bool onGroundState = false;
     private bool jumpRequest = false;
     private float horizontalInput = 0f;
     private float airMomentumX = 0f; 
@@ -73,6 +84,16 @@ public class PlayerMovement : MonoBehaviour
             dashCooldownTimer -= Time.deltaTime;
         }
 
+        if (slashCooldownTimer > 0f)
+        {
+            slashCooldownTimer -= Time.deltaTime;
+        }
+        if (isSlashing)
+        {
+            slashTimer -= Time.deltaTime;
+            if (slashTimer <= 0f) EndSlash();
+        }
+
         float moveDir = 0f;
         if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveDir = 1f;
         if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveDir = -1f;
@@ -87,6 +108,14 @@ public class PlayerMovement : MonoBehaviour
         if (Keyboard.current.spaceKey.wasPressedThisFrame && onGroundState && !isBouncing)
         {
             jumpRequest = true;
+            EndSlash();     // jumping interrupts the slash
+        }
+
+        // Slash (J): does not touch velocity, so the cat keeps moving while slashing
+        if (Keyboard.current.jKey.wasPressedThisFrame && !isSlashing && !isDashing && slashCooldownTimer <= 0f)
+        {
+            isSlashing = true;
+            slashTimer = slashDuration;
         }
 
         if (Keyboard.current.leftShiftKey.wasPressedThisFrame && onGroundState && !isDashing && dashCooldownTimer <= 0f && !isBouncing)
@@ -97,8 +126,17 @@ public class PlayerMovement : MonoBehaviour
         UpdateAnimationState();
     }
 
+    private void EndSlash()
+    {
+        if (!isSlashing) return;
+        isSlashing = false;
+        slashTimer = 0f;
+        slashCooldownTimer = slashCooldown;
+    }
+
     private void StartDash()
     {
+        EndSlash();     // dashing interrupts the slash
         isDashing = true;
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
@@ -264,6 +302,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if (isSlashing) newState = ANIM_SLASH;   // slash overrides the movement animation
+
         if (currentAnimationState != newState)
         {
             animator.Play(newState);
@@ -277,9 +317,23 @@ public class PlayerMovement : MonoBehaviour
         {
             onGroundState = true;
         }
-        else if (col.gameObject.CompareTag("Enemy"))
+        else
         {
-            Debug.Log("Collided with prey!");
+            TryCatchPrey(col);
+        }
+    }
+
+    // Also covers starting a slash while already touching the prey
+    void OnCollisionStay2D(Collision2D col)
+    {
+        TryCatchPrey(col);
+    }
+
+    private void TryCatchPrey(Collision2D col)
+    {
+        if (isSlashing && col.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Prey slashed!");
             GameManager.Instance.StopGameAndShowWin(GameManager.Instance.timer);
         }
     }
@@ -293,6 +347,9 @@ public class PlayerMovement : MonoBehaviour
     // Called by GameManager on restart
     public void ResetState()
     {
+        isSlashing = false;
+        slashTimer = 0f;
+        slashCooldownTimer = 0f;
         isDashing = false;
         isBouncing = false;
         dashTimer = 0f;

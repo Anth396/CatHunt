@@ -22,6 +22,17 @@ public class GameManager : MonoBehaviour
     private bool countTimerState = true;
     private Coroutine timerRoutine;
 
+    // True while the player is in the slash state (needed to catch the prey)
+    public bool IsPlayerSlashing
+    {
+        get
+        {
+            if (playerBody == null) return false;
+            PlayerMovement p = playerBody.GetComponent<PlayerMovement>();
+            return p != null && p.IsSlashing;
+        }
+    }
+
     private void Awake()
     {
         // Singleton setup

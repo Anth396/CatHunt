@@ -113,6 +113,9 @@ public partial class EnemyMovement : MonoBehaviour
     private float pendingJumpSpeed = 0f;
     private bool jumpedThisAir = false;
     private float targetSpeed = 0f;
+    private bool escapePending = false;
+    private float escapeDir = 1f;
+    private float escapeCooldown = 0f;
     private float ratWidth = 1f;
     private float ratHeight = 1f;
 
@@ -190,8 +193,25 @@ public partial class EnemyMovement : MonoBehaviour
             if (wallScan.wall && wallScan.wallDist <= wallCheckDistance) airMomentumX = 0f;
         }
 
+        if (escapeCooldown > 0f) escapeCooldown -= dt;
+
         // ---- Vertical: custom gravity / jumping ----
-        if (jumpRequest && onGroundState)
+        if (escapePending)
+        {
+            // Standing on top of the cat: hop off with horizontal speed
+            escapePending = false;
+            escapeCooldown = 0.4f;
+            moveDir = escapeDir;
+            currentVel.y = jumpForce;
+            airMomentumX = moveDir * maxSpeed;
+            onGroundState = false;
+            jumpedThisAir = true;
+            jumpPending = false;
+            dropping = false;
+            current = new PreyMove(ActionType.Run);
+            moveTimer = 0.3f;
+        }
+        else if (jumpRequest && onGroundState)
         {
             airMomentumX = moveDir * Mathf.Max(Mathf.Abs(currentVel.x), airMinSpeed);
             currentVel.y = pendingJumpSpeed > 0f ? pendingJumpSpeed : jumpForce;
@@ -240,6 +260,31 @@ public partial class EnemyMovement : MonoBehaviour
             jumpedThisAir = false;
             if (wasAirborne) OnLanded();
         }
+        else
+        {
+            CheckOnTopOfPlayer(col);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        CheckOnTopOfPlayer(col);
+    }
+
+    // The cat is not "Ground", so a rat resting on its head would never get a ground state and
+    // would be stuck. Detect that and hop off, away from the cat's centre.
+    private void CheckOnTopOfPlayer(Collision2D col)
+    {
+        if (escapeCooldown > 0f || escapePending || bodyCollider == null) return;
+        if (!col.gameObject.CompareTag(playerTag)) return;
+
+        Bounds rb = bodyCollider.bounds;
+        Bounds cb = col.collider.bounds;
+        if (rb.min.y < cb.max.y - 0.2f) return;     // not above the cat
+
+        float dx = rb.center.x - cb.center.x;
+        escapeDir = Mathf.Abs(dx) > 0.05f ? Mathf.Sign(dx) : moveDir;
+        escapePending = true;
     }
 
     void OnCollisionExit2D(Collision2D col)
@@ -298,6 +343,8 @@ public partial class EnemyMovement : MonoBehaviour
         jumpRequest = false;
         pendingJumpSpeed = 0f;
         jumpedThisAir = false;
+        escapePending = false;
+        escapeCooldown = 0f;
         playerDetected = false;
         moveDir = startDirection >= 0 ? 1f : -1f;
         InitBrain();
