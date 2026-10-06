@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private float holdTimer = 0f;
     private float holdStartTime = 0f;
     private ActionManager input;
+    private int moveInput = 0;      // -1 / 0 / 1 from ActionManager.moveCheck
     private bool isSuperDashing = false;
     private float currentDashSpeed = 25f;
 
@@ -72,6 +73,11 @@ public class PlayerMovement : MonoBehaviour
     private float horizontalInput = 0f;
     private float airMomentumX = 0f; 
 
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private Vector3 initialScale;
+    private bool initialFlipX;
+
     private Rigidbody2D catBody;
     private SpriteRenderer catSprite;
 
@@ -86,6 +92,12 @@ public class PlayerMovement : MonoBehaviour
         catBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         catBody.gravityScale = 0f; // Handled strictly by code
 
+        // Remember the scene start pose for restarts
+        initialPosition = transform.position;
+        initialRotation = transform.rotation;
+        initialScale = transform.localScale;
+        initialFlipX = catSprite != null && catSprite.flipX;
+
         // Input comes from ActionManager (CatActions); subscribe to its one-shot events
         input = ActionManager.Instance;
         if (input == null)
@@ -93,19 +105,27 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("PlayerMovement: no ActionManager in the scene, the cat cannot be controlled.", this);
             return;
         }
-        input.JumpPressed += HandleJumpPressed;
-        input.SlashPressed += HandleSlashPressed;
-        input.DashPressed += HandleDashPressed;
-        input.DashReleased += HandleDashReleased;
+        moveInput = input.Move;
+        input.jump.AddListener(HandleJumpPressed);
+        input.slash.AddListener(HandleSlashPressed);
+        input.dashPressed.AddListener(HandleDashPressed);
+        input.dashReleased.AddListener(HandleDashReleased);
+        input.moveCheck.AddListener(HandleMoveCheck);
     }
 
     void OnDestroy()
     {
         if (input == null) return;
-        input.JumpPressed -= HandleJumpPressed;
-        input.SlashPressed -= HandleSlashPressed;
-        input.DashPressed -= HandleDashPressed;
-        input.DashReleased -= HandleDashReleased;
+        input.jump.RemoveListener(HandleJumpPressed);
+        input.slash.RemoveListener(HandleSlashPressed);
+        input.dashPressed.RemoveListener(HandleDashPressed);
+        input.dashReleased.RemoveListener(HandleDashReleased);
+        input.moveCheck.RemoveListener(HandleMoveCheck);
+    }
+
+    private void HandleMoveCheck(int direction)
+    {
+        moveInput = direction;
     }
 
     // ---------------------------------------------------------- input events
@@ -172,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
             if (slashTimer <= 0f) EndSlash();
         }
 
-        float moveDir = input.Move;
+        float moveDir = moveInput;
 
         if (onGroundState && !isDashing && !isBouncing)
         {
@@ -439,6 +459,21 @@ public class PlayerMovement : MonoBehaviour
         horizontalInput = 0f;
         airMomentumX = 0f;
         onGroundState = true;
+        currentAnimationState = null;
+
+        // Back to the scene start pose
+        transform.position = initialPosition;
+        transform.rotation = initialRotation;
+        transform.localScale = initialScale;
+        if (catSprite != null) catSprite.flipX = initialFlipX;
+        if (catBody != null)
+        {
+            catBody.position = initialPosition;
+            catBody.rotation = initialRotation.eulerAngles.z;
+            catBody.linearVelocity = Vector2.zero;
+            catBody.angularVelocity = 0f;
+        }
+        Physics2D.SyncTransforms();
     }
 
     void OnCollisionExit2D(Collision2D col)

@@ -115,7 +115,7 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""dash"",
                     ""type"": ""Button"",
-                    ""id"": ""3b1f6d0a-5c7e-4a52-9a0e-6f1d2c8b7e41"",
+                    ""id"": ""255719aa-b091-46a0-874e-72c32935ea6e"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -123,9 +123,19 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""priority"": 0
                 },
                 {
+                    ""name"": ""superdash"",
+                    ""type"": ""Button"",
+                    ""id"": ""3e862ded-5e07-4fdb-bc2a-c4376ec85b6b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true,
+                    ""priority"": 0
+                },
+                {
                     ""name"": ""slash"",
                     ""type"": ""Button"",
-                    ""id"": ""9d4e2a7c-1b3f-4e68-8c25-a0b7f3d59e12"",
+                    ""id"": ""643eb057-91a2-42d6-a8f2-db872a7ffb4b"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -135,9 +145,9 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
+                    ""name"": ""1D Axis"",
                     ""id"": ""76aed8d3-2076-4238-93b9-9ec7c29629c4"",
-                    ""path"": ""1DAxis(whichSideWins=2)"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -151,7 +161,7 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -162,43 +172,21 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Arrows"",
-                    ""id"": ""7757a73b-95fc-4a50-8bdd-3c7be315d748"",
-                    ""path"": ""1DAxis(whichSideWins=2)"",
+                    ""name"": """",
+                    ""id"": ""cfc72114-a952-416d-be15-0c0b8d34121d"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""move"",
-                    ""isComposite"": true,
+                    ""action"": ""jump"",
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""ceb2db87-8c1d-4a82-9c96-b2679764291e"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""cc3079e7-fcbe-4542-b764-5d7cd3f23812"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -206,29 +194,95 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": "";Keyboard"",
                     ""action"": ""jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c2a84f10-6e3b-4d97-b1a5-3e9f07d6a8c4"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""id"": ""1f68cc46-4c24-4a10-931a-bc93aab6bfb8"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": """",
                     ""action"": ""dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e7b35d92-0a4c-4f18-96d3-5b1c8a2f6e70"",
+                    ""id"": ""f25e261d-c6ce-4ad6-933a-0bea62a074ce"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f13712c8-e276-47ad-b112-99d10634b423"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b9b4d503-644d-4dd0-a711-5cac20a46033"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""superdash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e504307e-7bc9-40e7-b3bb-f056907f1652"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""superdash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""420301a9-4a87-4e15-8b80-2e096c7bf480"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""slash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87df466e-2a6b-4c53-a1ab-18af0cd21ae5"",
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard"",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""slash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97c85a33-ba9d-4cd6-b4a4-ea94d2935f0f"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
                     ""action"": ""slash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -245,6 +299,11 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""devicePath"": ""<Keyboard>"",
                     ""isOptional"": false,
                     ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
                 }
             ]
         }
@@ -255,6 +314,7 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         m_gameplay_move = m_gameplay.FindAction("move", throwIfNotFound: true);
         m_gameplay_jump = m_gameplay.FindAction("jump", throwIfNotFound: true);
         m_gameplay_dash = m_gameplay.FindAction("dash", throwIfNotFound: true);
+        m_gameplay_superdash = m_gameplay.FindAction("superdash", throwIfNotFound: true);
         m_gameplay_slash = m_gameplay.FindAction("slash", throwIfNotFound: true);
     }
 
@@ -339,6 +399,7 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_move;
     private readonly InputAction m_gameplay_jump;
     private readonly InputAction m_gameplay_dash;
+    private readonly InputAction m_gameplay_superdash;
     private readonly InputAction m_gameplay_slash;
     /// <summary>
     /// Provides access to input actions defined in input action map "gameplay".
@@ -363,6 +424,10 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "gameplay/dash".
         /// </summary>
         public InputAction @dash => m_Wrapper.m_gameplay_dash;
+        /// <summary>
+        /// Provides access to the underlying input action "gameplay/superdash".
+        /// </summary>
+        public InputAction @superdash => m_Wrapper.m_gameplay_superdash;
         /// <summary>
         /// Provides access to the underlying input action "gameplay/slash".
         /// </summary>
@@ -402,6 +467,9 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
             @dash.started += instance.OnDash;
             @dash.performed += instance.OnDash;
             @dash.canceled += instance.OnDash;
+            @superdash.started += instance.OnSuperdash;
+            @superdash.performed += instance.OnSuperdash;
+            @superdash.canceled += instance.OnSuperdash;
             @slash.started += instance.OnSlash;
             @slash.performed += instance.OnSlash;
             @slash.canceled += instance.OnSlash;
@@ -425,6 +493,9 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
             @dash.started -= instance.OnDash;
             @dash.performed -= instance.OnDash;
             @dash.canceled -= instance.OnDash;
+            @superdash.started -= instance.OnSuperdash;
+            @superdash.performed -= instance.OnSuperdash;
+            @superdash.canceled -= instance.OnSuperdash;
             @slash.started -= instance.OnSlash;
             @slash.performed -= instance.OnSlash;
             @slash.canceled -= instance.OnSlash;
@@ -502,6 +573,13 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDash(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "superdash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSuperdash(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "slash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

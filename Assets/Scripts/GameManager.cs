@@ -108,16 +108,17 @@ public class GameManager : MonoBehaviour
 
     private void ResetGame()
     {
-        // 1. Reset player position and velocity
+        // 1. Reset the player (pose, velocity, dash / slash / hold state)
         if (playerBody != null)
         {
-            playerBody.transform.position = new Vector3(0.0f, 0.0f, 0.0f);
-            playerBody.linearVelocity = Vector2.zero;
-
             PlayerMovement player = playerBody.GetComponent<PlayerMovement>();
             if (player != null)
             {
                 player.ResetState();
+            }
+            else
+            {
+                playerBody.linearVelocity = Vector2.zero;
             }
         }
 
@@ -127,21 +128,19 @@ public class GameManager : MonoBehaviour
             popUpPanel.SetActive(false);
         }
 
-        // 3. Reset all enemies to start positions
-        if (enemies != null)
+        // 3. Reset every rat (pose, velocity, AI state)
+        foreach (EnemyMovement enemyMove in FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None))
         {
-            foreach (Transform eachChild in enemies.transform)
-            {
-                EnemyMovement enemyMove = eachChild.GetComponent<EnemyMovement>();
-                if (enemyMove != null)
-                {
-                    eachChild.transform.localPosition = enemyMove.startPosition;
-                    enemyMove.ResetState();
-                }
-            }
+            enemyMove.ResetState();
         }
 
-        // 4. Restart timer
+        // 4. Restore every broken object
+        foreach (BreakableObject breakable in FindObjectsByType<BreakableObject>(FindObjectsSortMode.None))
+        {
+            breakable.ResetState();
+        }
+
+        // 5. Restart timer
         StartTimer();
     }
 }

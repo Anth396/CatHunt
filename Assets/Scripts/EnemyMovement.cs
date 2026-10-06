@@ -84,7 +84,6 @@ public partial class EnemyMovement : MonoBehaviour
 
     [Header("Start")]
     public int startDirection = 1;      // 1 = right, -1 = left
-    public Vector3 startPosition = new Vector3(0.0f, 0.0f, 0.0f);
 
     [Header("Animation")]
     public bool spriteFacesRight = true;
@@ -98,6 +97,12 @@ public partial class EnemyMovement : MonoBehaviour
     const string ANIM_JUMP = "rat-jump";
     const string ANIM_MID_AIR = "rat-mid-air";
     const string ANIM_FALL = "rat-fall";
+
+    // Scene start pose, restored on restart
+    private Vector3 initialLocalPosition;
+    private Quaternion initialLocalRotation;
+    private Vector3 initialLocalScale;
+    private bool initialFlipX;
 
     private Rigidbody2D enemyBody;
     private SpriteRenderer enemySprite;
@@ -137,6 +142,11 @@ public partial class EnemyMovement : MonoBehaviour
         enemyBody = GetComponent<Rigidbody2D>();
         enemySprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+
+        initialLocalPosition = transform.localPosition;
+        initialLocalRotation = transform.localRotation;
+        initialLocalScale = transform.localScale;
+        initialFlipX = enemySprite != null && enemySprite.flipX;
 
         enemyBody.bodyType = RigidbodyType2D.Dynamic;
         enemyBody.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -338,7 +348,23 @@ public partial class EnemyMovement : MonoBehaviour
     // Called by GameManager on restart
     public void ResetState()
     {
-        if (enemyBody != null) enemyBody.linearVelocity = Vector2.zero;
+        // Back to the scene start pose
+        transform.localPosition = initialLocalPosition;
+        transform.localRotation = initialLocalRotation;
+        transform.localScale = initialLocalScale;
+        if (enemySprite != null) enemySprite.flipX = initialFlipX;
+        if (enemyBody != null)
+        {
+            enemyBody.position = transform.position;
+            enemyBody.rotation = transform.eulerAngles.z;
+            enemyBody.linearVelocity = Vector2.zero;
+            enemyBody.angularVelocity = 0f;
+        }
+        Physics2D.SyncTransforms();
+
+        onGroundState = false;      // re-set by the first ground contact
+        currentAnimationState = null;
+        targetSpeed = 0f;
         airMomentumX = 0f;
         jumpRequest = false;
         pendingJumpSpeed = 0f;
