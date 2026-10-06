@@ -1,0 +1,392 @@
+fileFormatVersion: 2
+guid: bbcd85d0bdf06d745b913e7b842972d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5322845581396989122
+    second: Cyber Cat Pixel Sprite Sheet_0
+  - first:
+      213: -6919886292916175302
+    second: Cyber Cat Pixel Sprite Sheet_1
+  - first:
+      213: 3735644411398300067
+    second: Cyber Cat Pixel Sprite Sheet_2
+  - first:
+      213: -539421175650916191
+    second: Cyber Cat Pixel Sprite Sheet_3
+  - first:
+      213: -2164849123329241665
+    second: Cyber Cat Pixel Sprite Sheet_4
+  - first:
+      213: 2354444942755365356
+    second: Cyber Cat Pixel Sprite Sheet_5
+  - first:
+      213: -5878556598180971791
+    second: Cyber Cat Pixel Sprite Sheet_6
+  - first:
+      213: -999021818043657990
+    second: Cyber Cat Pixel Sprite Sheet_7
+  - first:
+      213: -1912012591436836236
+    second: Cyber Cat Pixel Sprite Sheet_8
+  - first:
+      213: 483807402311134402
+    second: Cyber Cat Pixel Sprite Sheet_9
+  - first:
+      213: 5803099014188016438
+    second: Cyber Cat Pixel Sprite Sheet_10
+  - first:
+      213: 2940562713951094324
+    second: Cyber Cat Pixel Sprite Sheet_11
+  - first:
+      213: 3260826560400258166
+    second: Cyber Cat Pixel Sprite Sheet_12
+  - first:
+      213: -2532527362080662551
+    second: Cyber Cat Pixel Sprite Sheet_13
+  - first:
+      213: 4641543145022517312
+    second: Cyber Cat Pixel Sprite Sheet_14
+  - first:
+      213: 4780819868481847599
+    second: Cyber Cat Pixel Sprite Sheet_15
+  - first:
+      213: -7709649731421364840
+    second: Cyber Cat Pixel Sprite Sheet_16
+  - first:
+      213: -6657344904964369639
+    second: Cyber Cat Pixel Sprite Sheet_17
+  - first:
+      213: -5640059807801401434
+    second: Cyber Cat Pixel Sprite Sheet_18
+  - first:
+      213: 3780411185943333122
+    second: Cyber Cat Pixel Sprite Sheet_19
+  - first:
+      213: -8222032822483965277
+    second: Cyber Cat Pixel Sprite Sheet_20
+  - first:
+      213: -4668933200192835340
+    second: Cyber Cat Pixel Sprite Sheet_21
+  - first:
+      213: 9049549560406748828
+    second: Cyber Cat Pixel Sprite Sheet_22
+  - first:
+      213: 1473954632965516320
+    second: Cyber Cat Pixel Sprite Sheet_23
+  - first:
+      213: -2203114102337622346
+    second: Cyber Cat Pixel Sprite Sheet_24
+  - first:
+      213: -1001026032013492562
+    second: Cyber Cat Pixel Sprite Sheet_25
+  - first:
+      213: -3932956931610046315
+    second: Cyber Cat Pixel Sprite Sheet_26
+  - first:
+      213: -1488007041489556736
+    second: Cyber Cat Pixel Sprite Sheet_27
+  - first:
+      213: -2238127956467922637
+    second: Cyber Cat Pixel Sprite Sheet_28
+  - first:
+      213: 8012689049478093104
+    second: Cyber Cat Pixel Sprite Sheet_29
+  - first:
+      213: -7815852177158399023
+    second: Cyber Cat Pixel Sprite Sheet_30
+  - first:
+      213: 3318011211954606717
+    second: Cyber Cat Pixel Sprite Sheet_31
+  - first:
+      213: -7130106148825367345
+    second: Cyber Cat Pixel Sprite Sheet_32
+  - first:
+      213: 6610483620534638254
+    second: Cyber Cat Pixel Sprite Sheet_33
+  - first:
+      213: 7598603013341551753
+    second: Cyber Cat Pixel Sprite Sheet_34
+  - first:
+      213: 5619763772043876014
+    second: Cyber Cat Pixel Sprite Sheet_35
+  - first:
+      213: -8410922849633243503
+    second: Cyber Cat Pixel Sprite Sheet_36
+  - first:
+      213: 4071646067245645113
+    second: Cyber Cat Pixel Sprite Sheet_37
+  - first:
+      213: -1016285508614760165
+    second: Cyber Cat Pixel Sprite Sheet_38
+  - first:
+      213: 7832638076117529784
+    second: Cyber Cat Pixel Sprite Sheet_39
+  - first:
+      213: 7756725614548525036
+    second: Cyber Cat Pixel Sprite Sheet_40
+  - first:
+      213: 5922211235744088715
+    second: Cyber Cat Pixel Sprite Sheet_41
+  - first:
+      213: 8118728650927720951
+    second: Cyber Cat Pixel Sprite Sheet_42
+  - first:
+      213: 6891370319880772069
+    second: Cyber Cat Pixel Sprite Sheet_43
+  - first:
+      213: -7370248801770807664
+    second: Cyber Cat Pixel Sprite Sheet_44
+  - first:
+      213: -3976844178540749645
+    second: Cyber Cat Pixel Sprite Sheet_45
+  - first:
+      213: 1605804068276974313
+    second: Cyber Cat Pixel Sprite Sheet_46
+  - first:
+      213: 5289377394542614108
+    second: Cyber Cat Pixel Sprite Sheet_47
+  - first:
+      213: -3014127620543067171
+    second: Cyber Cat Pixel Sprite Sheet_48
+  - first:
+      213: -4020602497871408968
+    second: Cyber Cat Pixel Sprite Sheet_49
+  - first:
+      213: 4712763878069426055
+    second: Cyber Cat Pixel Sprite Sheet_50
+  - first:
+      213: -5826418477472838031
+    second: Cyber Cat Pixel Sprite Sheet_51
+  - first:
+      213: -6810171747030585500
+    second: Cyber Cat Pixel Sprite Sheet_52
+  - first:
+      213: -8592892403565364358
+    second: Cyber Cat Pixel Sprite Sheet_53
+  - first:
+      213: -4396901654800102304
+    second: Cyber Cat Pixel Sprite Sheet_54
+  - first:
+      213: -8479246950343649792
+    second: Cyber Cat Pixel Sprite Sheet_55
+  - first:
+      213: 6677590485028286495
+    second: Cyber Cat Pixel Sprite Sheet_56
+  - first:
+      213: -6229594493850626306
+    second: Cyber Cat Pixel Sprite Sheet_57
+  - first:
+      213: -4045556193900895195
+    second: Cyber Cat Pixel Sprite Sheet_58
+  - first:
+      213: -8603754507459336867
+    second: Cyber Cat Pixel Sprite Sheet_59
+  - first:
+      213: -4725834996887059274
+    second: Cyber Cat Pixel Sprite Sheet_60
+  - first:
+      213: -5882792920948676345
+    second: Cyber Cat Pixel Sprite Sheet_61
+  - first:
+      213: 6992806835657467916
+    second: Cyber Cat Pixel Sprite Sheet_62
+  - first:
+      213: -3857037523561070662
+    second: Cyber Cat Pixel Sprite Sheet_63
+  - first:
+      213: -6241016604022795055
+    second: Cyber Cat Pixel Sprite Sheet_64
+  - first:
+      213: 6077151045261046959
+    second: Cyber Cat Pixel Sprite Sheet_65
+  - first:
+      213: 2769042567318375082
+    second: Cyber Cat Pixel Sprite Sheet_66
+  - first:
+      213: 2055593630995919348
+    second: Cyber Cat Pixel Sprite Sheet_67
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cat-super-dash_1
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 305
+        width: 256
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3b239635247126b0800000000000000
+      internalID: -5322845581396989122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-super-dash_2
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 305
+        width: 222
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afdd0011edd89284098c2b8017803efb
+      internalID: -771071603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-super-dash_0
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 305
+        width: 253
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345eb1f7408247e46bc09d265e7aac24
+      internalID: -1145402984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9dd9c934ad81350459192c75824830f9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1536.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      cat-super-dash_0: -1145402984
+      cat-super-dash_1: -5322845581396989122
+      cat-super-dash_2: -771071603
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

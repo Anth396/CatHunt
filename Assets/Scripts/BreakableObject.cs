@@ -10,11 +10,6 @@ public class BreakableObject : MonoBehaviour
         CheckBreak(other.gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        CheckBreak(collision.gameObject);
-    }
-
     private void CheckBreak(GameObject hitObject)
     {
         if (isBroken) return;

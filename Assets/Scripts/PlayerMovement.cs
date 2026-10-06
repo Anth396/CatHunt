@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem; 
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -20,6 +19,17 @@ public class PlayerMovement : MonoBehaviour
     private float dashDirection = 1f;
     private bool isBouncing = false;
     public float bounceMinSpeed = 5f;
+
+    [Header("Super Dash Settings")]
+    public float superHoldTime = 0.5f;      // hold Left Shift this long, then release
+    public float superDashSpeed = 40f;
+    public float superDashDuration = 0.7f;
+    private bool isHolding = false;
+    private float holdTimer = 0f;
+    private float holdStartTime = 0f;
+    private ActionManager input;
+    private bool isSuperDashing = false;
+    private float currentDashSpeed = 25f;
 
     // Public property so BreakableObject can read if player is dashing
     public bool IsDashing => isDashing;
@@ -53,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
     const string ANIM_SKID = "cat-skid";
     const string ANIM_DASH = "cat-dash";
     const string ANIM_SLASH = "cat-slash";
+    const string ANIM_HOLD = "cat-hold";
+    const string ANIM_SUPER_DASH = "cat-super-dash";
 
     // States
     public bool onGroundState = false;
@@ -73,11 +85,77 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         catBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         catBody.gravityScale = 0f; // Handled strictly by code
+
+        // Input comes from ActionManager (CatActions); subscribe to its one-shot events
+        input = ActionManager.Instance;
+        if (input == null)
+        {
+            Debug.LogError("PlayerMovement: no ActionManager in the scene, the cat cannot be controlled.", this);
+            return;
+        }
+        input.JumpPressed += HandleJumpPressed;
+        input.SlashPressed += HandleSlashPressed;
+        input.DashPressed += HandleDashPressed;
+        input.DashReleased += HandleDashReleased;
+    }
+
+    void OnDestroy()
+    {
+        if (input == null) return;
+        input.JumpPressed -= HandleJumpPressed;
+        input.SlashPressed -= HandleSlashPressed;
+        input.DashPressed -= HandleDashPressed;
+        input.DashReleased -= HandleDashReleased;
+    }
+
+    // ---------------------------------------------------------- input events
+
+    private void HandleJumpPressed()
+    {
+        if (Time.timeScale == 0f) return;
+        if (!onGroundState || isBouncing) return;
+
+        jumpRequest = true;
+        EndSlash();         // jumping interrupts the slash
+        isHolding = false;  // ...and cancels a dash charge
+        holdTimer = 0f;
+    }
+
+    // Slash does not touch velocity, so the cat keeps moving while slashing
+    private void HandleSlashPressed()
+    {
+        if (Time.timeScale == 0f) return;
+        if (isSlashing || isDashing || isHolding || slashCooldownTimer > 0f) return;
+
+        isSlashing = true;
+        slashTimer = slashDuration;
+    }
+
+    // Dash: hold to charge, release to dash. Held >= superHoldTime -> super dash, shorter -> normal dash.
+    private void HandleDashPressed()
+    {
+        if (Time.timeScale == 0f) return;
+        if (isHolding || !onGroundState || isDashing || dashCooldownTimer > 0f || isBouncing) return;
+
+        EndSlash();
+        isHolding = true;
+        holdStartTime = Time.time;
+        holdTimer = 0f;
+    }
+
+    private void HandleDashReleased()
+    {
+        if (!isHolding) return;
+
+        bool super = Time.time - holdStartTime >= superHoldTime;
+        isHolding = false;
+        holdTimer = 0f;
+        StartDash(super);
     }
 
     void Update()
     {
-        if (Keyboard.current == null) return;
+        if (input == null) return;
 
         if (dashCooldownTimer > 0f)
         {
@@ -94,33 +172,27 @@ public class PlayerMovement : MonoBehaviour
             if (slashTimer <= 0f) EndSlash();
         }
 
-        float moveDir = 0f;
-        if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) moveDir = 1f;
-        if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) moveDir = -1f;
+        float moveDir = input.Move;
 
         if (onGroundState && !isDashing && !isBouncing)
         {
-            horizontalInput = moveDir;
+            horizontalInput = isHolding ? 0f : moveDir;     // charging a dash brakes the cat (facing can still change)
             if (horizontalInput > 0) { catSprite.flipX = false; }
             else if (horizontalInput < 0) { catSprite.flipX = true; }
         }
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && onGroundState && !isBouncing)
+        if (isHolding)
         {
-            jumpRequest = true;
-            EndSlash();     // jumping interrupts the slash
-        }
-
-        // Slash (J): does not touch velocity, so the cat keeps moving while slashing
-        if (Keyboard.current.jKey.wasPressedThisFrame && !isSlashing && !isDashing && slashCooldownTimer <= 0f)
-        {
-            isSlashing = true;
-            slashTimer = slashDuration;
-        }
-
-        if (Keyboard.current.leftShiftKey.wasPressedThisFrame && onGroundState && !isDashing && dashCooldownTimer <= 0f && !isBouncing)
-        {
-            StartDash();
+            holdTimer = Time.time - holdStartTime;
+            if (!onGroundState || isBouncing)
+            {
+                isHolding = false;      // walked off a ledge / bounced: charge is lost
+                holdTimer = 0f;
+            }
+            else if (!input.DashHeld)
+            {
+                HandleDashReleased();   // safety: key already released
+            }
         }
 
         UpdateAnimationState();
@@ -134,11 +206,13 @@ public class PlayerMovement : MonoBehaviour
         slashCooldownTimer = slashCooldown;
     }
 
-    private void StartDash()
+    private void StartDash(bool super)
     {
         EndSlash();     // dashing interrupts the slash
         isDashing = true;
-        dashTimer = dashDuration;
+        isSuperDashing = super;
+        currentDashSpeed = super ? superDashSpeed : dashSpeed;
+        dashTimer = super ? superDashDuration : dashDuration;
         dashCooldownTimer = dashCooldown;
         dashDirection = catSprite.flipX ? -1f : 1f;
 
@@ -185,7 +259,7 @@ public class PlayerMovement : MonoBehaviour
         if (isDashing && !jumpRequest)
         {
             dashTimer -= Time.fixedDeltaTime;
-            currentVel.x = dashDirection * dashSpeed;
+            currentVel.x = dashDirection * currentDashSpeed;
 
             if (dashTimer <= 0f)
             {
@@ -286,7 +360,11 @@ public class PlayerMovement : MonoBehaviour
 
             if (isDashing)
             {
-                newState = ANIM_DASH;
+                newState = isSuperDashing ? ANIM_SUPER_DASH : ANIM_DASH;
+            }
+            else if (isHolding)
+            {
+                newState = ANIM_HOLD;
             }
             else if (isSkidding)
             {
@@ -350,6 +428,9 @@ public class PlayerMovement : MonoBehaviour
         isSlashing = false;
         slashTimer = 0f;
         slashCooldownTimer = 0f;
+        isHolding = false;
+        holdTimer = 0f;
+        isSuperDashing = false;
         isDashing = false;
         isBouncing = false;
         dashTimer = 0f;
