@@ -179,34 +179,12 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""cfc72114-a952-416d-be15-0c0b8d34121d"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""31efa24a-7b17-47fc-b5f5-9b869eea1ddb"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
                     ""action"": ""jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1f68cc46-4c24-4a10-931a-bc93aab6bfb8"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -223,28 +201,6 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f13712c8-e276-47ad-b112-99d10634b423"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""dash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b9b4d503-644d-4dd0-a711-5cac20a46033"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""superdash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""e504307e-7bc9-40e7-b3bb-f056907f1652"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
@@ -256,8 +212,8 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""420301a9-4a87-4e15-8b80-2e096c7bf480"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""87df466e-2a6b-4c53-a1ab-18af0cd21ae5"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
@@ -267,8 +223,8 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""87df466e-2a6b-4c53-a1ab-18af0cd21ae5"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""id"": ""a006387f-c90d-4139-9b58-713f04e3eedc"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",

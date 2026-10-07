@@ -345,7 +345,7 @@ public partial class EnemyMovement : MonoBehaviour
         }
     }
 
-    // Called by GameManager on restart
+    // Called by EnemyManager on restart / new round
     public void ResetState()
     {
         // Back to the scene start pose

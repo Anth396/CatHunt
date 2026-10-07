@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Events")]
+    public UnityEvent preyCaught;           // slashed a rat
+    public UnityEvent restartRequested;     // restart button pressed (RestartButtonCallback)
+
     [Header("Movement Speeds")]
     public float moveSpeed = 10f;
     public float maxSpeed = 15f;
@@ -432,7 +437,7 @@ public class PlayerMovement : MonoBehaviour
         if (isSlashing && col.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Prey slashed!");
-            GameManager.Instance.PreyCaught();
+            preyCaught?.Invoke();
         }
     }
 
@@ -487,6 +492,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void RestartButtonCallback(int input)
     {
-        GameManager.Instance.RestartButtonCallback(input);
+        restartRequested?.Invoke();
     }
 }

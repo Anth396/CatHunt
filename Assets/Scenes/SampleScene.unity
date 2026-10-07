@@ -302,7 +302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ddf954ff0c00db429b3b7310817491c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CatchThePrey
-  enemyLocation: {fileID: 0}
+  enemyLocation: {fileID: 298519840}
+  player: {fileID: 31202546}
+  preyCaught:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &31202544
 Animator:
   serializedVersion: 7
@@ -434,6 +438,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b075242f07f4a8c428fc752a7da43267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  preyCaught:
+    m_PersistentCalls:
+      m_Calls: []
+  restartRequested:
+    m_PersistentCalls:
+      m_Calls: []
   moveSpeed: 10
   maxSpeed: 10
   jumpForce: 15
@@ -1218,7 +1228,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 199, y: -31.557}
+  m_AnchoredPosition: {x: 199, y: -31.557007}
   m_SizeDelta: {x: 324.2323, y: 38.166412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495934637
@@ -2631,6 +2641,8 @@ GameObject:
   - component: {fileID: 1491193451}
   - component: {fileID: 1491193450}
   - component: {fileID: 1491193452}
+  - component: {fileID: 1491193454}
+  - component: {fileID: 1491193453}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2650,12 +2662,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 418b9fc71c31daf4aa9d7421644cab1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  timerText: {fileID: 495934637}
-  scoreText: {fileID: 1780781810}
-  popUpPanel: {fileID: 406066019}
-  finalScoreText: {fileID: 453643989}
-  enemies: {fileID: 298519837}
-  playerTransform: {fileID: 31202539}
+  gameStart:
+    m_PersistentCalls:
+      m_Calls: []
+  gameRestart:
+    m_PersistentCalls:
+      m_Calls: []
+  scoreChange:
+    m_PersistentCalls:
+      m_Calls: []
+  gameOver:
+    m_PersistentCalls:
+      m_Calls: []
+  timeChange:
+    m_PersistentCalls:
+      m_Calls: []
+  roundReset:
+    m_PersistentCalls:
+      m_Calls: []
   playerBody: {fileID: 31202542}
   startTimeSeconds: 120
   scorePerCatch: 100
@@ -2705,6 +2729,36 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   jumpHoldTime: 0.25
+--- !u!114 &1491193453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491193449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd500984f2b6363448655bf6a2bab783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
+  enemies:
+  - {fileID: 298519844}
+--- !u!114 &1491193454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491193449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 308ba60b3d0a45a4a9d816119f1e5483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HUDManager
+  timerText: {fileID: 495934637}
+  scoreText: {fileID: 1780781810}
+  popUpPanel: {fileID: 0}
+  finalScoreText: {fileID: 0}
 --- !u!1 &1681400661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,85 +3277,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2011087003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2011087006}
-  - component: {fileID: 2011087005}
-  - component: {fileID: 2011087004}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2011087004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011087003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.InputSystemUIInputModule
-  m_SendPointerHoverToParent: 1
-  m_MoveRepeatDelay: 0.5
-  m_MoveRepeatRate: 0.1
-  m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: c7e34051ddcf01f438801b2e5892599e, type: 3}
-  m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: 0}
-  m_SubmitAction: {fileID: 0}
-  m_CancelAction: {fileID: 0}
-  m_LeftClickAction: {fileID: 0}
-  m_MiddleClickAction: {fileID: 0}
-  m_RightClickAction: {fileID: 0}
-  m_ScrollWheelAction: {fileID: 0}
-  m_TrackedDevicePositionAction: {fileID: 0}
-  m_TrackedDeviceOrientationAction: {fileID: 0}
-  m_DeselectOnBackgroundClick: 1
-  m_PointerBehavior: 0
-  m_CursorLockBehavior: 0
-  m_ScrollDeltaPerTick: 6
---- !u!114 &2011087005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011087003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &2011087006
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011087003}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056416900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,7 +3339,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3445,7 +3420,6 @@ SceneRoots:
   - {fileID: 31202539}
   - {fileID: 1954609448}
   - {fileID: 1764135091}
-  - {fileID: 2011087006}
   - {fileID: 1491193451}
   - {fileID: 1367547075}
   - {fileID: 1008918108}
