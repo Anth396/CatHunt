@@ -25,10 +25,8 @@ public class CatchThePrey : MonoBehaviour
         // Check if the object we touched is the enemy
         if (other.gameObject.CompareTag("Enemy") || other.transform == enemyLocation)
         {
-            Debug.Log("Enemy caught! Timer stopped at: " + GameManager.Instance.timer);
-            
-            // Tell GameManager to handle the win state/pop-up
-            GameManager.Instance.StopGameAndShowWin(GameManager.Instance.timer);
+            // Tell GameManager: +score, then player and rats reset
+            GameManager.Instance.PreyCaught();
         }
     }
 }

@@ -257,18 +257,7 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""420301a9-4a87-4e15-8b80-2e096c7bf480"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""slash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""87df466e-2a6b-4c53-a1ab-18af0cd21ae5"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
@@ -278,8 +267,8 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""97c85a33-ba9d-4cd6-b4a4-ea94d2935f0f"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""87df466e-2a6b-4c53-a1ab-18af0cd21ae5"",
+                    ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",

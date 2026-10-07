@@ -10,16 +10,23 @@ public class GameManager : MonoBehaviour
 
     [Header("UI & References")]
     public TextMeshProUGUI timerText;
+    public TextMeshProUGUI scoreText;
     public GameObject popUpPanel;
     public TextMeshProUGUI finalScoreText;
     public GameObject enemies;
     public Transform playerTransform;
     public Rigidbody2D playerBody;
 
-    [Header("Timer Settings")]
-    [System.NonSerialized]
-    public int timer = 0;
-    private bool countTimerState = true;
+    [Header("Game Settings")]
+    public int startTimeSeconds = 120;      // countdown start (2 minutes)
+    public int scorePerCatch = 100;
+
+    // Time left on the countdown (seconds) and current score
+    [System.NonSerialized] public int timeLeft = 0;
+    [System.NonSerialized] public int score = 0;
+
+    private bool gameRunning = false;
+    private bool resettingAfterCatch = false;
     private Coroutine timerRoutine;
 
     // True while the player is in the slash state (needed to catch the prey)
@@ -47,8 +54,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 30;
+        score = 0;
+        UpdateScoreText();
         StartTimer();
     }
+
+    // ---------------------------------------------------------------- timer
 
     public void StartTimer()
     {
@@ -56,18 +67,23 @@ public class GameManager : MonoBehaviour
         {
             StopCoroutine(timerRoutine);
         }
-        timer = 0;
-        countTimerState = true;
+        timeLeft = startTimeSeconds;
+        gameRunning = true;
         timerRoutine = StartCoroutine(TimerTick());
     }
 
     private IEnumerator TimerTick()
     {
-        while (countTimerState)
+        while (gameRunning)
         {
             UpdateTimerText();
+            if (timeLeft <= 0)
+            {
+                TimeUp();
+                yield break;
+            }
             yield return new WaitForSeconds(1f);
-            timer++;
+            timeLeft--;
         }
     }
 
@@ -75,25 +91,53 @@ public class GameManager : MonoBehaviour
     {
         if (timerText != null)
         {
-            int minutes = timer / 60;
-            int seconds = timer % 60;
-            timerText.text = string.Format("Timer - {0:00}:{1:00}", minutes, seconds);
+            int t = Mathf.Max(timeLeft, 0);
+            timerText.text = string.Format("Timer - {0:00}:{1:00}", t / 60, t % 60);
         }
     }
 
-    public void StopGameAndShowWin(int finalTime)
+    private void UpdateScoreText()
     {
-        if (!countTimerState) return; // already won
-        countTimerState = false;
+        if (scoreText != null)
+        {
+            scoreText.text = "Score - " + score;
+        }
+    }
+
+    // ---------------------------------------------------------------- catching / game over
+
+    // Called when the slashing cat touches a rat: +score, then the cat and the rats are reset
+    public void PreyCaught()
+    {
+        if (!gameRunning || resettingAfterCatch) return;
+
+        score += scorePerCatch;
+        UpdateScoreText();
+        Debug.Log("Prey caught! Score: " + score);
+
+        // Reset after the current physics callback has finished
+        resettingAfterCatch = true;
+        StartCoroutine(ResetAfterCatch());
+    }
+
+    private IEnumerator ResetAfterCatch()
+    {
+        yield return null;
+        ResetPlayerAndRats();
+        resettingAfterCatch = false;
+    }
+
+    private void TimeUp()
+    {
+        gameRunning = false;
         Time.timeScale = 0.0f;
 
-        if (popUpPanel != null && finalScoreText != null)
+        if (popUpPanel != null)
         {
-            int minutes = finalTime / 60;
-            int seconds = finalTime % 60;
-            string finalTimeStr = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-            finalScoreText.text = "Prey Caught!\nYour Time: " + finalTimeStr;
+            if (finalScoreText != null)
+            {
+                finalScoreText.text = "Time's Up!\nYour Score: " + score;
+            }
             popUpPanel.SetActive(true);
         }
     }
@@ -106,9 +150,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    private void ResetGame()
+    // Player + rats only (what happens after each catch)
+    private void ResetPlayerAndRats()
     {
-        // 1. Reset the player (pose, velocity, dash / slash / hold state)
         if (playerBody != null)
         {
             PlayerMovement player = playerBody.GetComponent<PlayerMovement>();
@@ -122,25 +166,33 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 2. Hide pop-up panel
+        foreach (EnemyMovement enemyMove in FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None))
+        {
+            enemyMove.ResetState();
+        }
+    }
+
+    // Full restart: score, timer, popup, player, rats and breakable objects
+    private void ResetGame()
+    {
+        StopAllCoroutines();
+        resettingAfterCatch = false;
+
+        score = 0;
+        UpdateScoreText();
+
         if (popUpPanel != null)
         {
             popUpPanel.SetActive(false);
         }
 
-        // 3. Reset every rat (pose, velocity, AI state)
-        foreach (EnemyMovement enemyMove in FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None))
-        {
-            enemyMove.ResetState();
-        }
+        ResetPlayerAndRats();
 
-        // 4. Restore every broken object
         foreach (BreakableObject breakable in FindObjectsByType<BreakableObject>(FindObjectsSortMode.None))
         {
             breakable.ResetState();
         }
 
-        // 5. Restart timer
         StartTimer();
     }
 }
