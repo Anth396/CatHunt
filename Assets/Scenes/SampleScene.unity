@@ -163,7 +163,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28418960}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 2de872a605c43294e860bb694e4580b8, type: 2}
@@ -522,9 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b075242f07f4a8c428fc752a7da43267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  preyCaught:
-    m_PersistentCalls:
-      m_Calls: []
   restartRequested:
     m_PersistentCalls:
       m_Calls: []
@@ -535,7 +532,6 @@ MonoBehaviour:
   dashDuration: 0.5
   dashCooldown: 1.5
   bounceMinSpeed: 5
-  superHoldTime: 0.5
   superDashSpeed: 40
   superDashDuration: 0.7
   slashDuration: 0.35
@@ -1453,7 +1449,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483013281}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -2341,9 +2337,6 @@ MonoBehaviour:
   jump:
     m_PersistentCalls:
       m_Calls: []
-  jumpHold:
-    m_PersistentCalls:
-      m_Calls: []
   moveCheck:
     m_PersistentCalls:
       m_Calls: []
@@ -2353,10 +2346,12 @@ MonoBehaviour:
   dashReleased:
     m_PersistentCalls:
       m_Calls: []
+  superDashReady:
+    m_PersistentCalls:
+      m_Calls: []
   slash:
     m_PersistentCalls:
       m_Calls: []
-  jumpHoldTime: 0.25
 --- !u!114 &1491193453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2705,7 +2700,6 @@ GameObject:
   - component: {fileID: 1685382898}
   - component: {fileID: 1685382897}
   - component: {fileID: 1685382905}
-  - component: {fileID: 1685382899}
   - component: {fileID: 1685382906}
   m_Layer: 0
   m_Name: DropObject
@@ -2790,32 +2784,6 @@ Transform:
   - {fileID: 28418961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1685382899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685382896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641a3b1fe8cf7a34a8bd11e5b2c11e47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectCrash
-  bottomEdge: {fileID: 0}
-  groundTag: Ground
-  scoreValue: 50
-  minImpactSpeed: 0.5
-  disableCollidersOnCrash: 1
-  crashStateName: object-crash
-  crashAudio: {fileID: 0}
-  body: {fileID: 0}
-  animator: {fileID: 0}
-  edges: []
-  crashed: 0
-  initialPosition: {x: 0, y: 0, z: 0}
-  initialRotation: {x: 0, y: 0, z: 0, w: 0}
-  initialBodyType: 0
 --- !u!95 &1685382905
 Animator:
   serializedVersion: 7
