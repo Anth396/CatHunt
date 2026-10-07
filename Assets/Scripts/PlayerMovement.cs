@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isHolding = false;
     private float holdTimer = 0f;
     private float holdStartTime = 0f;
+    private bool readySoundPlayed = false;
     private ActionManager input;
     private int moveInput = 0;      // -1 / 0 / 1 from ActionManager.moveCheck
     private bool isSuperDashing = false;
@@ -86,7 +87,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D catBody;
     private SpriteRenderer catSprite;
 
-    public AudioSource catAudio;
+    public AudioSource catDash;
+    public AudioSource catReady;
 
     void Start()
     {
@@ -166,6 +168,7 @@ public class PlayerMovement : MonoBehaviour
         isHolding = true;
         holdStartTime = Time.time;
         holdTimer = 0f;
+        readySoundPlayed = false;
     }
 
     private void HandleDashReleased()
@@ -209,6 +212,17 @@ public class PlayerMovement : MonoBehaviour
         if (isHolding)
         {
             holdTimer = Time.time - holdStartTime;
+
+            // Charged enough for a super dash: play the "ready" sound once
+            if (!readySoundPlayed && holdTimer >= superHoldTime)
+            {
+                readySoundPlayed = true;
+                if (catReady != null && catReady.clip != null)
+                {
+                    catReady.PlayOneShot(catReady.clip);
+                }
+            }
+
             if (!onGroundState || isBouncing)
             {
                 isHolding = false;      // walked off a ledge / bounced: charge is lost
@@ -241,9 +255,9 @@ public class PlayerMovement : MonoBehaviour
         dashCooldownTimer = dashCooldown;
         dashDirection = catSprite.flipX ? -1f : 1f;
 
-        if (catAudio != null && catAudio.clip != null)
+        if (catDash != null && catDash.clip != null)
         {
-            catAudio.PlayOneShot(catAudio.clip);
+            catDash.PlayOneShot(catDash.clip);
         }
     }
 
@@ -463,7 +477,7 @@ public class PlayerMovement : MonoBehaviour
         jumpRequest = false;
         horizontalInput = 0f;
         airMomentumX = 0f;
-        onGroundState = true;
+        onGroundState = false;
         currentAnimationState = null;
 
         // Back to the scene start pose
