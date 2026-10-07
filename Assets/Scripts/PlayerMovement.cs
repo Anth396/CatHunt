@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,9 +27,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isHolding = false;
     private float holdTimer = 0f;
     private float holdStartTime = 0f;
-
-    public InputActionAsset inputActions;
-    private InputAction moveAction, attackAction, jumpAction, sprintAction;
+    private ActionManager input;
+    private int moveInput = 0;      // -1 / 0 / 1 from ActionManager.moveCheck
     private bool isSuperDashing = false;
     private float currentDashSpeed = 25f;
 
@@ -100,9 +98,37 @@ public class PlayerMovement : MonoBehaviour
         initialScale = transform.localScale;
         initialFlipX = catSprite != null && catSprite.flipX;
 
+        // Input comes from ActionManager (CatActions); subscribe to its one-shot events
+        input = ActionManager.Instance;
+        if (input == null)
+        {
+            Debug.LogError("PlayerMovement: no ActionManager in the scene, the cat cannot be controlled.", this);
+            return;
+        }
+        moveInput = input.Move;
+        input.jump.AddListener(HandleJumpPressed);
+        input.slash.AddListener(HandleSlashPressed);
+        input.dashPressed.AddListener(HandleDashPressed);
+        input.dashReleased.AddListener(HandleDashReleased);
+        input.moveCheck.AddListener(HandleMoveCheck);
     }
 
-    // ---------------------------------------------------------- input actions (called from Update)
+    void OnDestroy()
+    {
+        if (input == null) return;
+        input.jump.RemoveListener(HandleJumpPressed);
+        input.slash.RemoveListener(HandleSlashPressed);
+        input.dashPressed.RemoveListener(HandleDashPressed);
+        input.dashReleased.RemoveListener(HandleDashReleased);
+        input.moveCheck.RemoveListener(HandleMoveCheck);
+    }
+
+    private void HandleMoveCheck(int direction)
+    {
+        moveInput = direction;
+    }
+
+    // ---------------------------------------------------------- input events
 
     private void HandleJumpPressed()
     {
@@ -147,50 +173,9 @@ public class PlayerMovement : MonoBehaviour
         StartDash(super);
     }
 
-    // ---------------------------------------------------------- input system (Player action map)
-
-    void OnEnable()
-    {
-        InputActionAsset asset = inputActions != null ? inputActions : InputSystem.actions;
-        if (asset == null)
-        {
-            Debug.LogError("PlayerMovement: assign the InputSystem_Actions asset to 'Input Actions'.", this);
-            return;
-        }
-
-        InputActionMap map = asset.FindActionMap("Player", true);
-        moveAction = map.FindAction("Move", true);
-        attackAction = map.FindAction("Attack", true);
-        jumpAction = map.FindAction("Jump", true);
-        sprintAction = map.FindAction("Sprint", true);
-
-        jumpAction.started += OnJumpStarted;
-        attackAction.started += OnAttackStarted;
-        sprintAction.started += OnSprintStarted;
-        sprintAction.canceled += OnSprintCanceled;
-        map.Enable();
-    }
-
-    void OnDisable()
-    {
-        if (jumpAction == null) return;
-
-        jumpAction.started -= OnJumpStarted;
-        attackAction.started -= OnAttackStarted;
-        sprintAction.started -= OnSprintStarted;
-        sprintAction.canceled -= OnSprintCanceled;
-        moveAction = null;
-        jumpAction = null;
-    }
-
-    private void OnJumpStarted(InputAction.CallbackContext ctx) { HandleJumpPressed(); }
-    private void OnAttackStarted(InputAction.CallbackContext ctx) { HandleSlashPressed(); }
-    private void OnSprintStarted(InputAction.CallbackContext ctx) { HandleDashPressed(); }
-    private void OnSprintCanceled(InputAction.CallbackContext ctx) { HandleDashReleased(); }
-
     void Update()
     {
-        if (moveAction == null) return;
+        if (input == null) return;
 
         if (dashCooldownTimer > 0f)
         {
@@ -207,9 +192,7 @@ public class PlayerMovement : MonoBehaviour
             if (slashTimer <= 0f) EndSlash();
         }
 
-        // Move (A / D, arrows): only the horizontal part of the Vector2 matters in this 2D platformer
-        float moveX = moveAction.ReadValue<Vector2>().x;
-        float moveDir = moveX > 0.1f ? 1f : (moveX < -0.1f ? -1f : 0f);
+        float moveDir = moveInput;
 
         if (onGroundState && !isDashing && !isBouncing)
         {
@@ -226,7 +209,7 @@ public class PlayerMovement : MonoBehaviour
                 isHolding = false;      // walked off a ledge / bounced: charge is lost
                 holdTimer = 0f;
             }
-            else if (!sprintAction.IsPressed())
+            else if (!input.DashHeld)
             {
                 HandleDashReleased();   // safety: key already released
             }
