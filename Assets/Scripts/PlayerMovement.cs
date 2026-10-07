@@ -26,13 +26,13 @@ public class PlayerMovement : MonoBehaviour
     public float bounceMinSpeed = 5f;
 
     [Header("Super Dash Settings")]
-    public float superHoldTime = 0.5f;      // hold Left Shift this long, then release
+    // Hold time for the super dash is the Hold(duration) on the "super-dash" binding in CatActions
     public float superDashSpeed = 40f;
     public float superDashDuration = 0.7f;
     private bool isHolding = false;
     private float holdTimer = 0f;
     private float holdStartTime = 0f;
-    private bool readySoundPlayed = false;
+    private bool superReady = false;       // the dash has been held long enough for a super dash
     private ActionManager input;
     private int moveInput = 0;      // -1 / 0 / 1 from ActionManager.moveCheck
     private bool isSuperDashing = false;
@@ -117,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
         input.slash.AddListener(HandleSlashPressed);
         input.dashPressed.AddListener(HandleDashPressed);
         input.dashReleased.AddListener(HandleDashReleased);
+        input.superDashReady.AddListener(HandleSuperDashReady);
         input.moveCheck.AddListener(HandleMoveCheck);
     }
 
@@ -127,7 +128,20 @@ public class PlayerMovement : MonoBehaviour
         input.slash.RemoveListener(HandleSlashPressed);
         input.dashPressed.RemoveListener(HandleDashPressed);
         input.dashReleased.RemoveListener(HandleDashReleased);
+        input.superDashReady.RemoveListener(HandleSuperDashReady);
         input.moveCheck.RemoveListener(HandleMoveCheck);
+    }
+
+    // The dash has been held long enough: release now performs a super dash
+    private void HandleSuperDashReady()
+    {
+        if (!isHolding || superReady) return;
+
+        superReady = true;
+        if (catReady != null && catReady.clip != null)
+        {
+            catReady.PlayOneShot(catReady.clip);
+        }
     }
 
     private void HandleMoveCheck(int direction)
@@ -168,14 +182,14 @@ public class PlayerMovement : MonoBehaviour
         isHolding = true;
         holdStartTime = Time.time;
         holdTimer = 0f;
-        readySoundPlayed = false;
+        superReady = false;
     }
 
     private void HandleDashReleased()
     {
         if (!isHolding) return;
 
-        bool super = Time.time - holdStartTime >= superHoldTime;
+        bool super = superReady;    // set by the "super-dash" Hold interaction
         isHolding = false;
         holdTimer = 0f;
         StartDash(super);
@@ -212,16 +226,6 @@ public class PlayerMovement : MonoBehaviour
         if (isHolding)
         {
             holdTimer = Time.time - holdStartTime;
-
-            // Charged enough for a super dash: play the "ready" sound once
-            if (!readySoundPlayed && holdTimer >= superHoldTime)
-            {
-                readySoundPlayed = true;
-                if (catReady != null && catReady.clip != null)
-                {
-                    catReady.PlayOneShot(catReady.clip);
-                }
-            }
 
             if (!onGroundState || isBouncing)
             {

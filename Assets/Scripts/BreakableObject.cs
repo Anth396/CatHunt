@@ -5,6 +5,7 @@ public class BreakableObject : MonoBehaviour
 {
     private bool isBroken = false;
     public AudioSource breakableAudio;
+    public int scoreValue = 50;     // points added when this breaks
 
     // Everything switched off when the object breaks, so ResetState can switch it back on
     private readonly List<Collider2D> brokenColliders = new List<Collider2D>();
@@ -33,6 +34,10 @@ public class BreakableObject : MonoBehaviour
     {
         isBroken = true;
         Debug.Log("Breakable object broken by dash!");
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.AddScore(scoreValue);
+        }
         if (breakableAudio != null && breakableAudio.clip != null)
         {
             breakableAudio.PlayOneShot(breakableAudio.clip);

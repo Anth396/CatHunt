@@ -12,23 +12,17 @@ public class ActionManager : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent jump;             // jump button pressed
-    public UnityEvent jumpHold;         // jump button held for jumpHoldTime
     public UnityEvent<int> moveCheck;   // -1 left, 0 stopped, 1 right (fires when it changes)
     public UnityEvent dashPressed;      // dash button pressed
     public UnityEvent dashReleased;     // dash button released
+    public UnityEvent superDashReady;   // dash held long enough (Hold interaction on "super-dash")
     public UnityEvent slash;            // slash button pressed
-
-    [Header("Settings")]
-    public float jumpHoldTime = 0.25f;
 
     // Latest state, for scripts that prefer polling
     public int Move { get; private set; }
     public bool DashHeld { get; private set; }
-    public bool JumpHeld { get; private set; }
 
     private CatActions catActions;
-    private float jumpPressTime;
-    private bool jumpHoldFired;
 
     void Awake()
     {
@@ -49,9 +43,9 @@ public class ActionManager : MonoBehaviour
         g.move.performed += OnMoveAction;
         g.move.canceled += OnMoveAction;
         g.jump.started += OnJumpAction;
-        g.jump.canceled += OnJumpAction;
         g.dash.started += OnDashAction;
         g.dash.canceled += OnDashAction;
+        g.superdash.performed += OnSuperDashAction;
         g.slash.started += OnSlashAction;
         g.Enable();
     }
@@ -65,30 +59,19 @@ public class ActionManager : MonoBehaviour
         g.move.performed -= OnMoveAction;
         g.move.canceled -= OnMoveAction;
         g.jump.started -= OnJumpAction;
-        g.jump.canceled -= OnJumpAction;
         g.dash.started -= OnDashAction;
         g.dash.canceled -= OnDashAction;
+        g.superdash.performed -= OnSuperDashAction;
         g.slash.started -= OnSlashAction;
 
         Move = 0;
         DashHeld = false;
-        JumpHeld = false;
     }
 
     void OnDestroy()
     {
         if (Instance == this) Instance = null;
         catActions?.Dispose();
-    }
-
-    void Update()
-    {
-        // jumpHold: fires once per press, when the button has stayed down long enough
-        if (JumpHeld && !jumpHoldFired && Time.unscaledTime - jumpPressTime >= jumpHoldTime)
-        {
-            jumpHoldFired = true;
-            jumpHold?.Invoke();
-        }
     }
 
     // move: performed on press / change, canceled on release
@@ -102,20 +85,10 @@ public class ActionManager : MonoBehaviour
         moveCheck?.Invoke(value);
     }
 
-    // jump: started = pressed, canceled = released
+    // jump: fires when the button is pressed
     private void OnJumpAction(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            JumpHeld = true;
-            jumpHoldFired = false;
-            jumpPressTime = Time.unscaledTime;
-            jump?.Invoke();
-        }
-        else if (context.canceled)
-        {
-            JumpHeld = false;
-        }
+        jump?.Invoke();
     }
 
     // dash: started = pressed, canceled = released
@@ -131,6 +104,12 @@ public class ActionManager : MonoBehaviour
             DashHeld = false;
             dashReleased?.Invoke();
         }
+    }
+
+    // super-dash: the Hold interaction fires "performed" once the key has been held long enough
+    private void OnSuperDashAction(InputAction.CallbackContext context)
+    {
+        superDashReady?.Invoke();
     }
 
     private void OnSlashAction(InputAction.CallbackContext context)

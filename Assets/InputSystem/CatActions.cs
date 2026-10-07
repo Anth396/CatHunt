@@ -123,19 +123,19 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""priority"": 0
                 },
                 {
-                    ""name"": ""superdash"",
-                    ""type"": ""Button"",
-                    ""id"": ""3e862ded-5e07-4fdb-bc2a-c4376ec85b6b"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true,
-                    ""priority"": 0
-                },
-                {
                     ""name"": ""slash"",
                     ""type"": ""Button"",
                     ""id"": ""643eb057-91a2-42d6-a8f2-db872a7ffb4b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""super-dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""5dffa077-935c-483d-83cf-5fa6db7bc6d9"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -201,17 +201,6 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e504307e-7bc9-40e7-b3bb-f056907f1652"",
-                    ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard"",
-                    ""action"": ""superdash"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""87df466e-2a6b-4c53-a1ab-18af0cd21ae5"",
                     ""path"": ""<Keyboard>/j"",
                     ""interactions"": """",
@@ -229,6 +218,17 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
                     ""action"": ""slash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68523fc5-0b25-4edb-a17c-50465f197a75"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": ""Hold(duration=0.5)"",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""super-dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -259,8 +259,8 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         m_gameplay_move = m_gameplay.FindAction("move", throwIfNotFound: true);
         m_gameplay_jump = m_gameplay.FindAction("jump", throwIfNotFound: true);
         m_gameplay_dash = m_gameplay.FindAction("dash", throwIfNotFound: true);
-        m_gameplay_superdash = m_gameplay.FindAction("superdash", throwIfNotFound: true);
         m_gameplay_slash = m_gameplay.FindAction("slash", throwIfNotFound: true);
+        m_gameplay_superdash = m_gameplay.FindAction("super-dash", throwIfNotFound: true);
     }
 
     ~@CatActions()
@@ -344,8 +344,8 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_move;
     private readonly InputAction m_gameplay_jump;
     private readonly InputAction m_gameplay_dash;
-    private readonly InputAction m_gameplay_superdash;
     private readonly InputAction m_gameplay_slash;
+    private readonly InputAction m_gameplay_superdash;
     /// <summary>
     /// Provides access to input actions defined in input action map "gameplay".
     /// </summary>
@@ -370,13 +370,13 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @dash => m_Wrapper.m_gameplay_dash;
         /// <summary>
-        /// Provides access to the underlying input action "gameplay/superdash".
-        /// </summary>
-        public InputAction @superdash => m_Wrapper.m_gameplay_superdash;
-        /// <summary>
         /// Provides access to the underlying input action "gameplay/slash".
         /// </summary>
         public InputAction @slash => m_Wrapper.m_gameplay_slash;
+        /// <summary>
+        /// Provides access to the underlying input action "gameplay/superdash".
+        /// </summary>
+        public InputAction @superdash => m_Wrapper.m_gameplay_superdash;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -412,12 +412,12 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
             @dash.started += instance.OnDash;
             @dash.performed += instance.OnDash;
             @dash.canceled += instance.OnDash;
-            @superdash.started += instance.OnSuperdash;
-            @superdash.performed += instance.OnSuperdash;
-            @superdash.canceled += instance.OnSuperdash;
             @slash.started += instance.OnSlash;
             @slash.performed += instance.OnSlash;
             @slash.canceled += instance.OnSlash;
+            @superdash.started += instance.OnSuperdash;
+            @superdash.performed += instance.OnSuperdash;
+            @superdash.canceled += instance.OnSuperdash;
         }
 
         /// <summary>
@@ -438,12 +438,12 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
             @dash.started -= instance.OnDash;
             @dash.performed -= instance.OnDash;
             @dash.canceled -= instance.OnDash;
-            @superdash.started -= instance.OnSuperdash;
-            @superdash.performed -= instance.OnSuperdash;
-            @superdash.canceled -= instance.OnSuperdash;
             @slash.started -= instance.OnSlash;
             @slash.performed -= instance.OnSlash;
             @slash.canceled -= instance.OnSlash;
+            @superdash.started -= instance.OnSuperdash;
+            @superdash.performed -= instance.OnSuperdash;
+            @superdash.canceled -= instance.OnSuperdash;
         }
 
         /// <summary>
@@ -519,18 +519,18 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDash(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "superdash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnSuperdash(InputAction.CallbackContext context);
-        /// <summary>
         /// Method invoked when associated input action "slash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSlash(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "super-dash" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSuperdash(InputAction.CallbackContext context);
     }
 }

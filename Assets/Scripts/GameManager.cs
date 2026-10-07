@@ -106,6 +106,15 @@ public class GameManager : MonoBehaviour
         StartTimer();
     }
 
+    // Adds points to the score (e.g. a breakable object calls this when it breaks)
+    public void AddScore(int amount)
+    {
+        if (!gameRunning) return;
+
+        Score += amount;
+        scoreChange.Invoke(Score);
+    }
+
     // Called when the slashing cat touches a rat: +score, then the cat and the rats are reset
     public void PreyCaught()
     {

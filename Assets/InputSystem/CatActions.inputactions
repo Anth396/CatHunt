@@ -37,19 +37,19 @@
                     "priority": 0
                 },
                 {
-                    "name": "superdash",
-                    "type": "Button",
-                    "id": "3e862ded-5e07-4fdb-bc2a-c4376ec85b6b",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true,
-                    "priority": 0
-                },
-                {
                     "name": "slash",
                     "type": "Button",
                     "id": "643eb057-91a2-42d6-a8f2-db872a7ffb4b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "super-dash",
+                    "type": "Button",
+                    "id": "5dffa077-935c-483d-83cf-5fa6db7bc6d9",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -115,17 +115,6 @@
                 },
                 {
                     "name": "",
-                    "id": "e504307e-7bc9-40e7-b3bb-f056907f1652",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard",
-                    "action": "superdash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "87df466e-2a6b-4c53-a1ab-18af0cd21ae5",
                     "path": "<Keyboard>/j",
                     "interactions": "",
@@ -143,6 +132,17 @@
                     "processors": "",
                     "groups": ";Keyboard",
                     "action": "slash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68523fc5-0b25-4edb-a17c-50465f197a75",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "Hold(duration=0.5)",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "super-dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
