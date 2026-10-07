@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
         PlayerMovement player = playerBody != null ? playerBody.GetComponent<PlayerMovement>() : null;
         if (player != null)
         {
-            player.preyCaught.AddListener(PreyCaught);
             player.restartRequested.AddListener(RestartGame);
         }
         foreach (CatchThePrey catcher in FindObjectsByType<CatchThePrey>(FindObjectsSortMode.None))

@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Events")]
-    public UnityEvent preyCaught;           // slashed a rat
     public UnityEvent restartRequested;     // restart button pressed (RestartButtonCallback)
 
     [Header("Movement Speeds")]
@@ -437,25 +436,6 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.CompareTag("Ground"))
         {
             onGroundState = true;
-        }
-        else
-        {
-            TryCatchPrey(col);
-        }
-    }
-
-    // Also covers starting a slash while already touching the prey
-    void OnCollisionStay2D(Collision2D col)
-    {
-        TryCatchPrey(col);
-    }
-
-    private void TryCatchPrey(Collision2D col)
-    {
-        if (isSlashing && col.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Prey slashed!");
-            preyCaught?.Invoke();
         }
     }
 
