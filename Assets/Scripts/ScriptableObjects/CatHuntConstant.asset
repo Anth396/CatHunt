@@ -16,11 +16,11 @@ MonoBehaviour:
   scorePerCatch: 100
   catMoveSpeed: 10
   catMaxSpeed: 15
-  catJumpForce: 12
-  catDashSpeed: 25
+  catJumpForce: 15
+  catDashSpeed: 15
   catDashDuration: 0.5
   catDashCooldown: 1.5
-  catSuperDashSpeed: 40
+  catSuperDashSpeed: 20
   catSuperDashDuration: 0.7
   ratMaxSpeed: 15
   ratWalkSpeed: 5

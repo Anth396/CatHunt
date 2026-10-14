@@ -116,7 +116,7 @@ public class GameManager : Singleton<GameManager>
     {
         SaveHighScore();
         Time.timeScale = 1.0f;
-        SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Single);
+        SceneLoader.LoadThroughLoadingScreen(nextSceneName);
     }
 
     // Leaving the level for the menu: stop the countdown so it does not tick in the background

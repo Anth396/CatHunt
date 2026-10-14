@@ -88,6 +88,8 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
     public AudioSource catDash;
     public AudioSource catReady;
+    public AudioSource catJump;
+    public AudioSource catSlash;
 
     [Header("Constants")]
     public GameConstants gameConstants;     // optional: overrides the movement values above
@@ -161,6 +163,11 @@ public class PlayerMovement : Singleton<PlayerMovement>
         }
     }
 
+    private static void PlaySound(AudioSource source)
+    {
+        if (source != null && source.clip != null) source.PlayOneShot(source.clip);
+    }
+
     private void HandleMoveCheck(int direction)
     {
         moveInput = direction;
@@ -174,6 +181,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
         if (!onGroundState || isBouncing) return;
 
         jumpRequest = true;
+        PlaySound(catJump);
         EndSlash();         // jumping interrupts the slash
         isHolding = false;  // ...and cancels a dash charge
         holdTimer = 0f;
@@ -186,6 +194,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
         if (isSlashing || isDashing || isHolding || slashCooldownTimer > 0f) return;
 
         isSlashing = true;
+        PlaySound(catSlash);
         slashTimer = slashDuration;
     }
 

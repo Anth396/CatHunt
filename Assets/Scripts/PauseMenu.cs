@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         if (pausePanel != null) pausePanel.SetActive(false);
+        AudioListener.pause = false;    // a global flag, so make sure a new level never starts muted
     }
 
     public void Pause()
@@ -23,18 +24,21 @@ public class PauseMenu : MonoBehaviour
 
         if (pausePanel != null) pausePanel.SetActive(true);
         Time.timeScale = 0f;
+        AudioListener.pause = true;     // freezes every playing sound
     }
 
     public void Resume()
     {
         if (pausePanel != null) pausePanel.SetActive(false);
         Time.timeScale = 1f;
+        AudioListener.pause = false;    // sounds continue where they stopped
     }
 
     // Resets the score, timer, player and rats (GameManager also restores timeScale)
     public void Restart()
     {
         if (pausePanel != null) pausePanel.SetActive(false);
+        AudioListener.pause = false;
         if (GameManager.Instance != null) GameManager.Instance.RestartGame();
         else Time.timeScale = 1f;
     }
@@ -46,6 +50,7 @@ public class PauseMenu : MonoBehaviour
 
         if (pausePanel != null) pausePanel.SetActive(false);
         Time.timeScale = 1f;
+        AudioListener.pause = false;
         SceneManager.LoadScene(mainMenuScene);
     }
 }

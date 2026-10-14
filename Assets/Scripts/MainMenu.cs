@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         if (GameManager.Instance != null) GameManager.Instance.StartNewGame();
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(firstLevelScene);
+        SceneLoader.LoadThroughLoadingScreen(firstLevelScene);
     }
 }
