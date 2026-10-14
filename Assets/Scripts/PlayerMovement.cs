@@ -89,12 +89,26 @@ public class PlayerMovement : Singleton<PlayerMovement>
     public AudioSource catDash;
     public AudioSource catReady;
 
+    [Header("Constants")]
+    public GameConstants gameConstants;     // optional: overrides the movement values above
+
     // The cat belongs to its scene, so each level uses its own copy
     protected override bool Persistent => false;
 
     void Start()
     {
         Application.targetFrameRate = 30;
+        if (gameConstants != null)
+        {
+            moveSpeed = gameConstants.catMoveSpeed;
+            maxSpeed = gameConstants.catMaxSpeed;
+            jumpForce = gameConstants.catJumpForce;
+            dashSpeed = gameConstants.catDashSpeed;
+            dashDuration = gameConstants.catDashDuration;
+            dashCooldown = gameConstants.catDashCooldown;
+            superDashSpeed = gameConstants.catSuperDashSpeed;
+            superDashDuration = gameConstants.catSuperDashDuration;
+        }
         catBody = GetComponent<Rigidbody2D>();
         catSprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -198,8 +212,45 @@ public class PlayerMovement : Singleton<PlayerMovement>
         StartDash(super);
     }
 
+    // ---------------------------------------------------------- invisibility (potion)
+
+    [Header("Invisibility")]
+    [Range(0f, 1f)] public float invisibleAlpha = 0.35f;   // sprite alpha while invisible
+    private float invisibleTimer = 0f;
+
+    // Rats cannot detect the cat while this is true
+    public bool IsInvisible => invisibleTimer > 0f;
+
+    // Starts (or extends to) an invisibility of the given length in seconds
+    public void GrantInvisibility(float duration)
+    {
+        invisibleTimer = Mathf.Max(invisibleTimer, duration);
+        SetSpriteAlpha(invisibleAlpha);
+    }
+
+    private void EndInvisibility()
+    {
+        invisibleTimer = 0f;
+        SetSpriteAlpha(1f);
+    }
+
+    private void SetSpriteAlpha(float alpha)
+    {
+        if (catSprite == null) return;
+        Color c = catSprite.color;
+        c.a = alpha;
+        catSprite.color = c;
+    }
+
     void Update()
     {
+        // Scaled time, so the potion does not run down while paused
+        if (invisibleTimer > 0f)
+        {
+            invisibleTimer -= Time.deltaTime;
+            if (invisibleTimer <= 0f) EndInvisibility();
+        }
+
         if (input == null) return;
 
         if (dashCooldownTimer > 0f)
@@ -473,6 +524,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
         transform.rotation = initialRotation;
         transform.localScale = initialScale;
         if (catSprite != null) catSprite.flipX = initialFlipX;
+        EndInvisibility();
         if (catBody != null)
         {
             catBody.position = initialPosition;

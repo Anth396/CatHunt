@@ -13,13 +13,13 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        if (scoreText != null) scoreText.text = "High Score - " + GameSession.HighScore;
+        if (scoreText != null) scoreText.text = "High Score - " + GameManager.SavedHighScore;
     }
 
     // Hook this up to the Start button
     public void StartGame()
     {
-        GameSession.StartScore = 0;
+        if (GameManager.Instance != null) GameManager.Instance.StartNewGame();
         Time.timeScale = 1f;
         SceneManager.LoadScene(firstLevelScene);
     }

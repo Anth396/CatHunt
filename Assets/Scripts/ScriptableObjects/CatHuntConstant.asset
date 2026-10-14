@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e186b1e82b59a4aa4536561bf13636, type: 3}
+  m_Name: CatHuntConstant
+  m_EditorClassIdentifier: Assembly-CSharp::GameConstants
+  startTimeSeconds: 120
+  scorePerCatch: 100
+  catMoveSpeed: 10
+  catMaxSpeed: 15
+  catJumpForce: 12
+  catDashSpeed: 25
+  catDashDuration: 0.5
+  catDashCooldown: 1.5
+  catSuperDashSpeed: 40
+  catSuperDashDuration: 0.7
+  ratMaxSpeed: 15
+  ratWalkSpeed: 5
+  ratJumpForce: 15

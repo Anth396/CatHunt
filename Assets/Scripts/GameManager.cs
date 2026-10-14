@@ -4,11 +4,14 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Owns the game state (score, countdown) and announces changes through UnityEvents.
-/// UI lives in HUDManager, enemy resets in EnemyManager; neither is referenced from here.
+/// Persistent game state (score, countdown, high score) that lives from the main menu onwards.
+/// It announces changes through UnityEvents. Each level has a LevelContext that registers that
+/// scene's player with it; UI lives in HUDManager, enemy resets in EnemyManager.
 /// </summary>
 public class GameManager : Singleton<GameManager>
 {
+    private const string HighScoreKey = "HighScore";
+
     [Header("Events")]
     public UnityEvent gameStart;            // the countdown has begun
     public UnityEvent gameRestart;          // full restart (score, timer, everything)
@@ -17,34 +20,73 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent<int> timeChange;      // seconds left, once per second
     public UnityEvent roundReset;           // after a catch: player and rats go back to start
 
-    [Header("References")]
-    public Rigidbody2D playerBody;
-
     [Header("Game Settings")]
     public int startTimeSeconds = 120;      // countdown start (2 minutes)
     public int scorePerCatch = 100;
 
-    [Header("Level Flow")]
-    [Tooltip("Scene loaded by the Continue button after time runs out. Set per level in the Inspector.")]
-    public string nextSceneName = "sewer";
+    [Header("Data")]
+    public GameConstants gameConstants;     // optional: overrides the two settings above
+    public IntVariable gameScore;           // the score lives in this asset
 
-    // Each scene has its own GameManager (it references that scene's player), so it is not persistent
-    protected override bool Persistent => false;
-
+    public int Score => gameScore.Value;
+    public int TimeLeft { get; private set; }
     public bool IsRunning => gameRunning;
 
-    public int Score { get; private set; }
-    public int TimeLeft { get; private set; }
+    // Saved between runs of the game, readable without a GameManager (e.g. before one exists)
+    public static int SavedHighScore => PlayerPrefs.GetInt(HighScoreKey, 0);
 
+    // Registered by the current level's LevelContext
+    private Rigidbody2D playerBody;
+    private string nextSceneName;
+
+    private int levelStartScore = 0;   // score when the current level began
     private bool gameRunning = false;
     private bool resettingAfterCatch = false;
     private Coroutine timerRoutine;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        if (Instance != this) return;   // duplicate, being destroyed
+
+        if (gameConstants != null)
+        {
+            startTimeSeconds = gameConstants.startTimeSeconds;
+            scorePerCatch = gameConstants.scorePerCatch;
+        }
+        if (gameScore == null)
+        {
+            Debug.LogWarning("GameManager: no GameScore asset assigned, using a temporary one.", this);
+            gameScore = ScriptableObject.CreateInstance<IntVariable>();
+        }
+    }
+
     void Start()
     {
         Application.targetFrameRate = 30;
+    }
 
-        // Listen to the things that can happen in the world
+    // ---------------------------------------------------------------- flow
+
+    // Main menu Start button: a brand new game
+    public void StartNewGame()
+    {
+        gameScore.SetValue(0);
+    }
+
+    // Called by each level's LevelContext once the scene is loaded
+    public void BeginLevel(Rigidbody2D body, string nextScene)
+    {
+        StopAllCoroutines();
+        timerRoutine = null;
+        gameRunning = false;
+        resettingAfterCatch = false;
+        Time.timeScale = 1.0f;
+
+        playerBody = body;
+        nextSceneName = nextScene;
+
+        // Listen to the things that can happen in this scene's world
         PlayerMovement player = playerBody != null ? playerBody.GetComponent<PlayerMovement>() : null;
         if (player != null)
         {
@@ -56,41 +98,48 @@ public class GameManager : Singleton<GameManager>
         }
 
         // One frame later, so every listener (HUD, enemies...) has subscribed in its own Start
-        StartCoroutine(StartGameNextFrame());
+        StartCoroutine(StartLevelNextFrame());
     }
 
-    private IEnumerator StartGameNextFrame()
+    private IEnumerator StartLevelNextFrame()
     {
         yield return null;
-        StartGame();
-    }
-
-    // ---------------------------------------------------------------- flow
-
-    private void StartGame()
-    {
-        Score = GameSession.StartScore;     // 0 for a new game, carried over when continuing
+        // The score is kept from the previous level (StartNewGame resets it for a new game)
+        levelStartScore = Score;    // what a restart of this level goes back to
         scoreChange.Invoke(Score);
         StartTimer();
         gameStart.Invoke();
     }
 
-    // Hook this up to the Continue button on the time's up popup
-    public void ContinueButtonCallback()
+    // Time's up popup: keep the score and move on
+    public void ContinueToNextLevel()
     {
         SaveHighScore();
-        GameSession.StartScore = Score;
         Time.timeScale = 1.0f;
         SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Single);
     }
 
+    // Leaving the level for the menu: stop the countdown so it does not tick in the background
+    public void EndSession()
+    {
+        StopAllCoroutines();
+        timerRoutine = null;
+        gameRunning = false;
+        resettingAfterCatch = false;
+        Time.timeScale = 1.0f;
+        SaveHighScore();
+    }
+
     public void SaveHighScore()
     {
-        GameSession.SubmitScore(Score);
+        if (Score > SavedHighScore)
+        {
+            PlayerPrefs.SetInt(HighScoreKey, Score);
+        }
         PlayerPrefs.Save();
     }
 
-    // Hook this up to a UI Restart Button
+    // Hook this up to a UI Restart Button (through LevelContext.Restart)
     public void RestartButtonCallback(int input)
     {
         RestartGame();
@@ -100,10 +149,11 @@ public class GameManager : Singleton<GameManager>
     {
         Debug.Log("Restart!");
         StopAllCoroutines();
+        timerRoutine = null;
         resettingAfterCatch = false;
         Time.timeScale = 1.0f;
 
-        Score = 0;
+        gameScore.SetValue(levelStartScore);
         ResetPlayer();
 
         foreach (BreakableObject breakable in FindObjectsByType<BreakableObject>(FindObjectsSortMode.None))
@@ -121,7 +171,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (!gameRunning) return;
 
-        Score += amount;
+        gameScore.ApplyChange(amount);
         scoreChange.Invoke(Score);
     }
 
@@ -130,7 +180,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (!gameRunning || resettingAfterCatch) return;
 
-        Score += scorePerCatch;
+        gameScore.ApplyChange(scorePerCatch);
         scoreChange.Invoke(Score);
         Debug.Log("Prey caught! Score: " + Score);
 

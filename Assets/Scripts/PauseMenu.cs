@@ -42,7 +42,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         GameManager gm = GameManager.Instance;
-        if (gm != null) gm.SaveHighScore();
+        if (gm != null) gm.EndSession();    // stops the countdown and saves the high score
 
         if (pausePanel != null) pausePanel.SetActive(false);
         Time.timeScale = 1f;

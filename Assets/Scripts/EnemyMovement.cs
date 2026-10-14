@@ -82,6 +82,9 @@ public partial class EnemyMovement : MonoBehaviour
     public float forkMinOpen = 2.5f;
     public float stuckTime = 1.0f;
 
+    [Header("Constants")]
+    public GameConstants gameConstants;     // optional: overrides the movement values above
+
     [Header("Start")]
     public int startDirection = 1;      // 1 = right, -1 = left
 
@@ -139,6 +142,12 @@ public partial class EnemyMovement : MonoBehaviour
 
     void Start()
     {
+        if (gameConstants != null)
+        {
+            maxSpeed = gameConstants.ratMaxSpeed;
+            walkSpeed = gameConstants.ratWalkSpeed;
+            jumpForce = gameConstants.ratJumpForce;
+        }
         enemyBody = GetComponent<Rigidbody2D>();
         enemySprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();

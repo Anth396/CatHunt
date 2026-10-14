@@ -37,6 +37,7 @@ public partial class EnemyMovement
             PlayerMovement found = col.GetComponentInParent<PlayerMovement>();
             if (found != null)
             {
+                if (found.IsInvisible) continue;    // invisible cat: the rat does not notice it
                 player = found;
                 playerCollider = col;
                 playerBody = found.GetComponent<Rigidbody2D>();

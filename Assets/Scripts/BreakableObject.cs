@@ -6,6 +6,7 @@ public class BreakableObject : MonoBehaviour
     private bool isBroken = false;
     public AudioSource breakableAudio;
     public int scoreValue = 50;     // points added when this breaks
+    public PotionPickup potion;     // optional: revealed when this breaks
 
     // Everything switched off when the object breaks, so ResetState can switch it back on
     private readonly List<Collider2D> brokenColliders = new List<Collider2D>();
@@ -49,20 +50,17 @@ public class BreakableObject : MonoBehaviour
             breakableAudio.PlayOneShot(breakableAudio.clip);
         }
 
-        // 1. This object's own BoxCollider2D
-        DisableCollider(GetComponent<BoxCollider2D>());
+        if (potion != null) potion.Reveal();
+
+        // 1. This object's own sprite and BoxCollider2D
         DisableSprite(GetComponent<SpriteRenderer>());
+        DisableCollider(GetComponent<BoxCollider2D>());
 
-        // 2. The parent's sprite, and the EdgeCollider2D on the parent's children (physics hit box)
-        if (transform.parent != null)
+        // 2. The EdgeCollider2D on this object's children (the physical hit box)
+        foreach (EdgeCollider2D edge in GetComponentsInChildren<EdgeCollider2D>(true))
         {
-            DisableSprite(transform.parent.GetComponent<SpriteRenderer>());
-
-            EdgeCollider2D[] edgeColliders = transform.parent.GetComponentsInChildren<EdgeCollider2D>();
-            foreach (EdgeCollider2D edge in edgeColliders)
-            {
-                DisableCollider(edge);
-            }
+            if (potion != null && edge.transform.IsChildOf(potion.transform)) continue;
+            DisableCollider(edge);
         }
     }
 
@@ -92,6 +90,7 @@ public class BreakableObject : MonoBehaviour
         {
             if (sprite != null) sprite.enabled = true;
         }
+        if (potion != null) potion.ResetState();
         brokenColliders.Clear();
         brokenSprites.Clear();
         isBroken = false;
