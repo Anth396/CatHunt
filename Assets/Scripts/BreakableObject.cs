@@ -16,6 +16,12 @@ public class BreakableObject : MonoBehaviour
         CheckBreak(other.gameObject);
     }
 
+    // The BoxCollider2D is no longer a trigger, so hits now arrive as collisions
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        CheckBreak(collision.gameObject);
+    }
+
     private void CheckBreak(GameObject hitObject)
     {
         if (isBroken) return;
@@ -45,25 +51,17 @@ public class BreakableObject : MonoBehaviour
 
         // 1. This object's own BoxCollider2D
         DisableCollider(GetComponent<BoxCollider2D>());
+        DisableSprite(GetComponent<SpriteRenderer>());
 
-        // 2. The parent's BoxCollider2D + sprite, and the parent's other child colliders (physics hit box)
+        // 2. The parent's sprite, and the EdgeCollider2D on the parent's children (physics hit box)
         if (transform.parent != null)
         {
-            BoxCollider2D parentCollider = transform.parent.GetComponent<BoxCollider2D>();
-            SpriteRenderer parentSprite = transform.parent.GetComponent<SpriteRenderer>();
-            if (parentCollider != null)
-            {
-                DisableCollider(parentCollider);
-                DisableSprite(parentSprite);
-            }
+            DisableSprite(transform.parent.GetComponent<SpriteRenderer>());
 
-            BoxCollider2D[] childColliders = transform.parent.GetComponentsInChildren<BoxCollider2D>();
-            foreach (BoxCollider2D childCol in childColliders)
+            EdgeCollider2D[] edgeColliders = transform.parent.GetComponentsInChildren<EdgeCollider2D>();
+            foreach (EdgeCollider2D edge in edgeColliders)
             {
-                if (childCol.gameObject != gameObject)
-                {
-                    DisableCollider(childCol);
-                }
+                DisableCollider(edge);
             }
         }
     }

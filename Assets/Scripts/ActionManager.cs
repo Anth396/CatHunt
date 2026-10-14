@@ -6,10 +6,8 @@ using UnityEngine.InputSystem;
 /// Owns the CatActions input asset and raises UnityEvents, so listeners can be wired in the
 /// Inspector or with AddListener. Put exactly one of these in the scene.
 /// </summary>
-public class ActionManager : MonoBehaviour
+public class ActionManager : Singleton<ActionManager>
 {
-    public static ActionManager Instance { get; private set; }
-
     [Header("Events")]
     public UnityEvent jump;             // jump button pressed
     public UnityEvent<int> moveCheck;   // -1 left, 0 stopped, 1 right (fires when it changes)
@@ -24,14 +22,10 @@ public class ActionManager : MonoBehaviour
 
     private CatActions catActions;
 
-    void Awake()
+    protected override void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
+        base.Awake();
+        if (Instance != this) return;   // duplicate, being destroyed
         catActions = new CatActions();
     }
 
@@ -68,9 +62,9 @@ public class ActionManager : MonoBehaviour
         DashHeld = false;
     }
 
-    void OnDestroy()
+    protected override void OnDestroy()
     {
-        if (Instance == this) Instance = null;
+        base.OnDestroy();
         catActions?.Dispose();
     }
 

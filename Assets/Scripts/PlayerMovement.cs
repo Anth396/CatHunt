@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Singleton<PlayerMovement>
 {
     [Header("Events")]
     public UnityEvent restartRequested;     // restart button pressed (RestartButtonCallback)
@@ -89,6 +89,9 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource catDash;
     public AudioSource catReady;
 
+    // The cat belongs to its scene, so each level uses its own copy
+    protected override bool Persistent => false;
+
     void Start()
     {
         Application.targetFrameRate = 30;
@@ -120,8 +123,9 @@ public class PlayerMovement : MonoBehaviour
         input.moveCheck.AddListener(HandleMoveCheck);
     }
 
-    void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
         if (input == null) return;
         input.jump.RemoveListener(HandleJumpPressed);
         input.slash.RemoveListener(HandleSlashPressed);

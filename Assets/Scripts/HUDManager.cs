@@ -4,7 +4,7 @@ using TMPro;
 /// <summary>
 /// All UI: subscribes to the GameManager events and updates the timer, score and game over popup.
 /// </summary>
-public class HUDManager : MonoBehaviour
+public class HUDManager : Singleton<HUDManager>
 {
     [Header("UI")]
     public TextMeshProUGUI timerText;
@@ -13,6 +13,9 @@ public class HUDManager : MonoBehaviour
     public TextMeshProUGUI finalScoreText;
 
     private GameManager gm;
+
+    // Bound to this scene's GameManager and UI, so each scene uses its own HUD
+    protected override bool Persistent => false;
 
     void Start()
     {
@@ -34,8 +37,9 @@ public class HUDManager : MonoBehaviour
         OnTimeChange(gm.startTimeSeconds);
     }
 
-    void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
         if (gm == null) return;
         gm.scoreChange.RemoveListener(OnScoreChange);
         gm.timeChange.RemoveListener(OnTimeChange);

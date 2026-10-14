@@ -304,13 +304,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Generated Image September 24, 2026 - 12_16AM (1)_6
+      name: tiles
       rect:
         serializedVersion: 2
-        x: 566
-        y: 681
-        width: 148
-        height: 107
+        x: 570
+        y: 683
+        width: 141
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -752,12 +752,12 @@ TextureImporter:
       Generated Image September 24, 2026 - 12_16AM (1)_24: 7236927496407833453
       Generated Image September 24, 2026 - 12_16AM (1)_4: 4338931188830753839
       Generated Image September 24, 2026 - 12_16AM (1)_5: -3520727669861844009
-      Generated Image September 24, 2026 - 12_16AM (1)_6: 6628266660789939404
       Generated Image September 24, 2026 - 12_16AM (1)_7: 6179453122806179928
       Generated Image September 24, 2026 - 12_16AM (1)_9: 3641695293039451013
       brick_ground: 9087447416156253270
       potion: -8250170673506784733
       rock: -3202097913145499711
+      tiles: 6628266660789939404
       wooden-crate: 6575597023664877204
       wooden-crate-broke: -8315858533358639843
   mipmapLimitGroupName: 

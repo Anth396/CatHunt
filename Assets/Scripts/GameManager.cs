@@ -1,16 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Owns the game state (score, countdown) and announces changes through UnityEvents.
 /// UI lives in HUDManager, enemy resets in EnemyManager; neither is referenced from here.
 /// </summary>
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    // Singleton Instance
-    public static GameManager Instance { get; private set; }
-
     [Header("Events")]
     public UnityEvent gameStart;            // the countdown has begun
     public UnityEvent gameRestart;          // full restart (score, timer, everything)
@@ -26,23 +24,21 @@ public class GameManager : MonoBehaviour
     public int startTimeSeconds = 120;      // countdown start (2 minutes)
     public int scorePerCatch = 100;
 
+    [Header("Level Flow")]
+    [Tooltip("Scene loaded by the Continue button after time runs out. Set per level in the Inspector.")]
+    public string nextSceneName = "sewer";
+
+    // Each scene has its own GameManager (it references that scene's player), so it is not persistent
+    protected override bool Persistent => false;
+
+    public bool IsRunning => gameRunning;
+
     public int Score { get; private set; }
     public int TimeLeft { get; private set; }
 
     private bool gameRunning = false;
     private bool resettingAfterCatch = false;
     private Coroutine timerRoutine;
-
-    private void Awake()
-    {
-        // Singleton setup
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
 
     void Start()
     {
@@ -73,10 +69,25 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
-        Score = 0;
+        Score = GameSession.StartScore;     // 0 for a new game, carried over when continuing
         scoreChange.Invoke(Score);
         StartTimer();
         gameStart.Invoke();
+    }
+
+    // Hook this up to the Continue button on the time's up popup
+    public void ContinueButtonCallback()
+    {
+        SaveHighScore();
+        GameSession.StartScore = Score;
+        Time.timeScale = 1.0f;
+        SceneManager.LoadSceneAsync(nextSceneName, LoadSceneMode.Single);
+    }
+
+    public void SaveHighScore()
+    {
+        GameSession.SubmitScore(Score);
+        PlayerPrefs.Save();
     }
 
     // Hook this up to a UI Restart Button
@@ -183,6 +194,7 @@ public class GameManager : MonoBehaviour
     {
         gameRunning = false;
         Time.timeScale = 0.0f;
+        SaveHighScore();
         gameOver.Invoke();
     }
 }
