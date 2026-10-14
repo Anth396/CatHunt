@@ -126,7 +126,11 @@ public partial class EnemyMovement
         float frontX = b.center.x + dir * b.extents.x;
         float originY = b.min.y + 0.1f;
 
-        for (float d = 0.15f; d <= ledgeScanRange; d += step)
+        // Look at least as far as the longest jump can carry the rat, so a jump never lands in an
+        // unseen void
+        float scanRange = Mathf.Max(ledgeScanRange, JumpRange(jumpForce, Mathf.Max(maxSpeed, airMinSpeed)) + 1f);
+
+        for (float d = 0.15f; d <= scanRange; d += step)
         {
             // nothing beyond a wall / obstacle matters for the ledge
             if (d > r.wallDist || d > r.obstacleDist) break;

@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31dc702c6d57b1478d029fea2a8ca54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadingScreen
-  levelText: {fileID: 1644939700}
+  levelText: {fileID: 1360957832}
   minimumSeconds: 1.5
   fallbackScene: city
 --- !u!4 &1896472703

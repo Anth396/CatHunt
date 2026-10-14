@@ -163,6 +163,15 @@ public partial class EnemyMovement
                         catAhead, catGap, catTop, catW, catVelAlong, catAny,
                         waited, rand01, 0f, out jumpSpeed))
                     {
+                        // A jump that lands past the edge of a void is not a real option
+                        float ledgeLeft = s.fwd.ledge >= 0f ? Mathf.Max(0f, s.fwd.ledge - travelled) : -1f;
+                        if (!JumpClearsVoid(ledgeLeft, s.fwd.ledgeVoid, jumpSpeed, Mathf.Max(Mathf.Abs(vx), airMinSpeed)))
+                        {
+                            r.invalid = true;
+                            r.end = s;
+                            return r;
+                        }
+
                         airborne = true;
                         jumpTaken = true;
                         vy = jumpSpeed;

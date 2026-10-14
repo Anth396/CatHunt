@@ -105,6 +105,14 @@ public partial class EnemyMovement
             pendingTime += dt;
             if (RealTakeoffDue(vel, fwd, out float v))
             {
+                float airSpeed = Mathf.Max(Mathf.Abs(vel.x), airMinSpeed);
+                if (!JumpClearsVoid(fwd.ledge ? fwd.ledgeDist : -1f, fwd.ledgeVoid, v, airSpeed))
+                {
+                    // This jump would land in the void: give it up and decide again
+                    jumpPending = false;
+                    moveTimer = 0f;
+                    return;
+                }
                 jumpRequest = true;
                 pendingJumpSpeed = v;
                 jumpPending = false;
@@ -276,6 +284,21 @@ public partial class EnemyMovement
         jumpSpeed = PickJumpSpeed(m.height, 0f, rand01);
         if (m.timing == JumpTiming.Early) return true;
         return waited >= freeLateDelay || catGapAny <= lateTriggerGap;
+    }
+
+    // Horizontal distance a flat-ground jump covers (take-off to touching down again)
+    private float JumpRange(float jumpSpeed, float airSpeed)
+    {
+        float airTime = jumpSpeed / gravity * (1f + 1f / Mathf.Sqrt(fallMultiplier));
+        return airSpeed * airTime;
+    }
+
+    // False if this jump would carry the rat past the edge of a void ahead.
+    // ledgeAhead is the distance from the rat's front edge to the ledge (-1 = none).
+    private bool JumpClearsVoid(float ledgeAhead, bool ledgeIsVoid, float jumpSpeed, float airSpeed)
+    {
+        if (ledgeAhead < 0f || !ledgeIsVoid) return true;
+        return JumpRange(jumpSpeed, airSpeed) < ledgeAhead - 0.1f;
     }
 
     // Minimal take-off speed that clears needH (plus clearance, more for wide things)

@@ -160,6 +160,8 @@ public partial class EnemyMovement : MonoBehaviour
         enemyBody.bodyType = RigidbodyType2D.Dynamic;
         enemyBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         enemyBody.gravityScale = 0f; // Handled strictly by code
+        // Edge colliders have no thickness; a fast fall can cross one within a single physics step
+        enemyBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
         // Pick the collider that is the rat's body (not the detect box)
         foreach (Collider2D col in GetComponents<Collider2D>())

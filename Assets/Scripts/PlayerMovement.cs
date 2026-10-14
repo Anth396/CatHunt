@@ -9,14 +9,15 @@ public class PlayerMovement : Singleton<PlayerMovement>
     public UnityEvent restartRequested;     // restart button pressed (RestartButtonCallback)
 
     [Header("Movement Speeds")]
-    public float moveSpeed = 10f;
-    public float maxSpeed = 15f;
-    public float jumpForce = 12f;
+    // Values come from GameConstants (see the Constants field below)
+    private float moveSpeed;
+    private float maxSpeed;
+    private float jumpForce;
 
     [Header("Dash Settings")]
-    public float dashSpeed = 25f;       
-    public float dashDuration = 0.5f;   
-    public float dashCooldown = 1.5f;   
+    private float dashSpeed;
+    private float dashDuration;
+    private float dashCooldown;
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
@@ -26,8 +27,8 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
     [Header("Super Dash Settings")]
     // Hold time for the super dash is the Hold(duration) on the "super-dash" binding in CatActions
-    public float superDashSpeed = 40f;
-    public float superDashDuration = 0.7f;
+    private float superDashSpeed;
+    private float superDashDuration;
     private bool isHolding = false;
     private float holdTimer = 0f;
     private float holdStartTime = 0f;
@@ -35,7 +36,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
     private ActionManager input;
     private int moveInput = 0;      // -1 / 0 / 1 from ActionManager.moveCheck
     private bool isSuperDashing = false;
-    private float currentDashSpeed = 25f;
+    private float currentDashSpeed;
 
     // Public property so BreakableObject can read if player is dashing
     public bool IsDashing => isDashing;
@@ -92,7 +93,7 @@ public class PlayerMovement : Singleton<PlayerMovement>
     public AudioSource catSlash;
 
     [Header("Constants")]
-    public GameConstants gameConstants;     // optional: overrides the movement values above
+    public GameConstants gameConstants;     // movement and dash values live here
 
     // The cat belongs to its scene, so each level uses its own copy
     protected override bool Persistent => false;
@@ -100,22 +101,29 @@ public class PlayerMovement : Singleton<PlayerMovement>
     void Start()
     {
         Application.targetFrameRate = 30;
-        if (gameConstants != null)
+        if (gameConstants == null)
         {
-            moveSpeed = gameConstants.catMoveSpeed;
-            maxSpeed = gameConstants.catMaxSpeed;
-            jumpForce = gameConstants.catJumpForce;
-            dashSpeed = gameConstants.catDashSpeed;
-            dashDuration = gameConstants.catDashDuration;
-            dashCooldown = gameConstants.catDashCooldown;
-            superDashSpeed = gameConstants.catSuperDashSpeed;
-            superDashDuration = gameConstants.catSuperDashDuration;
+            // A fresh GameConstants carries the default values, so the cat still works
+            Debug.LogWarning("PlayerMovement: no GameConstants assigned, using the defaults.", this);
+            gameConstants = ScriptableObject.CreateInstance<GameConstants>();
         }
+
+        moveSpeed = gameConstants.catMoveSpeed;
+        maxSpeed = gameConstants.catMaxSpeed;
+        jumpForce = gameConstants.catJumpForce;
+        dashSpeed = gameConstants.catDashSpeed;
+        dashDuration = gameConstants.catDashDuration;
+        dashCooldown = gameConstants.catDashCooldown;
+        superDashSpeed = gameConstants.catSuperDashSpeed;
+        superDashDuration = gameConstants.catSuperDashDuration;
+
         catBody = GetComponent<Rigidbody2D>();
         catSprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         catBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         catBody.gravityScale = 0f; // Handled strictly by code
+        // Edge colliders have no thickness; a fast fall or dash can cross one within a single step
+        catBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
         // Remember the scene start pose for restarts
         initialPosition = transform.position;
@@ -497,9 +505,41 @@ public class PlayerMovement : Singleton<PlayerMovement>
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ground"))
+        CheckContacts(col);
+    }
+
+    // Re-checked every physics step: touching a Ground-tagged wall and the floor at the same time
+    // must not lose (or fake) the ground state when one of the contacts ends
+    void OnCollisionStay2D(Collision2D col)
+    {
+        CheckContacts(col);
+    }
+
+    private void CheckContacts(Collision2D col)
+    {
+        bool standingOn = false;
+        bool pushingIntoWall = false;
+
+        for (int i = 0; i < col.contactCount; i++)
+        {
+            Vector2 normal = col.GetContact(i).normal;      // points from the surface towards the cat
+            if (normal.y > 0.5f) standingOn = true;          // a floor (or gentle slope) under the cat
+            // A side surface the air momentum is pushing into
+            if (Mathf.Abs(normal.x) > 0.5f && airMomentumX * normal.x < 0f) pushingIntoWall = true;
+        }
+
+        // Only a surface that is under the cat counts as ground, not the side of a Ground-tagged wall.
+        // Moving up is ignored: on the step of a jump the floor contact is still reported once,
+        // and re-grounding the cat there would cancel the jump.
+        if (standingOn && col.gameObject.CompareTag("Ground") && catBody.linearVelocity.y <= 0.1f)
         {
             onGroundState = true;
+        }
+        else if (!onGroundState && pushingIntoWall)
+        {
+            // Stop pushing into the wall. Otherwise the air momentum keeps the cat pressed against
+            // it, and the wall friction holds the cat in mid air.
+            airMomentumX = 0f;
         }
     }
 
