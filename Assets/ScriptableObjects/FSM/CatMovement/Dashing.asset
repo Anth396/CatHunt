@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1bf8a07785cd054b95d6321131fd524, type: 3}
+  m_Name: Dashing
+  m_EditorClassIdentifier: Assembly-CSharp::State
+  setupActions:
+  - {fileID: 11400000, guid: 6d8841df5b55b9049bcab928ef08abce, type: 2}
+  - {fileID: 11400000, guid: 57979a95065d5d34eb0785eb114d6639, type: 2}
+  - {fileID: 11400000, guid: 96c3b74037ca8b540a66828f0dff1e71, type: 2}
+  actions: []
+  eventTriggeredActions: []
+  exitActions:
+  - {fileID: 11400000, guid: 7d7f06ceb505730449e1e829f828f845, type: 2}
+  - {fileID: 11400000, guid: 3cc673e30fd640f4c932092928a7db16, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 4d5e7fec84d93d247859c89a3f4c1d82, type: 2}
+    trueState: {fileID: 11400000, guid: 1a79b3fff625f03439e75b7a46f6170a, type: 2}
+    falseState: {fileID: 11400000, guid: 7c398ed36e3c5914fbfc244aed59852b, type: 2}
+  - decision: {fileID: 11400000, guid: ddd83f9e838f0ff459c7cf45c1e38a83, type: 2}
+    trueState: {fileID: 11400000, guid: ac6b22e3b9a15404aadb4ace5cd4047d, type: 2}
+    falseState: {fileID: 11400000, guid: 7c398ed36e3c5914fbfc244aed59852b, type: 2}
+  - decision: {fileID: 11400000, guid: 41b0437ef97ff8948a1b6e753c007f18, type: 2}
+    trueState: {fileID: 11400000, guid: ac6b22e3b9a15404aadb4ace5cd4047d, type: 2}
+    falseState: {fileID: 11400000, guid: 7c398ed36e3c5914fbfc244aed59852b, type: 2}
+  sceneGizmoColor: {r: 0, g: 1, b: 1, a: 1}

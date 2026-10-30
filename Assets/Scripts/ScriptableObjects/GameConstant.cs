@@ -23,6 +23,21 @@ public class GameConstants : ScriptableObject
     public float catSuperDashSpeed = 40f;
     public float catSuperDashDuration = 0.7f;
 
+    [Header("Cat - Physics")]
+    public float catGravity = 30f;
+    public float catFallMultiplier = 1.5f;
+    public float catGroundFriction = 15f;
+    public float catBounceMinSpeed = 5f;
+
+    [Header("Cat - Slash / Stun")]
+    public float catSlashDuration = 0.35f;
+    public float catSlashCooldown = 0.3f;
+    public float catStunDuration = 0.3f;
+
+    [Header("Cat - Buffs")]
+    public float hasteSpeedMultiplier = 1.5f;
+    public float invisibleAlpha = 0.35f;
+
     [Header("Rat - Movement")]
     public float ratMaxSpeed = 15f;
     public float ratWalkSpeed = 5f;
