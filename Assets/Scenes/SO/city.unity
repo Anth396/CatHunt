@@ -1548,6 +1548,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239806787}
   m_CullTransparentMesh: 1
+--- !u!82 &286851629 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5988412464450797725, guid: 0ff24ab802e101a48866862048dab766, type: 3}
+  m_PrefabInstance: {fileID: 5006500803018869830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &298519837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5074,6 +5079,9 @@ GameObject:
   - component: {fileID: 1685382897}
   - component: {fileID: 1685382905}
   - component: {fileID: 1685382906}
+  - component: {fileID: 1685382909}
+  - component: {fileID: 1685382908}
+  - component: {fileID: 1685382907}
   m_Layer: 0
   m_Name: DropObject
   m_TagString: Untagged
@@ -5165,7 +5173,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685382896}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3387c020fdfac9e4d91129299067b694, type: 2}
   m_CullingMode: 0
@@ -5225,6 +5233,85 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.46, y: 1.26}
   m_EdgeRadius: 0
+--- !u!114 &1685382907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685382896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83bc9c8362ab7e545b38593825a47939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleGameEventListener
+  gameEvent: {fileID: 11400000, guid: ed0d195a62915db4ea83037a37950d34, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1685382908}
+        m_TargetAssemblyTypeName: FallingObject, Assembly-CSharp
+        m_MethodName: ResetState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1685382908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685382896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e7fa0ce2c3a3c44783ff193e78ad6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FallingObject
+  idleState: object-idle
+  crashState: crash
+  gravity: 30
+  maxFallSpeed: 25
+  groundTag: Ground
+  topTolerance: 0.6
+  onDropStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  onLanded:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!50 &1685382909
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685382896}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1764135087
 GameObject:
   m_ObjectHideFlags: 0
@@ -6681,6 +6768,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RockObstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 4987644277034075671, guid: 0ff24ab802e101a48866862048dab766, type: 3}
+      propertyPath: hitAudio
+      value: 
+      objectReference: {fileID: 286851629}
+    - target: {fileID: 5988412464450797725, guid: 0ff24ab802e101a48866862048dab766, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 364afe6158d50844c974cd4a4df98213, type: 3}
     - target: {fileID: 8474734758803172181, guid: 0ff24ab802e101a48866862048dab766, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.6792

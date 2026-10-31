@@ -249,7 +249,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -309,7 +309,7 @@ TextureImporter:
         width: 256
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -331,7 +331,7 @@ TextureImporter:
         width: 222
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -353,7 +353,7 @@ TextureImporter:
         width: 253
         height: 125
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -362,6 +362,28 @@ TextureImporter:
       bones: []
       spriteID: 345eb1f7408247e46bc09d265e7aac24
       internalID: -1145402984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat-wall-hold
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 49
+        width: 85
+        height: 207
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f5ead661a2ebd043923df6293b733e8
+      internalID: -455509564
       vertices: []
       indices: 
       edges: []
@@ -385,6 +407,7 @@ TextureImporter:
       cat-super-dash_0: -1145402984
       cat-super-dash_1: -5322845581396989122
       cat-super-dash_2: -771071603
+      cat-wall-hold: -455509564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
