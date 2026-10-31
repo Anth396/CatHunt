@@ -8,7 +8,9 @@ public enum CatMoveState
     Dashing,
     SuperDashing,
     Slashing,
-    Stunned
+    Stunned,
+    WallClinging,
+    WallJumping
 }
 
 /// <summary>
@@ -70,6 +72,7 @@ public class CatStateController : StateController
     public void OnDashPressed()
     {
         dashHeld = true;
+        if (motor != null) motor.ClingKeyHeld = true;
         if (dashCooldownTimer <= 0f && motor != null && motor.IsGrounded) dashPressed = true;
     }
 
@@ -78,6 +81,7 @@ public class CatStateController : StateController
         // superReady stays set: the Charging state reads it when it sees the release, and it is
         // cleared when the next charge starts
         dashHeld = false;
+        if (motor != null) motor.ClingKeyHeld = false;
     }
 
     // The Hold interaction fired: releasing now performs a super dash
@@ -107,6 +111,7 @@ public class CatStateController : StateController
     public void ResetState()
     {
         dashHeld = false;
+        if (motor != null) motor.ClingKeyHeld = false;
         superReady = false;
         dashPressed = false;
         slashPressed = false;

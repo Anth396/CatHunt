@@ -46,6 +46,7 @@ public partial class RatController : MonoBehaviour
     public float maxDropDepth = 8f;
     public string groundTag = "Ground";
     public string wallTag = "Ground";
+    public string buildingWallTag = "Wall";     // the edge colliders along the sides of buildings
     public string playerTag = "Player";
 
     [Header("AI - Decision")]
@@ -133,6 +134,7 @@ public partial class RatController : MonoBehaviour
     // Player awareness
     private CatMotor player;
     private CatStateController playerState;
+    private readonly HashSet<Collider2D> passableWalls = new HashSet<Collider2D>();
     private Collider2D playerCollider;
     private Rigidbody2D playerBody;
     private bool playerDetected = false;
@@ -176,6 +178,17 @@ public partial class RatController : MonoBehaviour
         if (bodyCollider == null)
         {
             Debug.LogWarning("RatController: no body Collider2D found on " + name, this);
+        }
+
+        // Building walls are meant for the cat only: the rat walks straight through them and its sensing
+        // does not see them
+        foreach (PassableWhenGrounded wall in FindObjectsByType<PassableWhenGrounded>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            foreach (Collider2D c in wall.GetComponents<Collider2D>())
+            {
+                passableWalls.Add(c);
+                if (bodyCollider != null) Physics2D.IgnoreCollision(bodyCollider, c, true);
+            }
         }
 
         solidFilter = ContactFilter2D.noFilter;

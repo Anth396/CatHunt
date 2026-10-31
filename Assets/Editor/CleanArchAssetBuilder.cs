@@ -192,6 +192,9 @@ public static class CleanArchAssetBuilder
         Action soundDash = Sound("Sound_Dash", "dash-sound.mp3");
         Action soundSlash = Sound("Sound_Slash", "slash.mp3");
         Action soundKnock = Sound("Sound_Knockback", "knockback.mp3");
+        Action startCling = Asset<StartClingAction>(Actions, "StartCling");
+        Action wallJump = Asset<WallJumpAction>(Actions, "WallJump");
+        Action animCling = Anim("Anim_Cling", "cat-wall-hold");
 
         // Decisions
         Decision dashPressed = Flag("CatFlag_DashPressed", CatFlag.DashPressed);
@@ -205,6 +208,11 @@ public static class CleanArchAssetBuilder
         Decision superDone = Countdown("CatCountdown_SuperDash", CatDuration.SuperDash);
         Decision slashDone = Countdown("CatCountdown_Slash", CatDuration.Slash);
         Decision stunDone = Countdown("CatCountdown_Stun", CatDuration.Stun);
+        Decision clingToWall = Flag("CatFlag_ClingToWall", CatFlag.ClingToWall);
+        Decision clingReleased = Flag("CatFlag_ClingReleased", CatFlag.ClingReleased);
+        Decision grounded = Flag("CatFlag_Grounded", CatFlag.Grounded);
+        Decision lostWall = Flag("CatFlag_LostWall", CatFlag.LostWall);
+        Decision wallJumpDone = Countdown("CatCountdown_WallJump", CatDuration.WallJump);
 
         // States (asset names must match the CatMoveState enum)
         State normal = MakeState(MoveStates, "Normal", Color.green);
@@ -213,13 +221,35 @@ public static class CleanArchAssetBuilder
         State superDashing = MakeState(MoveStates, "SuperDashing", Color.blue);
         State slashing = MakeState(MoveStates, "Slashing", Color.magenta);
         State stunned = MakeState(MoveStates, "Stunned", Color.red);
+        State wallClinging = MakeState(MoveStates, "WallClinging", new Color(1f, 0.5f, 0f));
+        State wallJumping = MakeState(MoveStates, "WallJumping", Color.white);
 
         normal.setupActions = new[] { motorFree, animNone };
         normal.transitions = new[]
         {
             T(dashPressed, charging, remain),
             T(slashPressed, slashing, remain),
-            T(obstacleHit, stunned, remain)
+            T(obstacleHit, stunned, remain),
+            T(clingToWall, wallClinging, remain)
+        };
+
+        // Holding the wall: released -> fall, jump -> kick off, ground or lost wall -> normal
+        wallClinging.setupActions = new[] { startCling, animCling };
+        wallClinging.exitActions = new[] { motorFree, animNone };
+        wallClinging.transitions = new[]
+        {
+            T(obstacleHit, stunned, remain),
+            T(jumpPressed, wallJumping, remain),
+            T(clingReleased, normal, remain),
+            T(grounded, normal, remain),
+            T(lostWall, normal, remain)
+        };
+
+        wallJumping.setupActions = new[] { wallJump };
+        wallJumping.transitions = new[]
+        {
+            T(obstacleHit, stunned, remain),
+            T(wallJumpDone, normal, remain)
         };
 
         charging.setupActions = new[] { motorBrake, animHold, clearSuper };
@@ -265,7 +295,7 @@ public static class CleanArchAssetBuilder
         stunned.exitActions = new[] { motorFree };
         stunned.transitions = new[] { T(stunDone, normal, remain) };
 
-        foreach (State s in new[] { normal, charging, dashing, superDashing, slashing, stunned }) EditorUtility.SetDirty(s);
+        foreach (State s in new[] { normal, charging, dashing, superDashing, slashing, stunned, wallClinging, wallJumping }) EditorUtility.SetDirty(s);
     }
 
     // ------------------------------------------------------------------ cat buff FSM (3 states)

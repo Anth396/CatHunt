@@ -34,6 +34,11 @@ public class GameConstants : ScriptableObject
     public float catSlashCooldown = 0.3f;
     public float catStunDuration = 0.3f;
 
+    [Header("Cat - Wall Cling")]
+    public float catWallJumpSpeedX = 10f;       // horizontal speed away from the wall
+    public float catWallJumpSpeedY = 15f;       // upward speed
+    public float catWallJumpTime = 0.25f;       // input is locked this long so the cat is not pulled back on
+
     [Header("Cat - Buffs")]
     public float hasteSpeedMultiplier = 1.5f;
     public float invisibleAlpha = 0.35f;

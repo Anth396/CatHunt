@@ -72,14 +72,14 @@ public partial class RatController
         {
             RaycastHit2D hit = castHits[i];
             Collider2D col = hit.collider;
-            if (col == null || col == detectBox || col.transform.IsChildOf(transform)) continue;
+            if (col == null || col == detectBox || col.transform.IsChildOf(transform) || passableWalls.Contains(col)) continue;
             if (col.isTrigger) continue;    // trigger colliders are not solid
             if (col.CompareTag(playerTag)) continue;
 
             bool horizontalSurface = hit.normal == Vector2.zero || Mathf.Abs(hit.normal.x) > 0.5f;
             if (!horizontalSurface) continue;
 
-            if (col.CompareTag(wallTag))
+            if (col.CompareTag(wallTag) || col.CompareTag(buildingWallTag))
             {
                 r.wall = true;
                 r.wallDist = Mathf.Min(r.wallDist, hit.distance);
@@ -145,7 +145,7 @@ public partial class RatController
             for (int i = 0; i < n; i++)
             {
                 Collider2D c = rayHits[i].collider;
-                if (c == null || c == detectBox || c.transform.IsChildOf(transform)) continue;
+                if (c == null || c == detectBox || c.transform.IsChildOf(transform) || passableWalls.Contains(c)) continue;
                 if (groundDist < 0f || rayHits[i].distance < groundDist) groundDist = rayHits[i].distance;
             }
 
@@ -188,7 +188,7 @@ public partial class RatController
             Collider2D highest = null;
             foreach (Collider2D c in stackResults)
             {
-                if (c == null || c == detectBox || c.transform.IsChildOf(transform)) continue;
+                if (c == null || c == detectBox || c.transform.IsChildOf(transform) || passableWalls.Contains(c)) continue;
                 if (c.bounds.max.y <= currentTop + 0.001f) continue;   // not above the current top
                 if (highest == null || c.bounds.max.y > highest.bounds.max.y) highest = c;
             }

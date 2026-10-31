@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1bf8a07785cd054b95d6321131fd524, type: 3}
+  m_Name: WallClinging
+  m_EditorClassIdentifier: Assembly-CSharp::State
+  setupActions:
+  - {fileID: 11400000, guid: f03baa6600358a14eb0a592608794ede, type: 2}
+  - {fileID: 11400000, guid: 4daae733767cddd429957c6e5d07a5e5, type: 2}
+  actions: []
+  eventTriggeredActions: []
+  exitActions:
+  - {fileID: 11400000, guid: 3a1b29dfb06178c42b6fb37b0cfea05c, type: 2}
+  - {fileID: 11400000, guid: 3cc673e30fd640f4c932092928a7db16, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 4d5e7fec84d93d247859c89a3f4c1d82, type: 2}
+    trueState: {fileID: 11400000, guid: 1a79b3fff625f03439e75b7a46f6170a, type: 2}
+    falseState: {fileID: 11400000, guid: 7c398ed36e3c5914fbfc244aed59852b, type: 2}
+  - decision: {fileID: 11400000, guid: ddd83f9e838f0ff459c7cf45c1e38a83, type: 2}
+    trueState: {fileID: 11400000, guid: fd8ba3f79f3593b4a809089e0d8a2362, type: 2}
+    falseState: {fileID: 11400000, guid: 7c398ed36e3c5914fbfc244aed59852b, type: 2}
+  - decision: {fileID: 11400000, guid: 5fa21e071ca9adc4b8217a1f8091b42d, type: 2}
+    trueState: {fileID: 11400000, guid: ac6b22e3b9a15404aadb4ace5cd4047d, type: 2}
+    falseState: {fileID: 11400000, guid: 7c398ed36e3c5914fbfc244aed59852b, type: 2}
+  - decision: {fileID: 11400000, guid: c450cf6bc54e0a94d948c9f2843c051a, type: 2}
+    trueState: {fileID: 11400000, guid: ac6b22e3b9a15404aadb4ace5cd4047d, type: 2}
+    falseState: {fileID: 11400000, guid: 7c398ed36e3c5914fbfc244aed59852b, type: 2}
+  - decision: {fileID: 11400000, guid: 0806cf11cbc24314c8949b6b462d963d, type: 2}
+    trueState: {fileID: 11400000, guid: ac6b22e3b9a15404aadb4ace5cd4047d, type: 2}
+    falseState: {fileID: 11400000, guid: 7c398ed36e3c5914fbfc244aed59852b, type: 2}
+  sceneGizmoColor: {r: 1, g: 0.5, b: 0, a: 1}

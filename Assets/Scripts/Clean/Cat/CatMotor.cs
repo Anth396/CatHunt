@@ -5,7 +5,8 @@ public enum CatMotorMode
     Free,       // normal running and jumping
     Brake,      // standing still while charging a dash (facing can still change)
     Dash,       // fixed-speed dash
-    Locked      // ignores input (stunned)
+    Locked,     // ignores input (stunned)
+    Cling       // holding on to a wall: no gravity, no movement
 }
 
 /// <summary>
@@ -19,6 +20,7 @@ public class CatMotor : MonoBehaviour
     [Header("Data")]
     public GameConstants constants;
     public string groundTag = "Ground";
+    public string wallTag = "Wall";
 
     [Header("Sound")]
     public AudioSource jumpAudio;
@@ -29,6 +31,13 @@ public class CatMotor : MonoBehaviour
     public float SpeedMultiplier { get; set; } = 1f;    // haste buff
 
     public bool IsGrounded => onGround;
+
+    // -1 = a wall on the left, 1 = on the right, 0 = not touching one (tag "Wall")
+    public int WallSide { get; private set; }
+
+    // The cling key (shift) is held; set by the state machine. Building walls are only solid to a cat
+    // that is in the air with this key held.
+    public bool ClingKeyHeld { get; set; }
     public bool FacingRight => sprite == null || !sprite.flipX;
     public Vector2 Velocity => body != null ? body.linearVelocity : Vector2.zero;
     public Bounds Bounds => cachedCollider != null ? cachedCollider.bounds : new Bounds(transform.position, Vector3.one);
@@ -44,6 +53,10 @@ public class CatMotor : MonoBehaviour
 
     private bool onGround = false;
     private bool jumpRequest = false;
+
+    // Walls that do not stop the cat on the ground (PassableWhenGrounded markers)
+    private readonly System.Collections.Generic.List<Collider2D> passableWalls = new System.Collections.Generic.List<Collider2D>();
+    private bool ignoringWalls = false;
     private int moveInput = 0;
     private float horizontalInput = 0f;
     private float airMomentumX = 0f;
@@ -96,6 +109,26 @@ public class CatMotor : MonoBehaviour
         initialRotation = transform.rotation;
         initialScale = transform.localScale;
         initialFlipX = sprite != null && sprite.flipX;
+
+        foreach (PassableWhenGrounded wall in FindObjectsByType<PassableWhenGrounded>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            passableWalls.AddRange(wall.GetComponents<Collider2D>());
+        }
+    }
+
+    // Those walls are solid only for a cat in the air that holds the cling key. On the ground, or in
+    // the air without the key, the cat passes straight through them.
+    private void UpdateWallCollision()
+    {
+        bool ignore = onGround || !ClingKeyHeld;
+        if (ignore == ignoringWalls) return;
+
+        ignoringWalls = ignore;
+        foreach (Collider2D wall in passableWalls)
+        {
+            if (wall != null) Physics2D.IgnoreCollision(cachedCollider, wall, ignoringWalls);
+        }
+        if (ignoringWalls) WallSide = 0;    // the contact is gone, so forget the wall
     }
 
     // ------------------------------------------------ called by listeners / state machine actions
@@ -162,9 +195,36 @@ public class CatMotor : MonoBehaviour
         Mode = CatMotorMode.Locked;
     }
 
+    // Grab the wall the cat is touching: stop dead, no gravity, face the wall
+    public void StartCling()
+    {
+        Mode = CatMotorMode.Cling;
+        airMomentumX = 0f;
+        body.linearVelocity = Vector2.zero;
+        if (WallSide != 0 && sprite != null) sprite.flipX = WallSide < 0;
+    }
+
+    // Kick off the wall: away from it, with upward speed
+    public void WallJump()
+    {
+        int away = WallSide != 0 ? -WallSide : (FacingRight ? -1 : 1);
+        Vector2 v = new Vector2(away * constants.catWallJumpSpeedX, constants.catWallJumpSpeedY);
+        Mode = CatMotorMode.Free;
+        body.linearVelocity = v;
+        airMomentumX = v.x;
+        onGround = false;
+        WallSide = 0;
+        if (sprite != null) sprite.flipX = away < 0;
+        if (jumpAudio != null && jumpAudio.clip != null) jumpAudio.PlayOneShot(jumpAudio.clip);   // same sound as a normal jump
+    }
+
+    public float WallJumpTime => constants.catWallJumpTime;
+
     // Back to the scene start pose (GameRestart / RoundReset)
     public void ResetState()
     {
+        WallSide = 0;
+        ClingKeyHeld = false;
         Mode = CatMotorMode.Free;
         AnimationOverride = null;
         SpeedMultiplier = 1f;
@@ -204,6 +264,15 @@ public class CatMotor : MonoBehaviour
 
     void FixedUpdate()
     {
+        UpdateWallCollision();
+
+        // Clinging to a wall: held in place until the state machine lets go
+        if (Mode == CatMotorMode.Cling)
+        {
+            body.linearVelocity = Vector2.zero;
+            return;
+        }
+
         Vector2 v = body.linearVelocity;
         float dt = Time.fixedDeltaTime;
         float input = Mode == CatMotorMode.Locked ? 0f : horizontalInput;
@@ -218,8 +287,9 @@ public class CatMotor : MonoBehaviour
 
         if (jumpRequest)
         {
-            if (Mode == CatMotorMode.Dash) Mode = CatMotorMode.Free;
-            airMomentumX = v.x;
+            bool fromDash = Mode == CatMotorMode.Dash;
+            if (fromDash) Mode = CatMotorMode.Free;
+            airMomentumX = JumpHorizontalSpeed(v.x, fromDash);
             v.y = jumpForce;
             onGround = false;
             jumpRequest = false;
@@ -266,6 +336,19 @@ public class CatMotor : MonoBehaviour
         body.linearVelocity = v;
     }
 
+    // Horizontal speed the cat leaves the ground with. It follows the direction held on the move input:
+    // nothing held is a straight jump. Going that way already faster than the move speed keeps the speed,
+    // otherwise the cat leaves at the move speed. A jump out of a dash keeps the dash speed and direction.
+    private float JumpHorizontalSpeed(float currentX, bool fromDash)
+    {
+        if (fromDash) return currentX;
+        if (moveInput == 0) return 0f;
+
+        float minSpeed = moveSpeed * SpeedMultiplier;
+        float alongInput = currentX * moveInput;        // negative when moving against the held direction
+        return moveInput * Mathf.Max(alongInput, minSpeed);
+    }
+
     // Only a surface under the cat is ground (not the side of a Ground-tagged wall), and a wall the air
     // momentum pushes into stops that momentum so the cat cannot stick to it.
     void OnCollisionEnter2D(Collision2D col)
@@ -280,6 +363,8 @@ public class CatMotor : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D col)
     {
+        if (col.gameObject.CompareTag(wallTag) && col.gameObject.TryGetComponent<PassableWhenGrounded>(out _)) WallSide = 0;
+
         if (col.gameObject.CompareTag(groundTag))
         {
             onGround = false;
@@ -292,9 +377,17 @@ public class CatMotor : MonoBehaviour
         bool standingOn = false;
         bool pushingIntoWall = false;
 
+        // Only the outer side of a building wall can be clung to (not the map edge, not the inside)
+        PassableWhenGrounded building = null;
+        bool clingable = col.gameObject.CompareTag(wallTag) && col.gameObject.TryGetComponent(out building);
         for (int i = 0; i < col.contactCount; i++)
         {
             Vector2 normal = col.GetContact(i).normal;
+            // The normal points from the wall towards the cat, so the wall is on the opposite side
+            if (clingable && Mathf.Abs(normal.x) > 0.5f && normal.x * building.outwardX > 0f)
+            {
+                WallSide = normal.x > 0f ? -1 : 1;
+            }
             if (normal.y > 0.5f) standingOn = true;
             if (Mathf.Abs(normal.x) > 0.5f && airMomentumX * normal.x < 0f) pushingIntoWall = true;
         }

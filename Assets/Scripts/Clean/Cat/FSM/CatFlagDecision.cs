@@ -8,7 +8,11 @@ public enum CatFlag
     SlashPressed,
     JumpPressed,
     ObstacleHit,
-    NotGrounded
+    NotGrounded,
+    Grounded,
+    ClingToWall,            // in the air, touching a wall, and the cling (shift) key is held
+    ClingReleased,          // the cling (shift) key is no longer held
+    LostWall                // no wall under the cat's hands any more
 }
 
 /// <summary>True when the chosen input / contact flag of the cat is set.</summary>
@@ -29,6 +33,10 @@ public class CatFlagDecision : Decision
             case CatFlag.JumpPressed: return cat.jumpPressed;
             case CatFlag.ObstacleHit: return cat.obstacleHit;
             case CatFlag.NotGrounded: return !cat.motor.IsGrounded;
+            case CatFlag.Grounded: return cat.motor.IsGrounded;
+            case CatFlag.ClingToWall: return cat.dashHeld && !cat.motor.IsGrounded && cat.motor.WallSide != 0;
+            case CatFlag.ClingReleased: return !cat.dashHeld;
+            case CatFlag.LostWall: return cat.motor.WallSide == 0;
             default: return false;
         }
     }
