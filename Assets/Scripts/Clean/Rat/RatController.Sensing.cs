@@ -73,6 +73,7 @@ public partial class RatController
             RaycastHit2D hit = castHits[i];
             Collider2D col = hit.collider;
             if (col == null || col == detectBox || col.transform.IsChildOf(transform) || passableWalls.Contains(col)) continue;
+            if (col.CompareTag(stairTag)) continue;     // a stair is walked on, never a wall or an obstacle
             if (col.isTrigger) continue;    // trigger colliders are not solid
             if (col.CompareTag(playerTag)) continue;
 
@@ -142,12 +143,20 @@ public partial class RatController
             int n = Physics2D.Raycast(origin, Vector2.down, solidFilter, rayHits, maxDropDepth + 0.1f);
 
             float groundDist = -1f;
+            bool overStair = false;
             for (int i = 0; i < n; i++)
             {
                 Collider2D c = rayHits[i].collider;
                 if (c == null || c == detectBox || c.transform.IsChildOf(transform) || passableWalls.Contains(c)) continue;
-                if (groundDist < 0f || rayHits[i].distance < groundDist) groundDist = rayHits[i].distance;
+                if (groundDist < 0f || rayHits[i].distance < groundDist)
+                {
+                    groundDist = rayHits[i].distance;
+                    overStair = c.CompareTag(stairTag);
+                }
             }
+
+            // A stair carries the floor on (up or down), so the way ahead is not a ledge
+            if (overStair) continue;
 
             bool isVoid = groundDist < 0f;
             float depth = isVoid ? float.MaxValue : groundDist - 0.1f;
@@ -188,7 +197,7 @@ public partial class RatController
             Collider2D highest = null;
             foreach (Collider2D c in stackResults)
             {
-                if (c == null || c == detectBox || c.transform.IsChildOf(transform) || passableWalls.Contains(c)) continue;
+                if (c == null || c == detectBox || c.transform.IsChildOf(transform) || passableWalls.Contains(c) || c.CompareTag(stairTag)) continue;
                 if (c.bounds.max.y <= currentTop + 0.001f) continue;   // not above the current top
                 if (highest == null || c.bounds.max.y > highest.bounds.max.y) highest = c;
             }

@@ -141,6 +141,16 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": false,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""down"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3f1c1a2-6d0e-4a55-9d2b-3c7a5e8f1a10"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -231,6 +241,28 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
                     ""action"": ""super-dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4a2d2b3-7e1f-4b66-8e3c-4d8b6f9a2b21"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5b3e3c4-8f20-4c77-9f4d-5e9c7a0b3c32"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard"",
+                    ""action"": ""down"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -261,6 +293,7 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         m_gameplay_dash = m_gameplay.FindAction("dash", throwIfNotFound: true);
         m_gameplay_slash = m_gameplay.FindAction("slash", throwIfNotFound: true);
         m_gameplay_superdash = m_gameplay.FindAction("super-dash", throwIfNotFound: true);
+        m_gameplay_down = m_gameplay.FindAction("down", throwIfNotFound: true);
     }
 
     ~@CatActions()
@@ -346,6 +379,7 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_dash;
     private readonly InputAction m_gameplay_slash;
     private readonly InputAction m_gameplay_superdash;
+    private readonly InputAction m_gameplay_down;
     /// <summary>
     /// Provides access to input actions defined in input action map "gameplay".
     /// </summary>
@@ -377,6 +411,10 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "gameplay/superdash".
         /// </summary>
         public InputAction @superdash => m_Wrapper.m_gameplay_superdash;
+        /// <summary>
+        /// Provides access to the underlying input action "gameplay/down".
+        /// </summary>
+        public InputAction @down => m_Wrapper.m_gameplay_down;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -418,6 +456,9 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
             @superdash.started += instance.OnSuperdash;
             @superdash.performed += instance.OnSuperdash;
             @superdash.canceled += instance.OnSuperdash;
+            @down.started += instance.OnDown;
+            @down.performed += instance.OnDown;
+            @down.canceled += instance.OnDown;
         }
 
         /// <summary>
@@ -444,6 +485,9 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
             @superdash.started -= instance.OnSuperdash;
             @superdash.performed -= instance.OnSuperdash;
             @superdash.canceled -= instance.OnSuperdash;
+            @down.started -= instance.OnDown;
+            @down.performed -= instance.OnDown;
+            @down.canceled -= instance.OnDown;
         }
 
         /// <summary>
@@ -532,5 +576,12 @@ public partial class @CatActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSuperdash(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "down" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDown(InputAction.CallbackContext context);
     }
 }

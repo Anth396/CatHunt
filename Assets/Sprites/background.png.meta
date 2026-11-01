@@ -176,9 +176,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 853
+        y: 850
         width: 136
-        height: 124
+        height: 131
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,10 +637,10 @@ TextureImporter:
       name: Generated Image September 24, 2026 - 12_16AM (1)_21
       rect:
         serializedVersion: 2
-        x: 19
-        y: 20
-        width: 219
-        height: 161
+        x: 23
+        y: 80
+        width: 211
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -721,6 +721,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: background_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 853
+        width: 139
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c76aca763edb9d4bb2163d20865d10c
+      internalID: 1651321701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -754,6 +776,7 @@ TextureImporter:
       Generated Image September 24, 2026 - 12_16AM (1)_5: -3520727669861844009
       Generated Image September 24, 2026 - 12_16AM (1)_7: 6179453122806179928
       Generated Image September 24, 2026 - 12_16AM (1)_9: 3641695293039451013
+      background_0: 1651321701
       brick_ground: 9087447416156253270
       potion: -8250170673506784733
       rock: -3202097913145499711

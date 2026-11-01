@@ -14,6 +14,8 @@ public class CatInput : MonoBehaviour
     public SimpleGameEvent dashReleased;
     public SimpleGameEvent superDashReady;      // dash held long enough (Hold interaction on "superdash")
     public SimpleGameEvent slashPressed;
+    public SimpleGameEvent downPressed;         // drop through a stair
+    public SimpleGameEvent downReleased;
 
     private CatActions actions;
     private int move;
@@ -30,6 +32,8 @@ public class CatInput : MonoBehaviour
         g.dash.canceled += OnDash;
         g.superdash.performed += OnSuperDash;
         g.slash.started += OnSlash;
+        g.down.started += OnDown;
+        g.down.canceled += OnDown;
         g.Enable();
     }
 
@@ -46,6 +50,8 @@ public class CatInput : MonoBehaviour
         g.dash.canceled -= OnDash;
         g.superdash.performed -= OnSuperDash;
         g.slash.started -= OnSlash;
+        g.down.started -= OnDown;
+        g.down.canceled -= OnDown;
         move = 0;
     }
 
@@ -89,5 +95,17 @@ public class CatInput : MonoBehaviour
     private void OnSlash(InputAction.CallbackContext context)
     {
         if (slashPressed != null) slashPressed.Raise();
+    }
+
+    private void OnDown(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            if (downPressed != null) downPressed.Raise();
+        }
+        else if (context.canceled)
+        {
+            if (downReleased != null) downReleased.Raise();
+        }
     }
 }

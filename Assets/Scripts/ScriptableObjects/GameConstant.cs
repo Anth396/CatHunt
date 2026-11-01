@@ -38,6 +38,8 @@ public class GameConstants : ScriptableObject
     public float catWallJumpSpeedX = 10f;       // horizontal speed away from the wall
     public float catWallJumpSpeedY = 15f;       // upward speed
     public float catWallJumpTime = 0.25f;       // input is locked this long so the cat is not pulled back on
+    public float catWallSlideDelay = 0.3f;      // the cat holds still this long, then starts to slide down
+    public float catWallSlideSpeed = 2f;        // downward speed while sliding
 
     [Header("Cat - Buffs")]
     public float hasteSpeedMultiplier = 1.5f;

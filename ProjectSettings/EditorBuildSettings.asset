@@ -6,17 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SO/mainmenu.unity
-    guid: cfcc9563f8b79cf4e8e16a2bd518a375
+    path: Assets/Scenes/NewGame/mainmenu.unity
+    guid: b347c2e328b5a014c8309864102d78ba
   - enabled: 1
     path: Assets/Scenes/SO/loading.unity
     guid: 6c5a60cd1765b95479f4fb44f41fcb84
   - enabled: 1
+    path: Assets/Scenes/NewGame/lobby.unity
+    guid: f5eb0d4c28d61794cbaaf8bf1a0ccdfc
+  - enabled: 0
     path: Assets/Scenes/SO/city.unity
     guid: c0b8c70487856684b9f5cab85b685357
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SO/sewer.unity
     guid: 45954a952833bd7488ca41e89b658bf0
+  - enabled: 1
+    path: Assets/Scenes/NewGame/cellar.unity
+    guid: ff4b8a531829276468c22550b68bb001
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

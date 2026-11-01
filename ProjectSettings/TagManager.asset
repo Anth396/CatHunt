@@ -9,6 +9,8 @@ TagManager:
   - Obstacle
   - Breakable
   - Wall
+  - Stair
+  - Interactable
   layers:
   - Default
   - TransparentFX

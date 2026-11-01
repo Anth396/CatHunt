@@ -45,6 +45,7 @@ public partial class RatController : MonoBehaviour
     public float ledgeMinDepth = 0.6f;
     public float maxDropDepth = 8f;
     public string groundTag = "Ground";
+    public string stairTag = "Stair";           // walkable like ground, with a slope to follow
     public string wallTag = "Ground";
     public string buildingWallTag = "Wall";     // the edge colliders along the sides of buildings
     public string playerTag = "Player";
@@ -119,6 +120,7 @@ public partial class RatController : MonoBehaviour
 
     // Physics state
     private bool onGroundState = false;
+    private Vector2 groundNormal = Vector2.up;      // the slope under the rat, so it can walk up a stair
     private float moveDir = 1f;
     private float airMomentumX = 0f;
     private bool jumpRequest = false;
@@ -285,14 +287,43 @@ public partial class RatController : MonoBehaviour
             currentVel.x = airMomentumX;
         }
 
+        // Follow the slope under the rat (zero on flat ground), so a stair is walked up and down
+        if (onGroundState)
+        {
+            currentVel.y = SlopeVelocityY(currentVel.x);
+        }
+        else
+        {
+            groundNormal = Vector2.up;
+        }
+
         enemyBody.linearVelocity = currentVel;
+    }
+
+    private float SlopeVelocityY(float vx)
+    {
+        if (groundNormal.y > 0.999f || groundNormal.y < 0.2f) return 0f;
+        return -vx * groundNormal.x / groundNormal.y;
+    }
+
+    // Remember the flattest surface the rat stands on
+    private void UpdateGroundNormal(Collision2D col)
+    {
+        Vector2 best = Vector2.zero;
+        for (int i = 0; i < col.contactCount; i++)
+        {
+            Vector2 n = col.GetContact(i).normal;
+            if (n.y > 0.5f && n.y > best.y) best = n;
+        }
+        if (best.y > 0f) groundNormal = best;
     }
 
     // Ground state is driven by collisions, same as the cat
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag(groundTag))
+        if (col.gameObject.CompareTag(groundTag) || col.gameObject.CompareTag(stairTag))
         {
+            UpdateGroundNormal(col);
             bool wasAirborne = !onGroundState;
             onGroundState = true;
             jumpedThisAir = false;
@@ -306,6 +337,7 @@ public partial class RatController : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D col)
     {
+        if (col.gameObject.CompareTag(groundTag) || col.gameObject.CompareTag(stairTag)) UpdateGroundNormal(col);
         CheckOnTopOfPlayer(col);
     }
 
@@ -327,8 +359,15 @@ public partial class RatController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag(groundTag))
+        if (col.gameObject.CompareTag(groundTag) || col.gameObject.CompareTag(stairTag))
         {
+            // Walking off the top end of a slope: the upward speed that followed it is not a jump
+            if (onGroundState && !jumpRequest && enemyBody.linearVelocity.y > 0f)
+            {
+                Vector2 v = enemyBody.linearVelocity;
+                v.y = 0f;
+                enemyBody.linearVelocity = v;
+            }
             onGroundState = false;
             // Walked off a ledge: keep horizontal speed. After a jump the take-off speed must stay,
             // otherwise this overwrites it with the (slower) ground speed and the jump falls short.

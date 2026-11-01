@@ -1,13 +1,14 @@
 using TMPro;
 using UnityEngine;
 
-/// <summary>Main menu: shows the saved high score and starts a new game from the Start button.</summary>
+/// <summary>Main menu: shows the saved high score and starts a new game (the lobby) from the Start button.</summary>
 public class MainMenuView : MonoBehaviour
 {
     public TextMeshProUGUI highScoreText;
     public IntVariable gameScore;
     public StringGameEvent sceneRequested;
-    public string firstLevel = "city";
+    [Tooltip("Scene the Start button goes to (through the loading scene). It must be in the Build Settings.")]
+    public string firstLevel = "lobby";
 
     void Start()
     {

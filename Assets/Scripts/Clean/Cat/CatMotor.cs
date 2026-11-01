@@ -21,6 +21,12 @@ public class CatMotor : MonoBehaviour
     public GameConstants constants;
     public string groundTag = "Ground";
     public string wallTag = "Wall";
+    [Tooltip("Stairs are walkable like ground, solid only from above, and the cat can drop through them with Down.")]
+    public string stairTag = "Stair";
+    [Tooltip("The stairs stay switched off this long after Down is released, so the cat is clear of them.")]
+    public float stairRestoreDelay = 0.2f;
+    [Tooltip("Objects with this tag are only solid to the cat during a super dash.")]
+    public string interactableTag = "Interactable";
 
     [Header("Sound")]
     public AudioSource jumpAudio;
@@ -38,6 +44,8 @@ public class CatMotor : MonoBehaviour
     // The cling key (shift) is held; set by the state machine. Building walls are only solid to a cat
     // that is in the air with this key held.
     public bool ClingKeyHeld { get; set; }
+
+    private float clingStartTime;
     public bool FacingRight => sprite == null || !sprite.flipX;
     public Vector2 Velocity => body != null ? body.linearVelocity : Vector2.zero;
     public Bounds Bounds => cachedCollider != null ? cachedCollider.bounds : new Bounds(transform.position, Vector3.one);
@@ -57,6 +65,23 @@ public class CatMotor : MonoBehaviour
     // Walls that do not stop the cat on the ground (PassableWhenGrounded markers)
     private readonly System.Collections.Generic.List<Collider2D> passableWalls = new System.Collections.Generic.List<Collider2D>();
     private bool ignoringWalls = false;
+
+    // Slopes (stairs): the surface normal under the cat, so walking follows the slope
+    private Vector2 groundNormal = Vector2.up;
+    private bool groundIsStair = false;
+
+    // Dropping through stairs while Down is held
+    private readonly System.Collections.Generic.List<Collider2D> stairColliders = new System.Collections.Generic.List<Collider2D>();
+    private bool downHeld = false;
+    private bool ignoringStairs = false;
+    private float stairRestoreTime = 0f;
+
+    // Interactable objects (armor, bookshelf...): the cat passes through them, except in a super dash
+    private readonly System.Collections.Generic.List<Collider2D> interactableColliders = new System.Collections.Generic.List<Collider2D>();
+    private bool ignoringInteractables = false;
+    private bool interactablesApplied = false;
+    private bool currentDashIsSuper = false;
+    private float nextInteractableScan = 0f;
     private int moveInput = 0;
     private float horizontalInput = 0f;
     private float airMomentumX = 0f;
@@ -116,6 +141,88 @@ public class CatMotor : MonoBehaviour
         }
     }
 
+    // ------------------------------------------------ interactable objects
+
+    // The cat walks, runs, jumps and dashes straight through objects tagged Interactable; only a super dash
+    // hits them.
+    private void UpdateInteractableCollision()
+    {
+        bool ignore = !(Mode == CatMotorMode.Dash && currentDashIsSuper);
+        bool rescan = Time.time >= nextInteractableScan;
+        if (interactablesApplied && ignore == ignoringInteractables && !rescan) return;
+
+        nextInteractableScan = Time.time + 2f;
+        interactableColliders.Clear();
+        try
+        {
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag(interactableTag))
+            {
+                interactableColliders.AddRange(go.GetComponents<Collider2D>());
+            }
+        }
+        catch (UnityException)
+        {
+            // the tag does not exist in this project yet: nothing to do
+        }
+        foreach (Collider2D c in interactableColliders)
+        {
+            if (c != null && !c.isTrigger) Physics2D.IgnoreCollision(cachedCollider, c, ignore);
+        }
+        ignoringInteractables = ignore;
+        interactablesApplied = true;
+    }
+
+    // ------------------------------------------------ dropping through stairs
+
+    // Down pressed: the cat stops colliding with every stair, so it falls through the one it stands on
+    public void OnDownPressed()
+    {
+        downHeld = true;
+        if (ignoringStairs) return;
+
+        stairColliders.Clear();
+        foreach (GameObject stair in GameObject.FindGameObjectsWithTag(stairTag))
+        {
+            stairColliders.AddRange(stair.GetComponents<Collider2D>());
+        }
+        foreach (Collider2D c in stairColliders) Physics2D.IgnoreCollision(cachedCollider, c, true);
+        ignoringStairs = true;
+
+        if (groundIsStair)
+        {
+            // Standing on a stair: let go of it and fall
+            onGround = false;
+            groundIsStair = false;
+            groundNormal = Vector2.up;
+            airMomentumX = body.linearVelocity.x;
+        }
+    }
+
+    public void OnDownReleased()
+    {
+        downHeld = false;
+        stairRestoreTime = Time.time + stairRestoreDelay;
+    }
+
+    private void UpdateStairCollision()
+    {
+        if (!ignoringStairs || downHeld || Time.time < stairRestoreTime) return;
+
+        foreach (Collider2D c in stairColliders)
+        {
+            if (c != null) Physics2D.IgnoreCollision(cachedCollider, c, false);
+        }
+        stairColliders.Clear();
+        ignoringStairs = false;
+    }
+
+    // Vertical speed that keeps the cat on the slope it walks along (0 on flat ground)
+    private float SlopeVelocityY(float vx)
+    {
+        if (groundNormal.y > 0.999f || groundNormal.y < 0.2f) return 0f;
+        return -vx * groundNormal.x / groundNormal.y;
+    }
+
     // Those walls are solid only for a cat in the air that holds the cling key. On the ground, or in
     // the air without the key, the cat passes straight through them.
     private void UpdateWallCollision()
@@ -159,6 +266,7 @@ public class CatMotor : MonoBehaviour
 
     public void StartDash(bool super)
     {
+        currentDashIsSuper = super;
         currentDashSpeed = super ? constants.catSuperDashSpeed : constants.catDashSpeed;
         dashDirection = FacingRight ? 1f : -1f;
         Mode = CatMotorMode.Dash;
@@ -171,7 +279,10 @@ public class CatMotor : MonoBehaviour
 
         Mode = CatMotorMode.Free;
         Vector2 v = body.linearVelocity;
-        v.x = dashDirection * maxSpeed;
+        // A dash that ran into something solid (e.g. a super dash into a bookshelf) stops there; only a
+        // free dash leaves at running speed
+        bool blocked = Mathf.Abs(v.x) < currentDashSpeed * 0.5f;
+        if (!blocked) v.x = dashDirection * maxSpeed;
         body.linearVelocity = v;
     }
 
@@ -195,10 +306,21 @@ public class CatMotor : MonoBehaviour
         Mode = CatMotorMode.Locked;
     }
 
+    // Thrown away from something that hurt the cat (in any state): away along x, and up
+    public void Knockback(float awayX, float speedX, float speedY)
+    {
+        float dir = Mathf.Abs(awayX) > 0.01f ? Mathf.Sign(awayX) : (FacingRight ? -1f : 1f);
+        Vector2 v = new Vector2(dir * speedX, speedY);
+        airMomentumX = v.x;
+        body.linearVelocity = v;
+        onGround = false;
+    }
+
     // Grab the wall the cat is touching: stop dead, no gravity, face the wall
     public void StartCling()
     {
         Mode = CatMotorMode.Cling;
+        clingStartTime = Time.time;
         airMomentumX = 0f;
         body.linearVelocity = Vector2.zero;
         if (WallSide != 0 && sprite != null) sprite.flipX = WallSide < 0;
@@ -225,6 +347,10 @@ public class CatMotor : MonoBehaviour
     {
         WallSide = 0;
         ClingKeyHeld = false;
+        downHeld = false;
+        stairRestoreTime = 0f;
+        groundNormal = Vector2.up;
+        groundIsStair = false;
         Mode = CatMotorMode.Free;
         AnimationOverride = null;
         SpeedMultiplier = 1f;
@@ -265,11 +391,19 @@ public class CatMotor : MonoBehaviour
     void FixedUpdate()
     {
         UpdateWallCollision();
+        UpdateStairCollision();
+        UpdateInteractableCollision();
+        if (!onGround)
+        {
+            groundNormal = Vector2.up;
+            groundIsStair = false;
+        }
 
-        // Clinging to a wall: held in place until the state machine lets go
+        // Clinging to a wall: held in place for a moment, then slides down slowly until the state machine lets go
         if (Mode == CatMotorMode.Cling)
         {
-            body.linearVelocity = Vector2.zero;
+            bool sliding = Time.time - clingStartTime >= constants.catWallSlideDelay;
+            body.linearVelocity = sliding ? new Vector2(0f, -constants.catWallSlideSpeed) : Vector2.zero;
             return;
         }
 
@@ -333,6 +467,8 @@ public class CatMotor : MonoBehaviour
             v.x = airMomentumX;
         }
 
+        if (onGround) v.y = SlopeVelocityY(v.x);    // walk up and down a stair instead of into it
+
         body.linearVelocity = v;
     }
 
@@ -365,8 +501,16 @@ public class CatMotor : MonoBehaviour
     {
         if (col.gameObject.CompareTag(wallTag) && col.gameObject.TryGetComponent<PassableWhenGrounded>(out _)) WallSide = 0;
 
-        if (col.gameObject.CompareTag(groundTag))
+        if (col.gameObject.CompareTag(groundTag) || col.gameObject.CompareTag(stairTag))
         {
+            // Walking off the top end of a slope: the upward speed that followed the slope is not a jump
+            // (a jump has already cleared onGround), so drop it and carry on level
+            if (onGround && !jumpRequest && body.linearVelocity.y > 0f)
+            {
+                Vector2 v = body.linearVelocity;
+                v.y = 0f;
+                body.linearVelocity = v;
+            }
             onGround = false;
             airMomentumX = body.linearVelocity.x;
         }
@@ -376,26 +520,36 @@ public class CatMotor : MonoBehaviour
     {
         bool standingOn = false;
         bool pushingIntoWall = false;
+        Vector2 standNormal = Vector2.zero;
 
-        // Only the outer side of a building wall can be clung to (not the map edge, not the inside)
+        // Only building walls can be clung to (not the map edge), from the sides their marker allows
         PassableWhenGrounded building = null;
         bool clingable = col.gameObject.CompareTag(wallTag) && col.gameObject.TryGetComponent(out building);
         for (int i = 0; i < col.contactCount; i++)
         {
             Vector2 normal = col.GetContact(i).normal;
             // The normal points from the wall towards the cat, so the wall is on the opposite side
-            if (clingable && Mathf.Abs(normal.x) > 0.5f && normal.x * building.outwardX > 0f)
+            if (clingable && Mathf.Abs(normal.x) > 0.5f && building.CanCling(normal.x))
             {
                 WallSide = normal.x > 0f ? -1 : 1;
             }
-            if (normal.y > 0.5f) standingOn = true;
+            if (normal.y > 0.5f)
+            {
+                standingOn = true;
+                if (normal.y > standNormal.y) standNormal = normal;     // the flattest surface under the cat
+            }
             if (Mathf.Abs(normal.x) > 0.5f && airMomentumX * normal.x < 0f) pushingIntoWall = true;
         }
 
-        // Ignored while moving up: the floor contact is still reported on the step of a jump
-        if (standingOn && col.gameObject.CompareTag(groundTag) && body.linearVelocity.y <= 0.1f)
+        bool isStair = col.gameObject.CompareTag(stairTag);
+        bool isGround = col.gameObject.CompareTag(groundTag) || isStair;
+
+        // Ignored while moving away from the surface: the floor contact is still reported on the step of a jump
+        if (standingOn && isGround && Vector2.Dot(body.linearVelocity, standNormal) <= 0.1f)
         {
             onGround = true;
+            groundNormal = standNormal;
+            groundIsStair = isStair;
         }
         else if (!onGround && pushingIntoWall)
         {

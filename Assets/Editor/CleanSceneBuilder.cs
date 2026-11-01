@@ -116,6 +116,8 @@ public static class CleanSceneBuilder
         input.dashReleased = Ev<SimpleGameEvent>("DashReleased");
         input.superDashReady = Ev<SimpleGameEvent>("SuperDashReady");
         input.slashPressed = Ev<SimpleGameEvent>("SlashPressed");
+        input.downPressed = Ev<SimpleGameEvent>("DownPressed");
+        input.downReleased = Ev<SimpleGameEvent>("DownReleased");
         EditorUtility.SetDirty(input);
 
         // ---- level flow
@@ -283,6 +285,8 @@ public static class CleanSceneBuilder
         Listen(cat, "SuperDashReady", V(fsm, "OnSuperDashReady"));
         Listen(cat, "SlashPressed", V(fsm, "OnSlashPressed"));
         Listen(cat, "ObstacleHit", V(fsm, "OnObstacleHit"));
+        Listen(cat, "DownPressed", V(motor, "OnDownPressed"));
+        Listen(cat, "DownReleased", V(motor, "OnDownReleased"));
         Listen(cat, "GameRestart", V(motor, "ResetState"), V(fsm, "ResetState"), V(buff, "ResetState"), V(catcher, "ResetState"));
         Listen(cat, "RoundReset", V(motor, "ResetState"), V(fsm, "ResetState"), V(catcher, "ResetState"));
 

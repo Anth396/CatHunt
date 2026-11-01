@@ -1,0 +1,945 @@
+fileFormatVersion: 2
+guid: 73c6855ad8312e54682448e1a23feac7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1802087008376854910
+    second: Generated Image October 31, 2026 - 6_12PM (1)_0
+  - first:
+      213: 4391546833152025137
+    second: Generated Image October 31, 2026 - 6_12PM (1)_1
+  - first:
+      213: -8158385667194435630
+    second: Generated Image October 31, 2026 - 6_12PM (1)_2
+  - first:
+      213: 7993680216609386730
+    second: Generated Image October 31, 2026 - 6_12PM (1)_3
+  - first:
+      213: 4945400968464560711
+    second: Generated Image October 31, 2026 - 6_12PM (1)_4
+  - first:
+      213: 5481292791179912316
+    second: Generated Image October 31, 2026 - 6_12PM (1)_5
+  - first:
+      213: -8799492537018911801
+    second: Generated Image October 31, 2026 - 6_12PM (1)_6
+  - first:
+      213: 5240786334148072287
+    second: Generated Image October 31, 2026 - 6_12PM (1)_7
+  - first:
+      213: 3754783504945500505
+    second: Generated Image October 31, 2026 - 6_12PM (1)_8
+  - first:
+      213: 3170296880545978432
+    second: Generated Image October 31, 2026 - 6_12PM (1)_9
+  - first:
+      213: -1761338382723074347
+    second: Generated Image October 31, 2026 - 6_12PM (1)_10
+  - first:
+      213: -6839603348720414234
+    second: Generated Image October 31, 2026 - 6_12PM (1)_11
+  - first:
+      213: -7104796574167614054
+    second: Generated Image October 31, 2026 - 6_12PM (1)_12
+  - first:
+      213: 5056170794924010122
+    second: Generated Image October 31, 2026 - 6_12PM (1)_13
+  - first:
+      213: -5577984553567417271
+    second: Generated Image October 31, 2026 - 6_12PM (1)_14
+  - first:
+      213: 8213138491827091678
+    second: Generated Image October 31, 2026 - 6_12PM (1)_15
+  - first:
+      213: -1903109981292035656
+    second: Generated Image October 31, 2026 - 6_12PM (1)_16
+  - first:
+      213: 6371731125105540240
+    second: Generated Image October 31, 2026 - 6_12PM (1)_17
+  - first:
+      213: -1554591760631382854
+    second: Generated Image October 31, 2026 - 6_12PM (1)_18
+  - first:
+      213: 5161537886426309330
+    second: Generated Image October 31, 2026 - 6_12PM (1)_19
+  - first:
+      213: -5053209023844237156
+    second: Generated Image October 31, 2026 - 6_12PM (1)_20
+  - first:
+      213: 6719913680985179174
+    second: Generated Image October 31, 2026 - 6_12PM (1)_21
+  - first:
+      213: -2192842371272433072
+    second: Generated Image October 31, 2026 - 6_12PM (1)_22
+  - first:
+      213: -2414541542352258737
+    second: Generated Image October 31, 2026 - 6_12PM (1)_23
+  - first:
+      213: 14787441483772685
+    second: Generated Image October 31, 2026 - 6_12PM (1)_24
+  - first:
+      213: 7645448875250226841
+    second: Generated Image October 31, 2026 - 6_12PM (1)_25
+  - first:
+      213: 4260435841811792206
+    second: Generated Image October 31, 2026 - 6_12PM (1)_26
+  - first:
+      213: -5639506672111107562
+    second: Generated Image October 31, 2026 - 6_12PM (1)_27
+  - first:
+      213: 5165480866096352678
+    second: Generated Image October 31, 2026 - 6_12PM (1)_28
+  - first:
+      213: 6015555303413308032
+    second: Generated Image October 31, 2026 - 6_12PM (1)_29
+  - first:
+      213: 5183304797516494159
+    second: Generated Image October 31, 2026 - 6_12PM (1)_30
+  - first:
+      213: -293029291757699068
+    second: Generated Image October 31, 2026 - 6_12PM (1)_31
+  - first:
+      213: -8951253334822834048
+    second: Generated Image October 31, 2026 - 6_12PM (1)_32
+  - first:
+      213: -8879144447555932907
+    second: Generated Image October 31, 2026 - 6_12PM (1)_33
+  - first:
+      213: 1017933659122332152
+    second: Generated Image October 31, 2026 - 6_12PM (1)_34
+  - first:
+      213: -4512057436115997776
+    second: Generated Image October 31, 2026 - 6_12PM (1)_35
+  - first:
+      213: -7705760096669358277
+    second: Generated Image October 31, 2026 - 6_12PM (1)_36
+  - first:
+      213: 5884097976747670327
+    second: Generated Image October 31, 2026 - 6_12PM (1)_37
+  - first:
+      213: -2260136485346504546
+    second: Generated Image October 31, 2026 - 6_12PM (1)_38
+  - first:
+      213: -4617834058243363326
+    second: Generated Image October 31, 2026 - 6_12PM (1)_39
+  - first:
+      213: 6341678894112272008
+    second: Generated Image October 31, 2026 - 6_12PM (1)_40
+  - first:
+      213: -2829163713198107860
+    second: Generated Image October 31, 2026 - 6_12PM (1)_41
+  - first:
+      213: -6652206487986332491
+    second: Generated Image October 31, 2026 - 6_12PM (1)_42
+  - first:
+      213: -4431476872848331376
+    second: Generated Image October 31, 2026 - 6_12PM (1)_43
+  - first:
+      213: -1774078518162920967
+    second: Generated Image October 31, 2026 - 6_12PM (1)_44
+  - first:
+      213: -6386691388799576223
+    second: Generated Image October 31, 2026 - 6_12PM (1)_45
+  - first:
+      213: 7261147521388675767
+    second: Generated Image October 31, 2026 - 6_12PM (1)_46
+  - first:
+      213: 7489234584274019554
+    second: Generated Image October 31, 2026 - 6_12PM (1)_47
+  - first:
+      213: -369110291254407684
+    second: Generated Image October 31, 2026 - 6_12PM (1)_48
+  - first:
+      213: -5676316648350434145
+    second: Generated Image October 31, 2026 - 6_12PM (1)_49
+  - first:
+      213: 6140603820289790174
+    second: Generated Image October 31, 2026 - 6_12PM (1)_50
+  - first:
+      213: 5449280677645845770
+    second: Generated Image October 31, 2026 - 6_12PM (1)_51
+  - first:
+      213: 5320070161455676788
+    second: Generated Image October 31, 2026 - 6_12PM (1)_52
+  - first:
+      213: 7207114204260537289
+    second: Generated Image October 31, 2026 - 6_12PM (1)_53
+  - first:
+      213: -3365752971014757611
+    second: Generated Image October 31, 2026 - 6_12PM (1)_54
+  - first:
+      213: -8888611072642533365
+    second: Generated Image October 31, 2026 - 6_12PM (1)_55
+  - first:
+      213: 2252735994311932315
+    second: Generated Image October 31, 2026 - 6_12PM (1)_56
+  - first:
+      213: -1451061252405615608
+    second: Generated Image October 31, 2026 - 6_12PM (1)_57
+  - first:
+      213: 377974745495653788
+    second: Generated Image October 31, 2026 - 6_12PM (1)_58
+  - first:
+      213: -828073493716774337
+    second: Generated Image October 31, 2026 - 6_12PM (1)_59
+  - first:
+      213: 3012929125697254052
+    second: Generated Image October 31, 2026 - 6_12PM (1)_60
+  - first:
+      213: 1161521271323842590
+    second: Generated Image October 31, 2026 - 6_12PM (1)_61
+  - first:
+      213: -7778398957081816673
+    second: Generated Image October 31, 2026 - 6_12PM (1)_62
+  - first:
+      213: -5397856608121755642
+    second: Generated Image October 31, 2026 - 6_12PM (1)_63
+  - first:
+      213: -6371880265700811010
+    second: Generated Image October 31, 2026 - 6_12PM (1)_64
+  - first:
+      213: -1950419030855338128
+    second: Generated Image October 31, 2026 - 6_12PM (1)_65
+  - first:
+      213: -3081101428383930967
+    second: Generated Image October 31, 2026 - 6_12PM (1)_66
+  - first:
+      213: 8727624236109812941
+    second: Generated Image October 31, 2026 - 6_12PM (1)_67
+  - first:
+      213: -6706408515979999028
+    second: Generated Image October 31, 2026 - 6_12PM (1)_68
+  - first:
+      213: -1723440790000583518
+    second: Generated Image October 31, 2026 - 6_12PM (1)_69
+  - first:
+      213: 3073894268987820617
+    second: Generated Image October 31, 2026 - 6_12PM (1)_70
+  - first:
+      213: -1296524875198506654
+    second: Generated Image October 31, 2026 - 6_12PM (1)_71
+  - first:
+      213: -5668927350245768770
+    second: Generated Image October 31, 2026 - 6_12PM (1)_72
+  - first:
+      213: -6448452144916967875
+    second: Generated Image October 31, 2026 - 6_12PM (1)_73
+  - first:
+      213: 2359281383412312886
+    second: Generated Image October 31, 2026 - 6_12PM (1)_74
+  - first:
+      213: -3579553440048822622
+    second: Generated Image October 31, 2026 - 6_12PM (1)_75
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: floor-mat
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 431
+        width: 185
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7916a4169c420910800000000000000
+      internalID: 1802087008376854910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brick-wall
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 596
+        width: 157
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e4d8ea257cb6c748ac13da2c723da5a
+      internalID: -632482249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: table-bottom
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 643
+        width: 274
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7fcc2581cabba46afc20b7e7996802
+      internalID: 1178164885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stairs
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 431
+        width: 153
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df033f67be85af742a7c7830f160bc79
+      internalID: -742597225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red-stairs
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 431
+        width: 109
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 726f1e7034f97a74fbd8865e73b0f1d8
+      internalID: -855401844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stair-fill
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 431
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f346d18bbd2dff04aa2c35a9b6475536
+      internalID: 1880444945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: window-bottom
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 395
+        width: 87
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e552a494492b5744bb8243fbd39d0ed
+      internalID: 1107349681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: window-top
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 484
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bba17cea08d02f4bb63fe76d987a6d8
+      internalID: -1345650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: window-middle
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 450
+        width: 87
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456ec762fa4c34d4b904d92aaf1c8aa4
+      internalID: -739243106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor-mat-left
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 431
+        width: 23
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ff6e78c6d85ce4fb29420c917975d1
+      internalID: -1977288124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bookshelf
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 582
+        width: 124
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7defb213204d44680c1839455f8d38
+      internalID: 1027979160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sofa
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 600
+        width: 208
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f77f14f01ad6c74c993e958d8d5be1b
+      internalID: 944545220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chandelier
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 136
+        width: 139
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c61512317d9ae64ca512659e7af4881
+      internalID: -911551893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chandelier-chain
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 267
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05ec223bfbbb44b4090fb89d8280a04e
+      internalID: -502098689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chandelier-fall
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 80
+        width: 194
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c62b72e8c80624d8f28fa2fdb8a8c1
+      internalID: -1070275185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 85
+        width: 121
+        height: 206
+      alignment: 9
+      pivot: {x: 0.2727523, y: 0.00000014814358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3caf6dce8f6e314480d0941c402d37d
+      internalID: -1387089623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: armor-fall
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 86
+        width: 198
+        height: 115
+      alignment: 9
+      pivot: {x: 0.8247508, y: 0.00000019902768}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03e1198157503a4082d1e48ca9f88cd
+      internalID: -2082953708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stand-lamp
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 86
+        width: 45
+        height: 178
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396c85e96d5f3774a863034494746301
+      internalID: -641541966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stand-lamp-fall
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 86
+        width: 184
+        height: 49
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d6ee4168f372142a204bbb2de27d88
+      internalID: -1673574259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: table-cloth
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 621
+        width: 60
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9439773a779403a4091a44fad2ec7023
+      internalID: 1831800175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: table-top
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 651
+        width: 283
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e16ef1eceb7bb64997237ed76d5a019
+      internalID: -664165929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: table-front-leg-left
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 601
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f232e6a47a46d1c49a5a3786b859409e
+      internalID: -999179726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: table-front-leg-right
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 601
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736e462bbe7fd3642aaec6767b635c05
+      internalID: 1166487853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: table-back-leg-right
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 619
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a4ec836d8890b459e0d0cb0a45fd15
+      internalID: -942587374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: table-back-leg-left
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 619
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064e65a3767f013468690a2a08641dad
+      internalID: -1983797703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat-hole
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 597
+        width: 101
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139ef6ff2b0dd81478b8e3a693b7463d
+      internalID: 450807821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 2df55faef0ee08d4b9e9da023445cab2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1408.0,"y":768.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      armor: -1387089623
+      armor-fall: -2082953708
+      bookshelf: 1027979160
+      brick-wall: -632482249
+      chandelier: -911551893
+      chandelier-chain: -502098689
+      chandelier-fall: -1070275185
+      floor-mat: 1802087008376854910
+      floor-mat-left: -1977288124
+      rat-hole: 450807821
+      red-stairs: -855401844
+      sofa: 944545220
+      stair-fill: 1880444945
+      stairs: -742597225
+      stand-lamp: -641541966
+      stand-lamp-fall: -1673574259
+      table-back-leg-left: -1983797703
+      table-back-leg-right: -942587374
+      table-bottom: 1178164885
+      table-cloth: 1831800175
+      table-front-leg-left: -999179726
+      table-front-leg-right: 1166487853
+      table-top: -664165929
+      window-bottom: 1107349681
+      window-middle: -739243106
+      window-top: -1345650
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

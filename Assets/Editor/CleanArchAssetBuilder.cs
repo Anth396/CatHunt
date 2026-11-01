@@ -70,7 +70,8 @@ public static class CleanArchAssetBuilder
         foreach (string n in new[]
         {
             "GameStart", "GameRestart", "GameOver", "RoundReset", "PreyCaught", "ObstacleHit", "MainMenuRequested",
-            "JumpPressed", "DashPressed", "DashReleased", "SuperDashReady", "SlashPressed"
+            "JumpPressed", "DashPressed", "DashReleased", "SuperDashReady", "SlashPressed",
+            "DownPressed", "DownReleased"
         })
             Asset<SimpleGameEvent>(Events, n);
 

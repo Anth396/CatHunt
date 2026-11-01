@@ -1,0 +1,609 @@
+fileFormatVersion: 2
+guid: 6ed090ceb8859394283695c9c28c3b76
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8331295094502842232
+    second: Chonky Rat Pixel Animation Sheet (1)_0
+  - first:
+      213: -5467988772931508187
+    second: Chonky Rat Pixel Animation Sheet (1)_1
+  - first:
+      213: -675786485906517652
+    second: Chonky Rat Pixel Animation Sheet (1)_2
+  - first:
+      213: 7916885901870305263
+    second: Chonky Rat Pixel Animation Sheet (1)_3
+  - first:
+      213: 1999600796067490952
+    second: Chonky Rat Pixel Animation Sheet (1)_4
+  - first:
+      213: 3442883003476254558
+    second: Chonky Rat Pixel Animation Sheet (1)_5
+  - first:
+      213: 335631671201942170
+    second: Chonky Rat Pixel Animation Sheet (1)_6
+  - first:
+      213: 8238862615083414469
+    second: Chonky Rat Pixel Animation Sheet (1)_7
+  - first:
+      213: -2629346546541894557
+    second: Chonky Rat Pixel Animation Sheet (1)_8
+  - first:
+      213: -6617098952584982517
+    second: Chonky Rat Pixel Animation Sheet (1)_9
+  - first:
+      213: -1563505937819382018
+    second: Chonky Rat Pixel Animation Sheet (1)_10
+  - first:
+      213: 457932493199341124
+    second: Chonky Rat Pixel Animation Sheet (1)_11
+  - first:
+      213: -8199204223956466479
+    second: Chonky Rat Pixel Animation Sheet (1)_12
+  - first:
+      213: -4769725956340855143
+    second: Chonky Rat Pixel Animation Sheet (1)_13
+  - first:
+      213: -6736558718617722195
+    second: Chonky Rat Pixel Animation Sheet (1)_14
+  - first:
+      213: 8850628781998724549
+    second: Chonky Rat Pixel Animation Sheet (1)_15
+  - first:
+      213: 2559760437683994251
+    second: Chonky Rat Pixel Animation Sheet (1)_16
+  - first:
+      213: -1370939341239008888
+    second: Chonky Rat Pixel Animation Sheet (1)_17
+  - first:
+      213: -7650919651923619902
+    second: Chonky Rat Pixel Animation Sheet (1)_18
+  - first:
+      213: 5883961009367672739
+    second: Chonky Rat Pixel Animation Sheet (1)_19
+  - first:
+      213: -8362675073791737114
+    second: Chonky Rat Pixel Animation Sheet (1)_20
+  - first:
+      213: 8145000436199105386
+    second: Chonky Rat Pixel Animation Sheet (1)_21
+  - first:
+      213: 1849899932573103266
+    second: Chonky Rat Pixel Animation Sheet (1)_22
+  - first:
+      213: 2588362031472356948
+    second: Chonky Rat Pixel Animation Sheet (1)_23
+  - first:
+      213: -6279754394225126242
+    second: Chonky Rat Pixel Animation Sheet (1)_24
+  - first:
+      213: -4802035698858077962
+    second: Chonky Rat Pixel Animation Sheet (1)_25
+  - first:
+      213: -1543295304791242382
+    second: Chonky Rat Pixel Animation Sheet (1)_26
+  - first:
+      213: 7463135195550726876
+    second: Chonky Rat Pixel Animation Sheet (1)_27
+  - first:
+      213: -1238600173320475798
+    second: Chonky Rat Pixel Animation Sheet (1)_28
+  - first:
+      213: -1182732581946148292
+    second: Chonky Rat Pixel Animation Sheet (1)_29
+  - first:
+      213: -5052650054383849012
+    second: Chonky Rat Pixel Animation Sheet (1)_30
+  - first:
+      213: 6556956156332214997
+    second: Chonky Rat Pixel Animation Sheet (1)_31
+  - first:
+      213: 694537688891097826
+    second: Chonky Rat Pixel Animation Sheet (1)_32
+  - first:
+      213: -7481818129604368658
+    second: Chonky Rat Pixel Animation Sheet (1)_33
+  - first:
+      213: 1766646719175879717
+    second: Chonky Rat Pixel Animation Sheet (1)_34
+  - first:
+      213: 6498026523390264484
+    second: Chonky Rat Pixel Animation Sheet (1)_35
+  - first:
+      213: 5554786254876040503
+    second: Chonky Rat Pixel Animation Sheet (1)_36
+  - first:
+      213: 3132593470199272603
+    second: Chonky Rat Pixel Animation Sheet (1)_37
+  - first:
+      213: -8593042585683043557
+    second: Chonky Rat Pixel Animation Sheet (1)_38
+  - first:
+      213: 8687070434908133081
+    second: Chonky Rat Pixel Animation Sheet (1)_39
+  - first:
+      213: 2368650902318589257
+    second: Chonky Rat Pixel Animation Sheet (1)_40
+  - first:
+      213: -1229613713781495340
+    second: Chonky Rat Pixel Animation Sheet (1)_41
+  - first:
+      213: -2490689561603551785
+    second: Chonky Rat Pixel Animation Sheet (1)_42
+  - first:
+      213: -5098868535381138660
+    second: Chonky Rat Pixel Animation Sheet (1)_43
+  - first:
+      213: -1121272994936145575
+    second: Chonky Rat Pixel Animation Sheet (1)_44
+  - first:
+      213: 4775938582104044628
+    second: Chonky Rat Pixel Animation Sheet (1)_45
+  - first:
+      213: -2810004726676048321
+    second: Chonky Rat Pixel Animation Sheet (1)_46
+  - first:
+      213: -8957029559669033355
+    second: Chonky Rat Pixel Animation Sheet (1)_47
+  - first:
+      213: 2035744845524369599
+    second: Chonky Rat Pixel Animation Sheet (1)_48
+  - first:
+      213: 5444740103427133140
+    second: Chonky Rat Pixel Animation Sheet (1)_49
+  - first:
+      213: -8854565739273888782
+    second: Chonky Rat Pixel Animation Sheet (1)_50
+  - first:
+      213: -8335524586871719322
+    second: Chonky Rat Pixel Animation Sheet (1)_51
+  - first:
+      213: -6040703926031150788
+    second: Chonky Rat Pixel Animation Sheet (1)_52
+  - first:
+      213: -5174636157370015134
+    second: Chonky Rat Pixel Animation Sheet (1)_53
+  - first:
+      213: -1638351398616684549
+    second: Chonky Rat Pixel Animation Sheet (1)_54
+  - first:
+      213: 3942186475567575219
+    second: Chonky Rat Pixel Animation Sheet (1)_55
+  - first:
+      213: 1796380060765493806
+    second: Chonky Rat Pixel Animation Sheet (1)_56
+  - first:
+      213: 4694904787026357962
+    second: Chonky Rat Pixel Animation Sheet (1)_57
+  - first:
+      213: 3608044502354882612
+    second: Chonky Rat Pixel Animation Sheet (1)_58
+  - first:
+      213: 7478643051900398549
+    second: Chonky Rat Pixel Animation Sheet (1)_59
+  - first:
+      213: -6911257841848561803
+    second: Chonky Rat Pixel Animation Sheet (1)_60
+  - first:
+      213: 6949154490812049423
+    second: Chonky Rat Pixel Animation Sheet (1)_61
+  - first:
+      213: -7948494374800286478
+    second: Chonky Rat Pixel Animation Sheet (1)_62
+  - first:
+      213: -2352454331830745685
+    second: Chonky Rat Pixel Animation Sheet (1)_63
+  - first:
+      213: -5978757167628887854
+    second: Chonky Rat Pixel Animation Sheet (1)_64
+  - first:
+      213: -6511377539613898852
+    second: Chonky Rat Pixel Animation Sheet (1)_65
+  - first:
+      213: 6320464354600875924
+    second: Chonky Rat Pixel Animation Sheet (1)_66
+  - first:
+      213: 4484425665905667657
+    second: Chonky Rat Pixel Animation Sheet (1)_67
+  - first:
+      213: -492890719545170640
+    second: Chonky Rat Pixel Animation Sheet (1)_68
+  - first:
+      213: 4847829139818081264
+    second: Chonky Rat Pixel Animation Sheet (1)_69
+  - first:
+      213: -350169541319572288
+    second: Chonky Rat Pixel Animation Sheet (1)_70
+  - first:
+      213: 6198913475258487754
+    second: Chonky Rat Pixel Animation Sheet (1)_71
+  - first:
+      213: 2095304431792216131
+    second: Chonky Rat Pixel Animation Sheet (1)_72
+  - first:
+      213: -7843187125304665102
+    second: Chonky Rat Pixel Animation Sheet (1)_73
+  - first:
+      213: 4141749346503305736
+    second: Chonky Rat Pixel Animation Sheet (1)_74
+  - first:
+      213: -7200126240030783613
+    second: Chonky Rat Pixel Animation Sheet (1)_75
+  - first:
+      213: -4964095661832850663
+    second: Chonky Rat Pixel Animation Sheet (1)_76
+  - first:
+      213: 5025080167227200510
+    second: Chonky Rat Pixel Animation Sheet (1)_77
+  - first:
+      213: 11658604998623217
+    second: Chonky Rat Pixel Animation Sheet (1)_78
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Chonky Rat Pixel Animation Sheet (1)_13
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 738
+        width: 366
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99ec75883878ecdb0800000000000000
+      internalID: -4769725956340855143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chonky Rat Pixel Animation Sheet (1)_14
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 738
+        width: 350
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2ea38898fe282a0800000000000000
+      internalID: -6736558718617722195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chonky Rat Pixel Animation Sheet (1)_15
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 737
+        width: 365
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c5d1ed0cffb3da70800000000000000
+      internalID: 8850628781998724549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chonky Rat Pixel Animation Sheet (1)_16
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 737
+        width: 353
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8eb04e4e88168320800000000000000
+      internalID: 2559760437683994251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chonky Rat Pixel Animation Sheet (1)_51
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 389
+        width: 381
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66af9fe3d84425c80800000000000000
+      internalID: -8335524586871719322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chonky Rat Pixel Animation Sheet (1)_52
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 389
+        width: 364
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c311b97c8cb1b2ca0800000000000000
+      internalID: -6040703926031150788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chonky Rat Pixel Animation Sheet (1)_54
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 389
+        width: 310
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7203455186349e0800000000000000
+      internalID: -1638351398616684549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chonky Rat Pixel Animation Sheet (1)_77
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 55
+        width: 436
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3107fb9cbacb540800000000000000
+      internalID: 5025080167227200510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 10e4c0a4cba9ad54496cdbf247f0458a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Chonky Rat Pixel Animation Sheet (1)_0: 8331295094502842232
+      Chonky Rat Pixel Animation Sheet (1)_1: -5467988772931508187
+      Chonky Rat Pixel Animation Sheet (1)_10: -1563505937819382018
+      Chonky Rat Pixel Animation Sheet (1)_11: 457932493199341124
+      Chonky Rat Pixel Animation Sheet (1)_12: -8199204223956466479
+      Chonky Rat Pixel Animation Sheet (1)_13: -4769725956340855143
+      Chonky Rat Pixel Animation Sheet (1)_14: -6736558718617722195
+      Chonky Rat Pixel Animation Sheet (1)_15: 8850628781998724549
+      Chonky Rat Pixel Animation Sheet (1)_16: 2559760437683994251
+      Chonky Rat Pixel Animation Sheet (1)_17: -1370939341239008888
+      Chonky Rat Pixel Animation Sheet (1)_18: -7650919651923619902
+      Chonky Rat Pixel Animation Sheet (1)_19: 5883961009367672739
+      Chonky Rat Pixel Animation Sheet (1)_2: -675786485906517652
+      Chonky Rat Pixel Animation Sheet (1)_20: -8362675073791737114
+      Chonky Rat Pixel Animation Sheet (1)_21: 8145000436199105386
+      Chonky Rat Pixel Animation Sheet (1)_22: 1849899932573103266
+      Chonky Rat Pixel Animation Sheet (1)_23: 2588362031472356948
+      Chonky Rat Pixel Animation Sheet (1)_24: -6279754394225126242
+      Chonky Rat Pixel Animation Sheet (1)_25: -4802035698858077962
+      Chonky Rat Pixel Animation Sheet (1)_26: -1543295304791242382
+      Chonky Rat Pixel Animation Sheet (1)_27: 7463135195550726876
+      Chonky Rat Pixel Animation Sheet (1)_28: -1238600173320475798
+      Chonky Rat Pixel Animation Sheet (1)_29: -1182732581946148292
+      Chonky Rat Pixel Animation Sheet (1)_3: 7916885901870305263
+      Chonky Rat Pixel Animation Sheet (1)_30: -5052650054383849012
+      Chonky Rat Pixel Animation Sheet (1)_31: 6556956156332214997
+      Chonky Rat Pixel Animation Sheet (1)_32: 694537688891097826
+      Chonky Rat Pixel Animation Sheet (1)_33: -7481818129604368658
+      Chonky Rat Pixel Animation Sheet (1)_34: 1766646719175879717
+      Chonky Rat Pixel Animation Sheet (1)_35: 6498026523390264484
+      Chonky Rat Pixel Animation Sheet (1)_36: 5554786254876040503
+      Chonky Rat Pixel Animation Sheet (1)_37: 3132593470199272603
+      Chonky Rat Pixel Animation Sheet (1)_38: -8593042585683043557
+      Chonky Rat Pixel Animation Sheet (1)_39: 8687070434908133081
+      Chonky Rat Pixel Animation Sheet (1)_4: 1999600796067490952
+      Chonky Rat Pixel Animation Sheet (1)_40: 2368650902318589257
+      Chonky Rat Pixel Animation Sheet (1)_41: -1229613713781495340
+      Chonky Rat Pixel Animation Sheet (1)_42: -2490689561603551785
+      Chonky Rat Pixel Animation Sheet (1)_43: -5098868535381138660
+      Chonky Rat Pixel Animation Sheet (1)_44: -1121272994936145575
+      Chonky Rat Pixel Animation Sheet (1)_45: 4775938582104044628
+      Chonky Rat Pixel Animation Sheet (1)_46: -2810004726676048321
+      Chonky Rat Pixel Animation Sheet (1)_47: -8957029559669033355
+      Chonky Rat Pixel Animation Sheet (1)_48: 2035744845524369599
+      Chonky Rat Pixel Animation Sheet (1)_49: 5444740103427133140
+      Chonky Rat Pixel Animation Sheet (1)_5: 3442883003476254558
+      Chonky Rat Pixel Animation Sheet (1)_50: -8854565739273888782
+      Chonky Rat Pixel Animation Sheet (1)_51: -8335524586871719322
+      Chonky Rat Pixel Animation Sheet (1)_52: -6040703926031150788
+      Chonky Rat Pixel Animation Sheet (1)_53: -5174636157370015134
+      Chonky Rat Pixel Animation Sheet (1)_54: -1638351398616684549
+      Chonky Rat Pixel Animation Sheet (1)_55: 3942186475567575219
+      Chonky Rat Pixel Animation Sheet (1)_56: 1796380060765493806
+      Chonky Rat Pixel Animation Sheet (1)_57: 4694904787026357962
+      Chonky Rat Pixel Animation Sheet (1)_58: 3608044502354882612
+      Chonky Rat Pixel Animation Sheet (1)_59: 7478643051900398549
+      Chonky Rat Pixel Animation Sheet (1)_6: 335631671201942170
+      Chonky Rat Pixel Animation Sheet (1)_60: -6911257841848561803
+      Chonky Rat Pixel Animation Sheet (1)_61: 6949154490812049423
+      Chonky Rat Pixel Animation Sheet (1)_62: -7948494374800286478
+      Chonky Rat Pixel Animation Sheet (1)_63: -2352454331830745685
+      Chonky Rat Pixel Animation Sheet (1)_64: -5978757167628887854
+      Chonky Rat Pixel Animation Sheet (1)_65: -6511377539613898852
+      Chonky Rat Pixel Animation Sheet (1)_66: 6320464354600875924
+      Chonky Rat Pixel Animation Sheet (1)_67: 4484425665905667657
+      Chonky Rat Pixel Animation Sheet (1)_68: -492890719545170640
+      Chonky Rat Pixel Animation Sheet (1)_69: 4847829139818081264
+      Chonky Rat Pixel Animation Sheet (1)_7: 8238862615083414469
+      Chonky Rat Pixel Animation Sheet (1)_70: -350169541319572288
+      Chonky Rat Pixel Animation Sheet (1)_71: 6198913475258487754
+      Chonky Rat Pixel Animation Sheet (1)_72: 2095304431792216131
+      Chonky Rat Pixel Animation Sheet (1)_73: -7843187125304665102
+      Chonky Rat Pixel Animation Sheet (1)_74: 4141749346503305736
+      Chonky Rat Pixel Animation Sheet (1)_75: -7200126240030783613
+      Chonky Rat Pixel Animation Sheet (1)_76: -4964095661832850663
+      Chonky Rat Pixel Animation Sheet (1)_77: 5025080167227200510
+      Chonky Rat Pixel Animation Sheet (1)_78: 11658604998623217
+      Chonky Rat Pixel Animation Sheet (1)_8: -2629346546541894557
+      Chonky Rat Pixel Animation Sheet (1)_9: -6617098952584982517
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

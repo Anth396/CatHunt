@@ -23,6 +23,8 @@ public class FallingObject : MonoBehaviour
     public string groundTag = "Ground";
     [Tooltip("How far above the object's top the cat's feet must be for a landing to count as 'on top'.")]
     public float topTolerance = 0.6f;
+    [Tooltip("On: the drop starts as soon as the cat touches the trigger from any side (chandelier). Off: only a landing on top counts (aircon).")]
+    public bool dropOnAnyTouch = false;
 
     [Header("Events")]
     public UnityEvent onDropStarted = new UnityEvent();
@@ -35,14 +37,14 @@ public class FallingObject : MonoBehaviour
     private Collider2D coverage;                // the sprite-sized collider that finds the ground
     private ContactFilter2D groundFilter;
     private readonly RaycastHit2D[] hits = new RaycastHit2D[8];
-    private Vector2 startPosition;
+    private Vector3 startPosition;      // with z: the object hangs in front of or behind other things
     private float fallSpeed;
 
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        startPosition = body.position;
+        startPosition = transform.position;
 
         // The collider on this object itself covers the whole sprite
         foreach (Collider2D c in GetComponents<Collider2D>())
@@ -75,6 +77,12 @@ public class FallingObject : MonoBehaviour
 
         CatMotor cat = other.GetComponentInParent<CatMotor>();
         if (cat == null) return;
+
+        if (dropOnAnyTouch)
+        {
+            StartDrop();
+            return;
+        }
 
         // Only a cat coming down onto the top counts: falling, with its feet around the object's top
         float objectTop = coverage != null ? coverage.bounds.max.y : transform.position.y;
@@ -141,8 +149,8 @@ public class FallingObject : MonoBehaviour
     {
         State = DropState.Idle;
         fallSpeed = 0f;
-        body.position = startPosition;
         transform.position = startPosition;
+        body.position = startPosition;      // the rigidbody only has x and y
         Physics2D.SyncTransforms();
         PlayState(idleState);
     }
